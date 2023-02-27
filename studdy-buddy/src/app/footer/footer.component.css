@@ -55,6 +55,7 @@
     width: 50px; /* Anpassen der Breite des Logos (Icons) */
     height: 40px; /* Anpassen der Höhe des Logos (Icons) */
     float: left; /* Links ausrichten */
+    margin-left: 90px;
     /* Weitere Styling-Optionen */
   }
   
