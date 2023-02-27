@@ -51,9 +51,9 @@
     
   }
   
-  .logo {
+  .logo > img{
     width: 50px; /* Anpassen der Breite des Logos (Icons) */
-    height: 50px; /* Anpassen der Höhe des Logos (Icons) */
+    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
     float: left; /* Links ausrichten */
     /* Weitere Styling-Optionen */
   }
