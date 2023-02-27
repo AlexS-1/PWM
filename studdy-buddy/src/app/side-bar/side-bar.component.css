@@ -1,0 +1,51 @@
+.background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 100%;
+    background: #D8DCFF;
+}
+
+.burger-menu-button {
+    display: flex;
+    position: absolute;
+}
+
+.line {
+    position: relative;
+    display: flex;
+    width: 32px;
+    height: 6px;
+    background: #FFA100;
+    border-radius: 4px;
+    margin-left: 29px;
+}
+
+.line1 {
+    top: 15px;
+}
+
+.line2 {
+    top: 21px;
+}
+
+.line3 {
+    top: 27px;
+}
+
+.icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin-top: 60px;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 0px;
+}
+
+li {
+    margin-left: -25px;
+}
