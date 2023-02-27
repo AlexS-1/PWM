@@ -67,3 +67,10 @@
     margin-right: 60px;
     flex-grow: 1;
   }
+
+  .socialMediaLogo > img{
+    width: 50px; /* Anpassen der Breite des Logos (Icons) */
+    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
+    float: right; /* Links ausrichten */
+    /* Weitere Styling-Optionen */
+  }
