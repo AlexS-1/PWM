@@ -24,3 +24,10 @@ Sobald Sie Node.js und npm auf Ihrem System installiert haben, können Sie das A
 
     Anwendung sollte sich direkt im Browser öffnen
 
+    Zum erstellen von Komponenten in src/app den Befehl
+
+        ng generate component component-name
+
+    Danach kann in app.component.html de in component-name.module.ts unter selector angegebene Namen in app.component.html eingefügt werden
+
+        <component-name></component-name>
