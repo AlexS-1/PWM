@@ -10,7 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   /* Add route info to route array*/
   { path: '', component:HomeComponent},
-  { path: 'contact', component:ContactComponent},
+  { path: 'contact-component', component:ContactComponent},
   { path: 'app-component', component:AppComponent }, /* Not sure if this one is needed since it is the basic component*/
   { path: 'about-us-component', component:AboutUsComponent }
 ];
