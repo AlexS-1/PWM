@@ -5,3 +5,32 @@ body {
     font-weight: normal;
     font-size: 18px;
 }
+
+.home {
+  grid-area: home; /* Position des Hauptbereichs im Grid definieren */
+  margin: 25px; /* Optional: Abstand zum Rand des Hauptbereichs festlegen */
+  padding-left: 70px;
+  padding-top: 8px;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 10px; /* Eine Spalte */
+  grid-template-rows: auto 10px; /* Automatische Höhe für Sidebar und Navigation oben, Rest für Hauptbereich */
+  grid-template-areas:
+    "side-bar"
+    "nav-bar"
+    "home" /* Grid-Bereiche definieren */
+    "footer";
+}
+
+.side-bar {
+  grid-area: side-bar; /* Position der Sidebar im Grid definieren */
+}
+
+.nav-bar {
+  grid-area: nav-bar; /* Position der Navigation oben im Grid definieren */
+}
+
+
