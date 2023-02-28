@@ -13,6 +13,8 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CreateCourseComponent } from './create-course/create-course.component';
     MyAccountComponent,
     BrowseCoursesComponent,
     ListCoursesComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    LogInComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,

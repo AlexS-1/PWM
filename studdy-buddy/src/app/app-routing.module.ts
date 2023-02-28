@@ -1,3 +1,5 @@
+import { LogInComponent } from './log-in/log-in.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'my-account-component', component:MyAccountComponent},
   { path: 'browse-courses-component', component:BrowseCoursesComponent},
   { path: 'list-courses-component', component:ListCoursesComponent},
-  { path: 'create-course-component', component:CreateCourseComponent}
+  { path: 'create-course-component', component:CreateCourseComponent},
+  { path: 'create-account-component', component:CreateAccountComponent},
+  { path: 'log-in-component', component:LogInComponent}
 ];
 
 @NgModule({
