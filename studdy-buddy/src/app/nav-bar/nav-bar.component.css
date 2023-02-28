@@ -1,6 +1,7 @@
 .nav-bar {
     width: 100%;
     background-color: #0066A1;
+    color: white;
     display: flex;
     position: top;
     position: fixed;
@@ -22,4 +23,15 @@ h1 {
 
 .text {
   align-self: flex-end;
+}
+
+span{
+  color: white;
+
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  
 }
