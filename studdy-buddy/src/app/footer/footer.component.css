@@ -6,14 +6,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
+
   }
-    
+
   a {
     color: #000000;
     text-decoration: none;
   }
-  
+
   a:hover {
     text-decoration: underline;
   }
@@ -21,7 +21,7 @@
   .h1 {
     font-weight: bolder;
   }
-  
+
   /* Klassen */
   .sidebar {
     background-color: #f1f1f1;
@@ -34,7 +34,7 @@
   .footer {
     background-color: #0066A1;
     color: #fff; /* Weißer Text */
-    
+
     position: fixed;
     bottom: 0;
     left: 0;
@@ -44,21 +44,21 @@
     align-items: center;
     display: flex;
   }
-  
+
   .footer a {
     color: #fff; /* Weiße Link-Textfarbe */
     margin-right: 20px; /* Abstand zwischen den Links */
-    
+
   }
-  
-  .logo > img{
+
+  .logo > a > img{
     width: 50px; /* Anpassen der Breite des Logos (Icons) */
     height: 40px; /* Anpassen der Höhe des Logos (Icons) */
     float: left; /* Links ausrichten */
     margin-left: 90px;
     /* Weitere Styling-Optionen */
   }
-  
+
   .links {
     float: left; /* Links ausrichten */
     display: flex;
