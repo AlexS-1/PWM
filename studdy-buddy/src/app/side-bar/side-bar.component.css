@@ -2,36 +2,31 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 90px;
     height: 100%;
     background: #D8DCFF;
 }
 
-.burger-menu-button {
-    display: flex;
-    position: absolute;
-}
-
 .line {
     position: relative;
-    display: flex;
     width: 32px;
     height: 6px;
     background: #FFA100;
-    border-radius: 4px;
-    margin-left: 29px;
+    border-radius: 3px;
 }
 
 .line1 {
-    top: 15px;
+    left: -4px;
+    top: -6px;
 }
 
 .line2 {
-    top: 21px;
+    left: -4px;
+    top: 0px;
 }
 
 .line3 {
-    top: 27px;
+    left: -4px;
+    top: 6px;
 }
 
 .icon {
@@ -48,4 +43,20 @@ ul {
 
 li {
     margin-left: -25px;
+}
+
+.folded-in {
+    width: 90px;
+}
+
+.folded-out {
+    width: 420px;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    left: 25px;
+    top: 12px;
+    position: relative;
 }

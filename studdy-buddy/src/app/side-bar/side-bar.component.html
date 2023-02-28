@@ -1,9 +1,12 @@
-<div class="background">
-    <div class="burger-mneu-button">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
-    </div>
+<div [ngClass]="sideBarStyle" class="background">
+    
+        <div class="burger-mneu-button">
+            <button (click)="setSideBarStyle()">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </button>
+        </div>
     <ul>
         <li>
             <a href="my-account" routerLink="my-account-component" routerLinkActive="active" ariaCurrentWhenActive="page">
