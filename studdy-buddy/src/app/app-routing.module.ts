@@ -1,3 +1,6 @@
+import { CreateCourseComponent } from './create-course/create-course.component';
+import { ListCoursesComponent } from './list-courses/list-courses.component';
+import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'app-component', component:AppComponent }, /* Not sure if this one is needed since it is the basic component*/
   { path: 'about-us-component', component:AboutUsComponent },
   { path: 'home-component', component:HomeComponent},
-  { path: 'my-account-component', component:MyAccountComponent}
+  { path: 'my-account-component', component:MyAccountComponent},
+  { path: 'browse-courses-component', component:BrowseCoursesComponent},
+  { path: 'list-courses-component', component:ListCoursesComponent},
+  { path: 'create-course-component', component:CreateCourseComponent}
 ];
 
 @NgModule({

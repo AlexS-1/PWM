@@ -10,6 +10,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
+import { ListCoursesComponent } from './list-courses/list-courses.component';
+import { CreateCourseComponent } from './create-course/create-course.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { MyAccountComponent } from './my-account/my-account.component';
     AboutUsComponent,
     ContactComponent,
     HomeComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    BrowseCoursesComponent,
+    ListCoursesComponent,
+    CreateCourseComponent
   ],
   imports: [
     BrowserModule,
