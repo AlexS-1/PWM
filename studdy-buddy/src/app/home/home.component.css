@@ -1,31 +1,52 @@
 * {
   box-sizing: border-box;
   width: 600px;
+  height: 100px;
   justify-content: center;
-  }
+}
 
 :host {
-display: block;
-margin: 20px;
-justify-content: center;
-text-align: center;
+  display: block;
+  margin: 20px;
+  justify-content: center;
+  text-align: center;
+}
 
+.rounded-rectangle {
+  width: 130%;
+  height: 330%;
+  background-color: #7496ED;
+  border-radius:60px;
+  
+  /* Positionierung des Elements */
+  position: absolute;
+  top: 100%; /* setzt den Abstand zum h1-Element */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 600px)  {
+  .rounded-rectangle {
+    width: 100px;
+    height: 400px;
+  }
 }
 
 .container {
   display: flex;
   justify-content: center;
+  position: relative;
 }
+
 body {
-text-align: center;
+  text-align: center;
 }
 
-.div {
-  justify-content: left;
-
+.container {
+  justify-content: center;
 }
 
-.h1 {
+h1 {
   justify-content: center;
   text-align: center;
 }

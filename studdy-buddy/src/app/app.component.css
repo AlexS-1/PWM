@@ -11,12 +11,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:15px;
+
 }
 
 
 .grid-container {
   display: grid;
+
+  width: 100%;
   padding: 5%;
   justify-content: center !important;
   /*grid-template-columns: 10px; /* Eine Spalte */
@@ -30,10 +32,12 @@ body {
 
 .app-side-bar {
   grid-area: side-bar; /* Position der Sidebar im Grid definieren */
+  grid-column: 1;
 }
 
 .app-nav-bar {
   grid-area: nav-bar; /* Position der Navigation oben im Grid definieren */
+  grid-column: 2;
 }
 
 
