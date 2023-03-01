@@ -1,40 +1,11 @@
+/* Styling for the general background of the side bar */
+
 .background {
     position: fixed;
     top: 0px;
     left: 0px;
     height: 100%;
     background: #D8DCFF;
-}
-
-.line {
-    position: relative;
-    width: 32px;
-    height: 6px;
-    background: #FFA100;
-    border-radius: 3px;
-}
-
-.line1 {
-    left: -4px;
-    top: -6px;
-}
-
-.line2 {
-    left: -4px;
-    top: 0px;
-}
-
-.line3 {
-    left: -4px;
-    top: 6px;
-}
-
-.icon {
-    display: flex;
-    width: 60px;
-    height: 60px;
-    margin-top: 60px;
-    float: left;
 }
 
 .folded-in {
@@ -45,12 +16,67 @@
     width: 420px;
 }
 
+/* Styling of the burger menu section */
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu-button {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: inline-start;
+}
+
 button {
-    position: relative;
     width: 40px;
     height: 40px;
-    left: 25px;
-    top: 12px;
+}
+
+.line {
+    width: 24px;
+    height: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background: #FFA100;
+    border-radius: 3px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+}
+
+h1:hover {
+    text-decoration: underline;
+}
+
+h1.folded-in {
+    display: none;
+}
+
+/* Styling of the navigation items in the side bar */
+
+.link-container {
+    position: relative;
+    top: 60px;
+    left: 0px;
+}
+
+.image {
+    margin: 15px;
+    float: inline-start;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
 }
 
 h2 {
@@ -66,9 +92,4 @@ h2:hover {
 
 h2.folded-in {
     display: none;
-}
-
-.link-container {
-    margin-left: 15px;
-    margin-right: 15px;
 }
