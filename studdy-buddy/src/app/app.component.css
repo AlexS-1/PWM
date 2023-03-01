@@ -1,41 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-.app-home {
-  grid-area: app-home;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-
-.grid-container {
-  display: grid;
-
+app-nav-bar {
+  top: 0px;
+  position: fixed;
+  height: 60px;
   width: 100%;
-  padding: 5%;
-  justify-content: center !important;
-  /*grid-template-columns: 10px; /* Eine Spalte */
-  grid-template-rows: auto 15px; /* Automatische Höhe für Sidebar und Navigation oben, Rest für Hauptbereich */
-  grid-template-areas:
-    "side-bar"
-    "nav-bar"
-    "app-home" /* Grid-Bereiche definieren */
-    "footer";
-
-  font-family: 'Inter', sans-serif;
-  font-weight: normal;
-  font-size: 18px;
 }
 
-.app-side-bar {
-  grid-area: side-bar; /* Position der Sidebar im Grid definieren */
-  grid-column: 1;
+app-side-bar {
+  width: 90px;
+  height: 100%;
+  left: 0px;
 }
 
-.app-nav-bar {
-  grid-area: nav-bar; /* Position der Navigation oben im Grid definieren */
-  grid-column: 2;
+main {
+  margin-left: 90px;
 }
 
+app-home {
+  top: 0px !important;
+  margin-top: 60px !important;
+  width: 100%;
+}
 
+footer {
+  width: 100%;
+  bottom: 0px;
+}
+
+app-footer {
+  width: 100%;
+  bottom: 0px;
+  height: 70px;
+}
