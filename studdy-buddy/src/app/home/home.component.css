@@ -1,10 +1,31 @@
+* {
+  box-sizing: border-box;
+  width: 600px;
+  justify-content: center;
+  }
 
 :host {
-    display: block;
-    margin: 20px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
+display: block;
+margin: 20px;
+justify-content: center;
+text-align: center;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+body {
+text-align: center;
+}
+
+.div {
+  justify-content: left;
+
+}
+
+.h1 {
+  justify-content: center;
+  text-align: center;
+}
