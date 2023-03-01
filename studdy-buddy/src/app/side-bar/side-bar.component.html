@@ -1,39 +1,81 @@
-<div class="background">
-    <div class="burger-mneu-button">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
+<div [ngClass]="sideBarStyle" class="background">
+    <div class="burger-menu">
+        <div class="menu-button">
+            <button (click)="setSideBarStyle()" class="button">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </button>
+        </div>
+        <div class="menu-heading">
+            <h1 [ngClass]="sideBarStyle">StuddyBuddy</h1>
+        </div>
     </div>
-    <ul>
-        <li>
-            <a href="my-account" routerLink="my-account-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-              <img src="/assets/side_bar_icons/user.svg" alt="user-icon" class="icon user-icon">
-            </a>
-        </li>
-        <li>
-            <a href="list-courses" routerLink="list-courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-              <img src="/assets/side_bar_icons/list.svg" alt="list-icon" class="icon list-icon">
-            </a>
-        </li>
-        <li>
-          <a href="browse-courses" routerLink="browse-courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-            <img src="/assets/side_bar_icons/earth.svg" alt="earth-icon" class="icon earth-icon">
-          </a>
-        </li>
-        <li>
-            <a href="create-course" routerLink="create-course-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-              <img src="/assets/side_bar_icons/plus.svg" alt="plus-icon" class="icon plus-icon">
-            </a>
-        </li>
-        <li>
-            <a href="log-in" routerLink="log-in-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-              <img src="/assets/side_bar_icons/arrow-right.svg" alt="arrow-right-icon" class="icon arrow-icon">
-            </a>
-        </li>
-        <li>
-            <a href="home-course" routerLink="home-component" routerLinkActive="active" ariaCurrentWhenActive="page">
-              <img src="/assets/side_bar_icons/close.svg" alt="close-icon" class="icon close-icon">
-            </a>
-        </li>
-    </ul>
+    
+    <a href="my-account" routerLink="my-account-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/user.svg" alt="user-icon" class="icon user-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">My Account</h2>
+            </div>
+        </div>
+    </a>
+
+    <a href="list-courses" routerLink="list-courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/list.svg" alt="list-icon" class="icon list-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">My Courses</h2>
+            </div>
+        </div>
+    </a>
+
+    <a href="browse-courses" routerLink="browse-courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/earth.svg" alt="earth-icon" class="icon earth-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">Browse Courses</h2>
+            </div>
+        </div>  
+    </a>
+
+    <a href="create-course" routerLink="create-course-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/plus.svg" alt="plus-icon" class="icon plus-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">Create Course</h2>
+            </div>
+        </div>
+    </a>
+
+    <a href="log-in" routerLink="log-in-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/arrow-right.svg" alt="arrow-right-icon" class="icon arrow-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">Log-In</h2>
+            </div>
+        </div>
+    </a>
+    
+    <a href="home-course" routerLink="home-component" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <div class="link-container">
+            <div class="image">
+                <img src="/assets/side_bar_icons/close.svg" alt="close-icon" class="icon close-icon">
+            </div>
+            <div class="text">
+                <h2 [ngClass]="sideBarStyle">Log-Out</h2>
+            </div>
+        </div>
+    </a>
+
 </div>

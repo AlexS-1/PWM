@@ -1,51 +1,97 @@
+/* Styling for the general background of the side bar */
+
 .background {
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 90px;
     height: 100%;
     background: #D8DCFF;
 }
 
-.burger-menu-button {
-    display: flex;
-    position: absolute;
+.folded-in {
+    width: 90px;
+}
+
+.folded-out {
+    width: 420px;
+}
+
+/* Styling of the burger menu section */
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu-button {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: inline-start;
+}
+
+button {
+    width: 40px;
+    height: 40px;
 }
 
 .line {
-    position: relative;
-    display: flex;
-    width: 32px;
+    width: 24px;
     height: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     background: #FFA100;
-    border-radius: 4px;
-    margin-left: 29px;
+    border-radius: 3px;
 }
 
-.line1 {
-    top: 15px;
+h1 {
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
 }
 
-.line2 {
-    top: 21px;
+h1:hover {
+    text-decoration: underline;
 }
 
-.line3 {
-    top: 27px;
+h1.folded-in {
+    display: none;
+}
+
+/* Styling of the navigation items in the side bar */
+
+.link-container {
+    display: block;
+    top: 0px;
+    left: 0px;
+}
+
+.image {
+    margin: 15px;
+    float: inline-start;
 }
 
 .icon {
-    display: flex;
     width: 60px;
     height: 60px;
-    margin-top: 60px;
 }
 
-ul {
-    list-style-type: none;
-    margin-left: 0px;
+h2 {
+    font-size: 24px;
+    font-weight: lighter;
+    color: black;
+    text-decoration: none;
+    height: 90px;
+    padding-top: 27px;
 }
 
-li {
-    margin-left: -25px;
+h2:hover {
+    text-decoration: underline;
+}
+
+h2.folded-in {
+    display: none;
 }
