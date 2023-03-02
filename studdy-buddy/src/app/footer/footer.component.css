@@ -23,14 +23,6 @@
   }
 
   /* Klassen */
-  .sidebar {
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
-  }
-
   .footer {
     background-color: #0066A1;
     color: #fff; /* Weißer Text */
@@ -39,7 +31,9 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px; /* Abstand des Inhalts vom Rand */
+    padding-top: 20px; /* Abstand des Inhalts vom Rand */
+    padding-bottom: 20px;
+    padding-right: 1.5%;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -52,10 +46,12 @@
   }
 
   .logo > a > img{
-    width: 50px; /* Anpassen der Breite des Logos (Icons) */
-    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
+    width: 55px; /* Anpassen der Breite des Logos (Icons) */
+
     float: left; /* Links ausrichten */
-    margin-left: 90px;
+    margin-left: 20px;
+
+    size: 180%;
     /* Weitere Styling-Optionen */
   }
 
@@ -64,14 +60,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 8%;
+    margin-right: 8%;
     flex-grow: 1;
+    padding-left: 0%;
+  }
+
+
+  .socialMediaLogo{
+    padding-right: 2%;
   }
 
   .socialMediaLogo > img{
-    width: 50px; /* Anpassen der Breite des Logos (Icons) */
-    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
-    float: right; /* Links ausrichten */
+    width: 20%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
+    text-align: center; /* Links ausrichten */
+    justify-content: center;
+    margin-right: 10px;
     /* Weitere Styling-Optionen */
+    padding-right: 4%;
   }
+
