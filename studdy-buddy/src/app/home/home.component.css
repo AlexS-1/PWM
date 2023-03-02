@@ -1,26 +1,21 @@
-* {
-  box-sizing: border-box;
-  width: 600px;
-  height: 100px;
-  justify-content: center;
-}
-
 :host {
   display: block;
-  justify-content: center;
-  text-align: center;
 }
 
+.homepage-heading {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bolder;
+  padding-top: 30px;
+}
+
+
 .rounded-rectangle {
-  width: 130%;
-  height: 330%;
   background-color: #7496ED;
   border-radius:60px;
-  
-  /* Positionierung des Elements */
-  position: absolute;
-  top: 100%; /* setzt den Abstand zum h1-Element */
-  left: 50%;
+  height: 30vh;
+  width: 80vw;
+  margin: auto;
 }
 
 @media (max-width: 600px)  {
@@ -28,23 +23,4 @@
     width: 100px;
     height: 400px;
   }
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-body {
-  text-align: center;
-}
-
-.container {
-  justify-content: center;
-}
-
-h1 {
-  justify-content: center;
-  text-align: center;
 }
