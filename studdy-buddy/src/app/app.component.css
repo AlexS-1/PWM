@@ -26,6 +26,12 @@ footer {
   bottom: 0px;
 }
 
+main{
+  margin-top: 60px;
+  margin-left: 90px;
+  
+}
+
 app-footer {
   width: 100%;
   bottom: 0px;

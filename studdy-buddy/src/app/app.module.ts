@@ -15,6 +15,7 @@ import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     ListCoursesComponent,
     CreateCourseComponent,
     LogInComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
