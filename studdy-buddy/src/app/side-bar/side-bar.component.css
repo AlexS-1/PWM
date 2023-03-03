@@ -1,5 +1,4 @@
 /* Styling for the general background of the side bar */
-
 .background {
     position: fixed;
     top: 0px;
@@ -74,21 +73,31 @@ a {
 }
 
 /* Styling of the navigation items in the side bar */
-.first-link {
+.icon-group {
     margin-top: 60px;
 }
 
+/*.navigation-group {
+    top: 60px;
+    padding: 30px auto;
+    min-height: 390px;
+}
+
+.account-group {
+    bottom: 100px;
+    padding: 30px auto;
+    min-height: 210px;
+}*/
+
 .link-container {
     display: block;
-    top: 0px;
-    left: 0px;
     height: 90px;
 }
 
 .image {
-    width: 90;
-    height: 90px;
     float: inline-start;
+    width: 90px;
+    height: 90px;
 }
 
 .icon {

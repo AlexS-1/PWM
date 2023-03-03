@@ -1,14 +1,12 @@
 app-nav-bar {
-  top: 0px;
-  position: fixed;
   height: 60px;
   width: 100%;
 }
 
 app-side-bar {
   width: 90px;
-  height: 100%;
   left: 0px;
+  margin-bottom: 106px;
 }
 
 main {
@@ -29,7 +27,7 @@ footer {
 main{
   margin-top: 60px;
   margin-left: 90px;
-  
+  margin-bottom: 106px;
 }
 
 app-footer {
