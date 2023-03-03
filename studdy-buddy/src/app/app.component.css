@@ -29,11 +29,15 @@ footer {
 main{
   margin-top: 60px;
   margin-left: 90px;
-  
+  height: 100%;
 }
 
 app-footer {
   width: 100%;
   bottom: 0px;
   height: 70px;
+}
+
+app-my-account {
+  height: 100%;
 }
