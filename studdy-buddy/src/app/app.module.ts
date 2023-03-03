@@ -7,7 +7,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
@@ -17,6 +16,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     FooterComponent,
     SideBarComponent,
     AboutUsComponent,
-    ContactComponent,
     HomeComponent,
     MyAccountComponent,
     BrowseCoursesComponent,
@@ -34,7 +33,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LogInComponent,
     CreateAccountComponent,
     SignUpComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    TermsOfUseComponent
   ],
   imports: [
     BrowserModule,

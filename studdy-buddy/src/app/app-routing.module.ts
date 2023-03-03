@@ -6,18 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 const routes: Routes = [
   /* Add route info to route array*/
   { path: '', component:HomeComponent},
-  { path: 'contact', component:ContactComponent},
+  { path: 'terms-of-use', component:TermsOfUseComponent},
   { path: 'app', component:AppComponent }, /* Not sure if this one is needed since it is the basic component*/
   { path: 'about-us', component:AboutUsComponent },
   { path: 'home', component:HomeComponent},
