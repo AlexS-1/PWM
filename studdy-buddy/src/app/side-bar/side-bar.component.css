@@ -1,4 +1,8 @@
 /* Styling for the general background of the side bar */
+*{
+    z-index: 1150;
+}
+
 .background {
     position: fixed;
     top: 0px;
@@ -70,6 +74,7 @@ h1.folded-in {
 a {
     color: white;
     text-decoration: none;
+    z-index: 1100;
 }
 
 /* Styling of the navigation items in the side bar */
@@ -111,4 +116,8 @@ h2:hover {
 
 h2.folded-in {
     display: none;
+}
+
+.menu-button {
+    z-index: 1150;
 }
