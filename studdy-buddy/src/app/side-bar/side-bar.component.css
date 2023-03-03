@@ -1,5 +1,4 @@
 /* Styling for the general background of the side bar */
-
 .background {
     position: fixed;
     top: 0px;
@@ -80,15 +79,13 @@ a {
 
 .link-container {
     display: block;
-    top: 0px;
-    left: 0px;
     height: 90px;
 }
 
 .image {
-    width: 90;
-    height: 90px;
     float: inline-start;
+    width: 90px;
+    height: 90px;
 }
 
 .icon {

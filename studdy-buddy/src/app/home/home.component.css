@@ -13,14 +13,7 @@
 .rounded-rectangle {
   background-color: #7496ED;
   border-radius:60px;
-  height: 30vh;
+  height: 300px;
   width: 80vw;
   margin: auto;
-}
-
-@media (max-width: 600px)  {
-  .rounded-rectangle {
-    width: 100px;
-    height: 400px;
-  }
 }
