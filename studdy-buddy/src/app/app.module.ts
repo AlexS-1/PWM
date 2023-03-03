@@ -10,7 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
-import { ListCoursesComponent } from './list-courses/list-courses.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -28,7 +28,7 @@ import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
     HomeComponent,
     MyAccountComponent,
     BrowseCoursesComponent,
-    ListCoursesComponent,
+    MyCoursesComponent,
     CreateCourseComponent,
     LogInComponent,
     CreateAccountComponent,
