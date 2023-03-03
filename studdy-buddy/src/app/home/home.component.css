@@ -1,5 +1,6 @@
-:host {
-  display: block;
+.homepage{
+  margin: 12px;
+  padding: 12px 24px;
 }
 
 .homepage-heading {
@@ -16,4 +17,34 @@
   height: 300px;
   width: 80vw;
   margin: auto;
+}
+
+.usp-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  margin-top: 48px;
+  padding: 24px;
+  margin: auto;
+}
+
+a :hover {
+  cursor: pointer;
+}
+
+button {
+  background-color: #ffa100;
+  border: none;
+  font-weight: bolder;
+  font-size: 24px;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 15px;
+  line-height: 48px;
+  margin: 12px auto
+}
+
+button > img {
+  vertical-align: middle;
+  padding: 6px;
 }

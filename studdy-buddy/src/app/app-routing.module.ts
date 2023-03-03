@@ -25,10 +25,12 @@ const routes: Routes = [
   { path: 'browse-courses', component:BrowseCoursesComponent},
   { path: 'list-courses', component:ListCoursesComponent},
   { path: 'log-in', component:LogInComponent},
-    { path: 'log-in/forgot-password', component:ForgotPasswordComponent},
-    { path: 'log-in/create-account', component:CreateAccountComponent},
+  { path: 'log-in/forgot-password', component:ForgotPasswordComponent},
+  { path: 'log-in/create-account', component:CreateAccountComponent},
   { path: 'create-course', component:CreateCourseComponent},
-  { path: 'create-account', component:CreateAccountComponent}
+  { path: 'create-account', component:CreateAccountComponent},
+  { path: 'home/create-account', component:CreateAccountComponent},
+  { path: 'home/browse-courses', component:BrowseCoursesComponent},
 ];
 
 @NgModule({
