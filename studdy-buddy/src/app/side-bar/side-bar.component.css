@@ -73,21 +73,9 @@ a {
 }
 
 /* Styling of the navigation items in the side bar */
-.icon-group {
+.first-link {
     margin-top: 60px;
 }
-
-/*.navigation-group {
-    top: 60px;
-    padding: 30px auto;
-    min-height: 390px;
-}
-
-.account-group {
-    bottom: 100px;
-    padding: 30px auto;
-    min-height: 210px;
-}*/
 
 .link-container {
     display: block;
