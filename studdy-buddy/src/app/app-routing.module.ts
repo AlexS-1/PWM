@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
-import { ListCoursesComponent } from './list-courses/list-courses.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home', component:HomeComponent},
   { path: 'my-account', component:MyAccountComponent},
   { path: 'browse-courses', component:BrowseCoursesComponent},
-  { path: 'list-courses', component:ListCoursesComponent},
+  { path: 'my-courses', component:MyCoursesComponent},
   { path: 'log-in', component:LogInComponent},
   { path: 'log-in/forgot-password', component:ForgotPasswordComponent},
   { path: 'log-in/create-account', component:CreateAccountComponent},
