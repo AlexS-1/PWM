@@ -36,6 +36,14 @@ button {
     line-height: 48px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+.bns {
+    padding: auto 30px;
+}
+
 .signup-form > button:hover {
     cursor: pointer;
 }  
