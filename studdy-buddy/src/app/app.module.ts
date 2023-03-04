@@ -14,7 +14,6 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
@@ -33,7 +32,6 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     CreateCourseComponent,
     LogInComponent,
     CreateAccountComponent,
-    SignUpComponent,
     ForgotPasswordComponent,
     TermsOfUseComponent,
     CourseDetailsComponent
