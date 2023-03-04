@@ -8,14 +8,9 @@ h1 {
     font-weight: bolder;
 }
 
-button {
-    background-color: #ffa100;
-    border: none;
-    font-weight: bolder;
-    font-size: 24px;
-    border-radius: 24px;
-    padding: 15px;
-    line-height: 48px;
+h2 {
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 .contact-info {

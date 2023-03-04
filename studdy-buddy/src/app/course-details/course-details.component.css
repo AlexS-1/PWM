@@ -13,7 +13,6 @@
 h1 {
     font-size: 52px;
     font-weight: bolder;
-    color: #0066A1;
 }
 
 .btns {
@@ -22,6 +21,7 @@ h1 {
 
 button {
     background-color: #ffa100;
+    color: white;
     border: none;
     font-weight: bolder;
     font-size: 20px;
