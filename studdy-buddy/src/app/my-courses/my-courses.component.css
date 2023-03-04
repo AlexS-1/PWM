@@ -25,9 +25,10 @@ a {
 }
   
 .card:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
-}
+    transform: scale(1.05); 
+      transition: transform 0.25s ease-in-out;
+      border: 
+  }
   
 .inner-box {
     height: 50%;
