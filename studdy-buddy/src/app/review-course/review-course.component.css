@@ -1,4 +1,4 @@
-.create-course-form {
+.review-course-form {
     margin: 12px;
     padding: 12px 24px;
 }
@@ -26,6 +26,17 @@ form {
     text-align: center;
 }
 
+textarea {
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #D8DCFF;
+    border: none;
+    max-width: 1000px;
+    max-width: 80vw;
+    min-height: 120px;
+}
+
 button {
     background-color: #ffa100;
     border: none;
@@ -38,12 +49,12 @@ button {
 
 button:hover {
     cursor: pointer;
+    transform: scale(1.05); /* Vergrößerungsfaktor */
+    transition: transform 0.1s ease-in-out; /* Übergangseffekt */
+    background-color: #0066A1;
+    color: white;
 }
 
-.bns {
-    padding: auto 30px;
+.checked {
+    color: #ffa100;
 }
-
-.signup-form > button:hover {
-    cursor: pointer;
-}  
