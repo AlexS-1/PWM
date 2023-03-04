@@ -17,6 +17,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { ReviewCourseComponent } from './review-course/review-course.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     CreateAccountComponent,
     ForgotPasswordComponent,
     TermsOfUseComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    ReviewCourseComponent
   ],
   imports: [
     BrowserModule,
