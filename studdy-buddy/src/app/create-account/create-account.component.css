@@ -59,7 +59,10 @@ body {
     background-color: white;
 }
 
-a {
-    color: #000;
+.signup-form a {
+    display: block;
     text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    color: #0066A1;
 }
