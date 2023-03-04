@@ -13,6 +13,8 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
+import { combineLatest } from 'rxjs';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 const routes: Routes = [
   /* Add route info to route array*/
@@ -31,6 +33,9 @@ const routes: Routes = [
   { path: 'create-account', component:CreateAccountComponent},
   { path: 'home/create-account', component:CreateAccountComponent},
   { path: 'home/browse-courses', component:BrowseCoursesComponent},
+  //{ path: 'create-account/home', component:HomeComponent},
+  { path: 'browse-courses/course-details', component:CourseDetailsComponent},
+  { path: 'my-courses/course-details', component:CourseDetailsComponent},
 ];
 
 @NgModule({

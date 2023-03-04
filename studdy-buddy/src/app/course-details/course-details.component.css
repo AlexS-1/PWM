@@ -1,0 +1,46 @@
+.my-courses {
+    margin: 12px;
+    padding: 12px 24px;
+}
+
+.grid-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+  
+h1 {
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.btns {
+    margin: auto;
+}
+
+button {
+    background-color: #ffa100;
+    border: none;
+    font-weight: bolder;
+    font-size: 24px;
+    border-radius: 24px;
+    padding: 15px;
+    line-height: 48px;
+    margin: 12px 24px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+p {
+    max-width: 1000px;
+}
+
+.review-box {
+    max-width: 1000px;
+    background-color: #D8DCFF;
+    border-radius: 24px;
+    padding: 12px;
+    margin: 24px 0px;
+}
