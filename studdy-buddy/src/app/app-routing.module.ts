@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'create-account', component:CreateAccountComponent},
   { path: 'home/create-account', component:CreateAccountComponent},
   { path: 'home/browse-courses', component:BrowseCoursesComponent},
-  //{ path: 'create-account/home', component:HomeComponent},
+  { path: 'create-account/home', component:HomeComponent},
   { path: 'browse-courses/course-details', component:CourseDetailsComponent},
   { path: 'my-courses/course-details', component:CourseDetailsComponent},
 ];

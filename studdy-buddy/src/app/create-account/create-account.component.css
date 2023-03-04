@@ -58,3 +58,8 @@ body {
 .signup-form .btn:hover {
     background-color: white;
 }
+
+a {
+    color: #000;
+    text-decoration: none;
+}
