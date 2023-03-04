@@ -31,11 +31,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### How to link form components to other components ###
 
 1. Make sure to have <router-outlet></router-outlet> in the component that should change the visible content (here: our app.component.html)
-2. for any link include `href="LINK_NAME" routerLink="NAME_OF_COMPONENT" routerLinkActive="active" ariaCurrentWhenActive="page"` tags
+2. for any link include `href="LINK_NAME" routerLink="/NAME_OF_COMPONENT" routerLinkActive="active" ariaCurrentWhenActive="page"` tags
 3. In app-routing.module.ts add a path statement in the static route array: { path: `PATH`, component:COMPONENT_NAMEComponent}
 
-A `PATH` consists of `SOURCE_COMPONENT/DESTINATION_COMPONENT`
-e.g., to link from component "foo" to component "baa" add { path: 'foo/baa', component:BaaComponent} to the path array
+A `PATH` consists of `/DESTINATION_COMPONENT` or `SOURCE_COMPONENT/DESTINATION_COMPONENT` for sub-pages
+e.g., to link from component "foo" to component "baa" add `{ path: '/baa', component:BaaComponent}` or `{ path: 'foo/baa', component:BaaComponent}´ (for subpages) to the path array
 
-# SPECULATION: 
-I don't know what happens with nested components e.g., if "baa" is nested in "baz". It may need a path entry like { path: 'foo/baz/baa', component:BaaComponent}
+If "baa" is nested in "baz". It needs a path entry like `{ path: 'foo/baz/baa', component:BaaComponent}`
