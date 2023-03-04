@@ -67,6 +67,21 @@
   }
 
 
+  .links :hover{
+    transform: scale(1.05); /* Vergrößerungsfaktor */
+    transition: transform 0.1s ease-in-out;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #ffa100;
+  }
+  a :hover{
+
+      transform: scale(1.05); /* Vergrößerungsfaktor */
+      transition: transform 0.1s ease-in-out; /* Übergangseffekt */
+     
+  }
+
+
   .socialMediaLogo{
     padding-right: 7%;
   }

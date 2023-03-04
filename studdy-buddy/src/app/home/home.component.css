@@ -26,6 +26,8 @@
   margin-top: 48px;
   width: 80vw;
   margin: auto;
+  padding: 25px;
+  padding-left: 55px;
 }
 
 a :hover {
@@ -42,6 +44,14 @@ button {
   padding: 12px;
   line-height: 48px;
   margin: 12px auto;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Vergrößerungsfaktor */
+  transition: transform 0.1s ease-in-out; /* Übergangseffekt */
+  background-color: #0066A1;
+  color: white;
 }
 
 button > img {
