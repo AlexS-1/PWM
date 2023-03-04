@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     z-index: 1200;
+    white-space: nowrap;
   }
 
   a {
@@ -71,12 +72,12 @@
     transform: scale(1.05); /* Vergrößerungsfaktor */
     transition: transform 0.1s ease-in-out;
     text-decoration: none;
-    font-weight: bolder;
-    color: #ffa100;
+    font-weight: bold;
+
   }
   a :hover{
 
-      transform: scale(1.05); /* Vergrößerungsfaktor */
+      transform: scale(1.15); /* Vergrößerungsfaktor */
       transition: transform 0.1s ease-in-out; /* Übergangseffekt */
      
   }
@@ -95,3 +96,7 @@
     padding-right: 4.5%;
   }
 
+  .socialMediaLogo :hover{
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in-out; 
+  }
