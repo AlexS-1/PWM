@@ -52,7 +52,3 @@ button:hover {
 .bns {
     padding: auto 30px;
 }
-
-.signup-form > button:hover {
-    cursor: pointer;
-}  
