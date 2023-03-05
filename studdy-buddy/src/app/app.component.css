@@ -9,34 +9,14 @@ app-side-bar {
   margin-bottom: 106px;
 }
 
-main {
-  margin-left: 90px;
-}
-
-app-home {
-  top: 0px !important;
-  margin-top: 60px !important;
-  width: 100%;
-}
-
-footer {
-  width: 100%;
-  bottom: 0px;
-}
-
 main{
   margin-top: 60px;
   margin-left: 90px;
   margin-bottom: 106px;
-  
 }
 
 app-footer {
   width: 100%;
   bottom: 0px;
   height: 70px;
-}
-
-app-my-account {
-  height: 100%;
 }

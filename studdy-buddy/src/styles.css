@@ -5,11 +5,17 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: normal;
     font-size: 18px;
-
+    
     /* Layout */
     margin: 0px;
 }
 
 a {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 35px;
 }

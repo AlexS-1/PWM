@@ -1,7 +1,12 @@
+.my-courses {
+    margin: 12px 5%;
+    padding: 12px 24px;
+}
+
 .card-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     flex-wrap: wrap;
     gap: 20px;
     padding: 30px;
