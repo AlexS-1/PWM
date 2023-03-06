@@ -1,25 +1,25 @@
 .nav-bar {
     width: 100%;
     background-color: #0066A1;
-    display: flex;
-    position: top;
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    height: 60px;
+    z-index: 1000;
 }
 
 h1 {
-    display: flex;
-    align-self: flex-end;
     font-weight: bolder;
     font-size: 24px;
-    padding-top: 0px;
-    margin-left: 102px;
-    color: white;
-
+    margin-left: 90px;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 60px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
 }
 
-.text {
-  align-self: flex-end;
+a {
+  color: white;
+  text-decoration: none;
 }

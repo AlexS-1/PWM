@@ -1,7 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+app-nav-bar {
+  height: 60px;
+  width: 100%;
+}
 
-body {
-    font-family: 'Inter', sans-serif;
-    font-weight: normal;
-    font-size: 18px;
+app-side-bar {
+  width: 90px;
+  left: 0px;
+  margin-bottom: 106px;
+}
+
+main{
+  margin-top: 60px;
+  margin-left: 90px;
+  margin-bottom: 106px;
+}
+
+app-footer {
+  width: 100%;
+  bottom: 0px;
+  height: 70px;
 }

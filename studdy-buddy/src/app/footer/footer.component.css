@@ -6,31 +6,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
+    z-index: 1200;
+    white-space: nowrap;
   }
-    
+
   a {
     color: #000000;
     text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
   }
 
   .h1 {
     font-weight: bolder;
   }
-  
-  /* Klassen */
-  .sidebar {
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
-  }
 
+  /* Klassen */
   .footer {
     background-color: #0066A1;
     color: #fff; /* Weißer Text */
@@ -39,39 +28,55 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px; /* Abstand des Inhalts vom Rand */
+    padding-top: 20px; /* Abstand des Inhalts vom Rand */
+    padding-bottom: 20px;
+    padding-right: 22px;
+    
     justify-content: space-between;
     align-items: center;
     display: flex;
+    min-height: 88px;
   }
-  
+
   .footer a {
     color: #fff; /* Weiße Link-Textfarbe */
     margin-right: 20px; /* Abstand zwischen den Links */
-    
   }
-  
-  .logo > img{
-    width: 50px; /* Anpassen der Breite des Logos (Icons) */
-    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
+
+  .logo > a > img{
+    width: 55px; /* Anpassen der Breite des Logos (Icons) */
     float: left; /* Links ausrichten */
-    margin-left: 90px;
+    margin-left: 21px;
+    size: 180%;
     /* Weitere Styling-Optionen */
   }
-  
+
   .links {
     float: left; /* Links ausrichten */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
     flex-grow: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .socialMediaLogo{
+    padding-right: 7%;
   }
 
   .socialMediaLogo > img{
-    width: 50px; /* Anpassen der Breite des Logos (Icons) */
-    height: 40px; /* Anpassen der Höhe des Logos (Icons) */
-    float: right; /* Links ausrichten */
+    width: 20%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
+    text-align: center; /* Links ausrichten */
+    justify-content: right;
+    margin-right: 10px;
     /* Weitere Styling-Optionen */
+    padding-right: 4.5%;
+  }
+
+  .logo :hover{
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in-out; 
   }

@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+### How to link form components to other components ###
+
+1. Make sure to have <router-outlet></router-outlet> in the component that should change the visible content (here: our app.component.html)
+2. for any link include `href="LINK_NAME" routerLink="/NAME_OF_COMPONENT" routerLinkActive="active" ariaCurrentWhenActive="page"` tags
+3. In app-routing.module.ts add a path statement in the static route array: { path: `PATH`, component:COMPONENT_NAMEComponent}
+
+A `PATH` consists of `/DESTINATION_COMPONENT` or `SOURCE_COMPONENT/DESTINATION_COMPONENT` for sub-pages
+e.g., to link from component "foo" to component "baa" add `{ path: '/baa', component:BaaComponent}` or `{ path: 'foo/baa', component:BaaComponent}´ (for subpages) to the path array
+
+If "baa" is nested in "baz". It needs a path entry like `{ path: 'foo/baz/baa', component:BaaComponent}`

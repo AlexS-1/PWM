@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
+  sideBarStyle = 'folded-in';
+  sideBarFoldedIn = true;
 
+  setSideBarStyle() {
+    if (this.sideBarFoldedIn) {
+      this.sideBarStyle = 'folded-out';
+      this.sideBarFoldedIn = false;
+    } else {
+      this.sideBarStyle = 'folded-in';
+      this.sideBarFoldedIn = true;
+    }
+  }
 }
