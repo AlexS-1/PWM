@@ -18,7 +18,13 @@
 }
 
 @media (pointer:coarse){
+  app-nav-bar {
+    width: 100%;
+  }
   app-side-bar {
     display: none;
+  }
+  .footer{
+    margin: 0 0 0 0;  /*needed ??? */
   }
 }

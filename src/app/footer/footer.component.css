@@ -158,10 +158,6 @@
     margin-bottom: 2%;
   }
 
-  .socialMediaLogo{
-    /*padding-right: 0%;*/
-  }
-
   .socialMediaLogo > img{
     width: 18%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
     text-align: center; /* Links ausrichten */
