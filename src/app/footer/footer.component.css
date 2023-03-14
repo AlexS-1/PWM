@@ -108,54 +108,65 @@
     background-color: #0066A1;
     color: #fff; /* Weißer Text */
     
-    position: sticky;
+    position: bottom; /* stick to the bottom of the page */
     bottom: 0;
     left: 0;
     width: 100%;
     padding-top: 20px; /* Abstand des Inhalts vom Rand */
-    padding-bottom: 0px;
+    /*padding-bottom: 0px;
     padding-right: 0px;
-    
-    justify-content: space-between;
+    padding-left: 0px;
+    /*min-height: 312px;*/
     align-items: center;
-    display: grid;
-    min-height: 312px;
   }
 
+  .footer_container{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5%;
+  }
+
+  .footer_components {
+    padding: 1%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+   /* StuddyBuddy Logo */
+   .logo > a > img{
+    width: 20%; /* Anpassen der Breite des Logos (Icons) */
+    float: center; /* Links ausrichten */
+    /*margin-left: 21px;*/
+    size: 150%;
+    /* Weitere Styling-Optionen */
+  }
+  
   .footer a {
     color: #fff; /* Weiße Link-Textfarbe */
-    margin-right: 20px; /* Abstand zwischen den Links */
-  }
-
-  .logo > a > img{
-    width: 55px; /* Anpassen der Breite des Logos (Icons) */
-    float: center; /* Links ausrichten */
-    margin-left: 21px;
-    size: 180%;
-    /* Weitere Styling-Optionen */
+   /* margin-top: 10%; /* Abstand zwischen den Links */
+    float: center;
   }
 
   .links {
-    float: left; /* Links ausrichten */
-    display: flex;
-    justify-content: space-between;
+    /*float: center; /* Links ausrichten */
+    display: grid;
+    /*justify-content: space-between;*/
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    flex-grow: 1;
-    padding-left: 10%;
-    padding-right: 10%;
+  }
+  .links a{
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
 
   .socialMediaLogo{
-    padding-right: 7%;
+    /*padding-right: 0%;*/
   }
 
   .socialMediaLogo > img{
-    width: 20%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
+    width: 18%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
     text-align: center; /* Links ausrichten */
-    justify-content: right;
-    margin-right: 10px;
+    justify-content: center;
+    margin-right: auto;
     /* Weitere Styling-Optionen */
     padding-right: 4.5%;
   }
