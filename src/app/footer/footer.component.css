@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-/* Reset CSS */
-* {
+/* Desktop Version */
+@media (pointer:fine){
+    /* Reset CSS */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -80,3 +81,87 @@
     transform: scale(1.2);
     transition: transform 0.1s ease-in-out; 
   }
+}
+
+/* Mobile Smartphone Version*/
+@media (pointer:coarse) {
+    /* Reset CSS */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 1200;
+    white-space: nowrap;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .h1 {
+    font-weight: bolder;
+  }
+
+  /* Klassen */
+  .footer {
+    background-color: #0066A1;
+    color: #fff; /* Weißer Text */
+    
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px; /* Abstand des Inhalts vom Rand */
+    padding-bottom: 0px;
+    padding-right: 0px;
+    
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    min-height: 312px;
+  }
+
+  .footer a {
+    color: #fff; /* Weiße Link-Textfarbe */
+    margin-right: 20px; /* Abstand zwischen den Links */
+  }
+
+  .logo > a > img{
+    width: 55px; /* Anpassen der Breite des Logos (Icons) */
+    float: center; /* Links ausrichten */
+    margin-left: 21px;
+    size: 180%;
+    /* Weitere Styling-Optionen */
+  }
+
+  .links {
+    float: left; /* Links ausrichten */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .socialMediaLogo{
+    padding-right: 7%;
+  }
+
+  .socialMediaLogo > img{
+    width: 20%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
+    text-align: center; /* Links ausrichten */
+    justify-content: right;
+    margin-right: 10px;
+    /* Weitere Styling-Optionen */
+    padding-right: 4.5%;
+  }
+
+  .logo :hover{
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in-out; 
+  }
+}

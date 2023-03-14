@@ -1,22 +1,33 @@
-app-nav-bar {
-  height: 60px;
-  width: 100%;
+@media (pointer:fine){
+  app-nav-bar {
+    height: 60px;
+    width: 100%;
+  }
+  
+  app-side-bar {
+    width: 90px;
+    left: 0px;
+    margin-bottom: 106px;
+  }
+  
+  main{
+    margin-top: 60px;
+    margin-left: 90px;
+    margin-bottom: 106px;
+  }
 }
 
-app-side-bar {
-  width: 90px;
-  left: 0px;
-  margin-bottom: 106px;
-}
-
-main{
-  margin-top: 60px;
-  margin-left: 90px;
-  margin-bottom: 106px;
-}
-
-app-footer {
-  width: 100%;
-  bottom: 0px;
-  height: 70px;
+@media (pointer:coarse){
+  app-side-bar {
+    display: none;
+  }
+  app-footer {
+    width: 100%;
+    bottom: 0px;
+    height: 30px;
+    padding-top: 20px; /* Abstand des Inhalts vom Rand */
+    padding-bottom: 20px;
+    padding-right: 22px;
+    min-height: 312px;
+  }
 }
