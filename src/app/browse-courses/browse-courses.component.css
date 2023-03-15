@@ -1,17 +1,20 @@
+/* Mobile (default) */
 .browse-courses {
-  margin: 12px 5%;
+  margin: 12px 6%;
   padding: 12px 24px;
+  text-align: center;
 }
 
 .card-container {
   display: flex;
-  justify-content: left;
+  justify-content: center; /* von 'left' auf 'center' geändert */
   align-items: left;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 48px;
 }
-  
+
+
 .card {
   display: flex;
   flex-direction: column;
@@ -30,7 +33,7 @@ a {
 }
 
 .card:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
   transition: transform 0.25s ease-in-out;
 }
 
@@ -44,10 +47,24 @@ a {
   margin: 10px;
 }
 
+
+
 .description {
   height: 50%;
   display: flex;
   align-items: normal;
   text-align: left;
   padding: 0px 18px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  .browse-courses {
+    text-align: left;
+  }
 }
