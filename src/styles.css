@@ -19,3 +19,18 @@ h1 {
     font-weight: bolder;
     margin-bottom: 35px;
 }
+
+/*  Movíl */
+@media (max-width: 767px) {
+    
+    h1{
+        font-weight: bolder;
+        font-size: 30px;
+    }
+
+    h2{
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    
+}
