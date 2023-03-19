@@ -1,43 +1,143 @@
 /* Desktop */
-app-nav-bar {
-  height: 60px;
-  width: 100%;
-}
+@media screen and (min-width: 1024px) {
 
-app-side-bar {
-  width: 90px;
-  left: 0px;
-  margin-bottom: 106px;
-}
+  app-nav-bar {
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    background-color: #0066A1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0px 10px 7px;
+  }
 
-main {
-  margin-top: 60px;
+  app-side-bar {
+    width: 90px;
+    left: 0px;
+    margin-bottom: 106px;
 
-  margin-bottom: 106px;
-}
+    z-index: 90;
+  }
 
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  margin: 0;
+  main {
+    margin-top: 60px;
+    margin-bottom: 106px;
+    padding-left: 15%;
+    padding-top: 5px;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    margin: 0;
+  }
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .footer .copyright{
+
+  }
+  
 }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Tablet-spezifische Stile hier, wenn nötig... */
+  app-nav-bar {
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    background-color: #0066A1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0px 10px 7px;
+  }
+
+  app-side-bar {
+    width: 90px;
+    left: 0px;
+    margin-bottom: 106px;
+    z-index: 90;
+  }
+
+  main {
+    margin-top: 60px;
+    margin-right: 35px;
+    margin-bottom: 106px;
+    padding-left: 130px;
+    padding-top: 5px;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    margin: 0;
+  }
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .footer .copyright{
+    justify-content: right;
+    display: flex;
+    text-align: right;
+  }
 }
 
 /* Movíl */
+/* Mobile */
 @media (max-width: 767px) {
   app-nav-bar {
+    height: 50px;
     width: 100%;
+    z-index: 100;
+    display: flex;
+    background-color: #0066A1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0px 12px 0px;
   }
+  
   app-side-bar {
     display: none;
   }
-  .footer {
-    margin: 0 0 0 0; /* benötigt, falls erforderlich */
+
+  main {
+    padding: 78px 20px;
   }
+
+  .footer {
+    background-color: #0066A1;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+
+  }
+
+
+
+
+
+  
 }
+
