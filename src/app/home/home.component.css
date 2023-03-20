@@ -167,15 +167,30 @@
     margin-bottom: 25px;
   }
   
+  /* Place text and buttons above each other */
   .usp-container {
     display: grid;
-    grid-template-columns: 48% 48%;
+    grid-template-columns: 48%%;
+    grid-template-areas: 
+    "text"
+    "buttons";
     gap: 24px;
     margin-top: 48px;
     width: 80vw;
     margin: auto;
-    padding: 25px;
+    padding: auto;
     line-height: 29px;
+  }
+
+  #home-text-h2 > h2{
+    padding-top: 12px;
+    text-align: center;
+  }
+
+  /* Place buttons above each other */
+  .home-button-container {
+    display: grid;
+    grid-template-columns: auto;
   }
   
   a:hover {
@@ -194,6 +209,13 @@
     color: #ffffff;
     border-radius: 24px;
     padding: 14px;
+  }
+
+  /* Modify arrow icon to right size */
+  #home-button-sign-in > img{
+    height: 20px;
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
   }
   
   button:hover {
