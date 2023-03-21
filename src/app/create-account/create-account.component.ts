@@ -7,22 +7,48 @@ import { Component } from '@angular/core';
 })
 export class CreateAccountComponent {
 
-  checkValidityPassword(passwordStirng: any) {
-    var inputValue = passwordStirng.target.value;
-     if (inputValue.match("(?=.*?[0-9])") == null) {
+  passwordStirng = "";
+  repeatedpasswordString = "";
+
+  checkValidityPassword(password: any) {
+    this.passwordStirng = password.target.value;
+     if (this.passwordStirng.match("(?=.*?[0-9])") == null) {
       console.log("Must contain a number");
-    } else if (inputValue.match("(?=.*?[#?!@$%^&*-])") == null) {
+    } else if (this.passwordStirng.match("(?=.*?[#?!@$%^&*-])") == null) {
       console.log("Must contain special character");
-    } else if (inputValue.match("(?=.*?[A-Z])") == null) {
+    } else if (this.passwordStirng.match("(?=.*?[A-Z])") == null) {
       console.log("Must contain a uppercase letter");
-    } else if (inputValue.match("(?=.*?[a-z])") == null) {
+    } else if (this.passwordStirng.match("(?=.*?[a-z])") == null) {
       console.log("Must contain a lowercase letter");
-    } else if (inputValue.match(".{8,}") == null) {
+    } else if (this.passwordStirng.match(".{8,}") == null) {
       console.log("Must be minimum 8 characters");
     }
-    /*var String pswValue = this.password.nativeElement.
-    if (this.password.value != this.repeatedPassword.value) {
+
+    if (this.passwordStirng != this.repeatedpasswordString) {
       console.log("Must match");
-    }*/
+    } else {
+      console.log("Password matching");
+    }
+  }
+
+  checkValidityRepeatedPassword(repeatedPassword: any) {
+    this.repeatedpasswordString = repeatedPassword.target.value;
+     if (this.repeatedpasswordString.match("(?=.*?[0-9])") == null) {
+      console.log("Must contain a number");
+    } else if (this.repeatedpasswordString.match("(?=.*?[#?!@$%^&*-])") == null) {
+      console.log("Must contain special character");
+    } else if (this.repeatedpasswordString.match("(?=.*?[A-Z])") == null) {
+      console.log("Must contain a uppercase letter");
+    } else if (this.repeatedpasswordString.match("(?=.*?[a-z])") == null) {
+      console.log("Must contain a lowercase letter");
+    } else if (this.repeatedpasswordString.match(".{8,}") == null) {
+      console.log("Must be minimum 8 characters");
+    }
+
+    if (this.passwordStirng != this.repeatedpasswordString) {
+      console.log("Must match");
+    } else {
+      console.log("Password matching");
+    }
   }
 }
