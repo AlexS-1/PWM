@@ -109,10 +109,6 @@
     padding: 10px 0px 12px 0px;
   }
   
-  app-side-bar {
-    display: none;
-  }
-
   main {
     padding: 78px 20px;
   }

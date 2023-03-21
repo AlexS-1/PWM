@@ -170,7 +170,7 @@
   /* Place text and buttons above each other */
   .usp-container {
     display: grid;
-    grid-template-columns: 48%%;
+    grid-template-columns: auto;
     grid-template-areas: 
     "text"
     "buttons";
