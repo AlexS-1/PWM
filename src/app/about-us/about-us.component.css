@@ -1,9 +1,7 @@
+ /* Mobile Styles */
 @media (max-width: 767px) {
-    /* Mobile Styles */
-
     h2 {
         margin-bottom: 25px;
-
     }
     
     .contact-info {
@@ -20,10 +18,9 @@
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Tablet Styles */
 
-    
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     h2 {
         margin-bottom: 25px;
         margin-top: 10px;
@@ -43,10 +40,14 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
-    /* Desktop Styles */
 
-    
+    /* Desktop Styles */
+@media screen and (min-width: 1024px) {
+    .about-us {
+        margin: 12px 5%;
+        padding: 12px 24px;
+    }
+
     h2 {
         margin-bottom: 25px;
         margin-top: 10px;
