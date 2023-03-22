@@ -73,23 +73,18 @@ h2.folded-in {
         width: 100%;
     }
 
-.a {
-    color: white;
-    text-decoration: none;
-}
-
 .background {
     position: absolute; /* show only the overlay, no othe content in*/
     top: 0px;
     left: 0px;
     height: 100%;
-    width: 100%;
     background: #D8DCFF;
 }
 
 /* Styling of the navigation items in the side bar */
 .menu-container {
     margin-top: 20px;
+    background-color: #D8DCFF;
 }
 
 .link-container {
