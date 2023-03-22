@@ -33,6 +33,11 @@
     padding: 25px;
     padding-left: 55px;
   }
+
+  .home-button-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
   
   a :hover {
     cursor: pointer;
