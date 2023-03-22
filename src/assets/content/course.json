@@ -1,0 +1,15 @@
+[  
+  {  
+    "id": 1,  
+    "titel": "course 1",  
+    "description": "This is a course description from a JSON file",  
+    "userId": "42"  
+  }, 
+
+  {  
+    "id": 2,  
+    "titel": "course 2",  
+    "description": "This is another course description from a JSON file",  
+    "userId": "11"  
+  }
+] 
