@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import courseDetails from '../../assets/content/course.json';
+
+interface CourseContent{
+  id:Number;
+  titel:String;
+  description:String;
+  userId:String
+}
 
 @Component({
   selector: 'app-course-details',
@@ -6,5 +14,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent {
+  
+  courseContent:CourseContent[] = courseDetails;
 
 }
