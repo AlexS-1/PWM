@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavBarService } from '../nav-bar.service';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.css'],
 })
-export class SideBarComponent {
-  sideBarStyle = 'folded-in';
-  sideBarFoldedIn = true;
+export class SideBarComponent implements OnInit {
+  isSideBarOpen = false;
 
-  setSideBarStyle() {
-    if (this.sideBarFoldedIn) {
-      this.sideBarStyle = 'folded-out';
-      this.sideBarFoldedIn = false;
-    } else {
-      this.sideBarStyle = 'folded-in';
-      this.sideBarFoldedIn = true;
-    }
+  constructor(private navBarService: NavBarService) {}
+
+  ngOnInit() {
+    this.navBarService.isOpen$.subscribe(isOpen => this.isSideBarOpen = isOpen);
+  }
+
+  toggleSideBar() {
+    this.navBarService.toggleSideBar();
   }
 }

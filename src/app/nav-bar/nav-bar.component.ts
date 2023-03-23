@@ -7,7 +7,11 @@ import { NavBarService } from '../nav-bar.service';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent {
-  constructor(private navBarService: NavBarService) {}
+  isSideBarOpen = false;
+
+  constructor(private navBarService: NavBarService) {
+    this.navBarService.isOpen$.subscribe((isOpen) => (this.isSideBarOpen = isOpen));
+  }
 
   toggleSideBar() {
     this.navBarService.toggleSideBar();
