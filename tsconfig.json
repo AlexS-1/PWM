@@ -19,6 +19,8 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "resolveJsonModule": true,  // Added to make it possible to import .jason files
+    "allowSyntheticDefaultImports": true, // Enable loading from .json
     "lib": [
       "ES2022",
       "dom"
@@ -29,7 +31,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "resolveJsonModule": true,  // Added to make it possible to import .jason files
-    "esModuleInterop": true     // Added to make it possible to import .jason files
   }
 }
