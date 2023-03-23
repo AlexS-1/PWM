@@ -7,8 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 export class NavBarService {
   private isOpen = new BehaviorSubject<boolean>(false);
   isOpen$ = this.isOpen.asObservable();
+  isSideBarFoldedIn = true;
 
   toggleSideBar() {
+    this.isSideBarFoldedIn = !this.isSideBarFoldedIn;
     this.isOpen.next(!this.isOpen.value);
   }
 }
