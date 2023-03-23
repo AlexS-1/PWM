@@ -18,6 +18,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ReviewCourseComponent } from './review-course/review-course.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReviewCourseComponent } from './review-course/review-course.component';
     ForgotPasswordComponent,
     TermsOfUseComponent,
     CourseDetailsComponent,
-    ReviewCourseComponent
+    ReviewCourseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
