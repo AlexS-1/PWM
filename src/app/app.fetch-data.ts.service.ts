@@ -10,7 +10,6 @@ export class AppFetchDataTsService {
   constructor(private http: HttpClient) { }
 
   getContentData() {
-    console.log(this.http.get('../assets/content/course.json'));
-    return this.http.get('../assets/content/course.json');
+    return this.http.get('../assets/content/course.json'); // Read the content of the json file
   }
 }
