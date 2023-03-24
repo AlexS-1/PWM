@@ -84,6 +84,8 @@
     padding-top: 5px;
   }
 
+
+
   h1 {
     display: flex;
     align-items: center;
@@ -119,9 +121,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 0px 12px 0px;
+    padding: 10px 0px 12px 1.5%;
   }
   
+  app-side-bar {
+    width: 90px;
+    left: 0px;
+    margin-bottom: 106px;
+    z-index: 90;
+  }
+
   main {
     padding: 78px 20px;
   }
@@ -133,7 +142,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-
+    z-index: 100;
 
   }
 

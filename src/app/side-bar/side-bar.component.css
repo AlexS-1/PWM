@@ -135,3 +135,29 @@ h2.folded-in {
     display: none;
 }
 
+@media (max-width: 767px) {
+    .folded-in {
+        width: 0px;
+        z-index: 20;
+
+    }
+    .folded-out {
+        width: 100%;
+        transform: translateX(0); /* Change this line */
+        z-index: 50;
+        padding: 7% 0 0 18%;
+
+        
+    }
+    .link-container {
+        margin-bottom: 40px; /* space between elements in menu */
+    
+        line-height: 180px;
+      }
+
+
+    .menu-heading{
+        display: none;
+    }
+    
+}
