@@ -1,6 +1,6 @@
 <div class="my-courses">
-    <div class="grid-container">
-        <h1>My Course Title</h1>
+    <div class="grid-container" *ngFor="let content of contentData">
+        <h1>My Course Title {{content.title}}</h1>
         <div class="btns">
             <button>
                 + Add to my Courses
@@ -12,9 +12,6 @@
             </a>
         </div>
     </div>
-    <p class="course-description" *ngFor="let courseContent of courseContent">
-        {{courseContent.description}}
-    </p>
     <p class="course-description">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
         Illum aspernatur autem non. Numquam, quod dolorem, perspiciatis quisquam aut nam sequi facere repellendus odit architecto itaque? 

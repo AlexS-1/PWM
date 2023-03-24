@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
-import courseDetails from '../../assets/content/course.json';
-
-interface CourseContent{
-  id:Number;
-  titel:String;
-  description:String;
-  userId:String
-}
+import { Component, OnInit } from '@angular/core';
+import { AppFetchDataTsService } from './../app.fetch-data.ts.service';
 
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
+
 export class CourseDetailsComponent {
   
-  courseContent:CourseContent[] = courseDetails;
+  contentData:any;
 
+  constructor(private fetchData:AppFetchDataTsService) {}
+
+  ngOnInit(): void {
+    this.fetchData.getContentData().subscribe((data) => {
+      this.contentData = data;
+    });
+  }
 }
