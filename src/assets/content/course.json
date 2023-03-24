@@ -1,15 +1,36 @@
 [  
   {  
     "id": 1,  
-    "titel": "course 1",  
+    "title": "course 1",  
     "description": "This is a course description from a JSON file",  
     "userId": "42"  
   }, 
 
   {  
     "id": 2,  
-    "titel": "course 2",  
+    "title": "course 2",  
     "description": "This is another course description from a JSON file",  
     "userId": "11"  
+  },
+
+  {  
+    "id": 3,  
+    "title": "course 3",  
+    "description": "This is a course description from a JSON file",  
+    "userId": "42"  
+  },
+
+  {  
+    "id": 4,  
+    "title": "course 4",  
+    "description": "This is a course description from a JSON file",  
+    "userId": "42"  
+  },
+
+  {  
+    "id": 5,  
+    "title": "course 5",  
+    "description": "This is a course description from a JSON file",  
+    "userId": "42"  
   }
 ] 
