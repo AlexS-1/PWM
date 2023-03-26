@@ -15,6 +15,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { ReviewCourseComponent } from './review-course/review-course.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   /* Add route info to route array*/
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'browse-courses', component:BrowseCoursesComponent},
   { path: 'course-details', component:CourseDetailsComponent},
   { path: 'review-course', component:ReviewCourseComponent},
+  { path: 'test', component:TestComponent}
 ];
 
 @NgModule({

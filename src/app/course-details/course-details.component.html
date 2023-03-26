@@ -1,6 +1,6 @@
 <div class="my-courses">
-    <div class="grid-container">
-        <h1>My Course Title</h1>
+    <div class="grid-container" *ngIf="dataEntry">
+        <h1>{{ dataEntry.title }}</h1>
         <div class="btns">
             <button>
                 + Add to my Courses
@@ -12,17 +12,9 @@
             </a>
         </div>
     </div>
-    <p class="course-description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Illum aspernatur autem non. Numquam, quod dolorem, perspiciatis quisquam aut nam sequi facere repellendus odit architecto itaque? 
-        Quis rem minima consequatur delectus! <br>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Iure vero voluptatem molestias officiis tempora nostrum, corrupti qui minima dolores a.
-        Voluptate sunt magni illo ipsam? Dolorem maxime doloribus totam iusto.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Atque libero soluta sed quae voluptas error magnam ipsa incidunt, ullam esse eveniet officia aut rerum animi sunt. 
-        Recusandae aspernatur molestiae velit!
-    </p>
+    <div class="course-description" *ngIf="dataEntry">
+        <p>{{ dataEntry.description }}</p>
+    </div>
     <div class="review-container">
         <div class="review-box">
             <h2>Miguel Mustermán</h2>

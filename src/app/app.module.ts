@@ -1,6 +1,8 @@
+import { AppFetchDataTsService } from './app.fetch-data.ts.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ReviewCourseComponent } from './review-course/review-course.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,16 @@ import { ReviewCourseComponent } from './review-course/review-course.component';
     ForgotPasswordComponent,
     TermsOfUseComponent,
     CourseDetailsComponent,
-    ReviewCourseComponent
+    ReviewCourseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AppFetchDataTsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 .my-courses {
-    margin: 12px 5%;
+    margin: 12px 6%;
     padding: 12px 24px;
 }
 
@@ -54,4 +54,15 @@ a {
     align-items:normal;
     text-align: left;
     padding: 0px 18px;
+}
+
+@media screen and (max-width: 767px) {
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0px;   /* force same visaul bahaviour as in "browse-course"*/
+    }
 }

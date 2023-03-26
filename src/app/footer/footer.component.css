@@ -1,82 +1,162 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-/* Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    z-index: 1200;
-    white-space: nowrap;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
 
-  a {
-    color: #000000;
-    text-decoration: none;
-  }
 
-  .h1 {
-    font-weight: bolder;
-  }
+.footer {
+  background-color: #0066A1;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  
+  padding-top: 19px;
 
-  /* Klassen */
-  .footer {
-    background-color: #0066A1;
-    color: #fff; /* Weißer Text */
-    
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 20px; /* Abstand des Inhalts vom Rand */
-    padding-bottom: 20px;
-    padding-right: 22px;
-    
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    min-height: 88px;
-  }
+  
+}
 
-  .footer a {
-    color: #fff; /* Weiße Link-Textfarbe */
-    margin-right: 20px; /* Abstand zwischen den Links */
-  }
+.footer_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0;
+  margin-bottom: 0;
+}
 
-  .logo > a > img{
-    width: 55px; /* Anpassen der Breite des Logos (Icons) */
-    float: left; /* Links ausrichten */
-    margin-left: 21px;
-    size: 180%;
-    /* Weitere Styling-Optionen */
+.footer_components a,
+.footer_components p {
+  color: #fff;
+
+}
+
+.logo img {
+  width: 62px;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+
+}
+
+.socialMediaLogo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialMediaLogo img {
+  width: 36px;
+}
+
+.copyright {
+  margin-left: 0.5rem;
+  right: 0;
+  margin-right: 2rem;
+
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+
+  .footer{
+    padding-left: 17px;
   }
 
   .links {
-    float: left; /* Links ausrichten */
     display: flex;
-    justify-content: space-between;
+    justify-content: left !important;
+    gap: 100px;
+    padding: 0 8% 0 4%;
+  
+  }
+
+  .links {
+    display: flex;
+    gap: 190px;
+  
+  }
+
+  .copyright{
+    margin-left: 10px !important;
+  }
+
+
+
+}
+
+/* Tablet & kleiner Laptop Screen */
+@media (max-width: 1024px) and (min-width: 769) {
+  .links {
+    gap: 365px !important;
+
+  }
+  
+  .socialMediaLogo {
+    margin: 7%
+  }
+
+  .copyright{
+    margin-left: 10px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    overflow-y: auto;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+    padding: 10px;
+  }
+
+  .footer_container {
+    flex-direction: column;
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    flex-grow: 1;
-    padding-left: 10%;
-    padding-right: 10%;
+    
   }
 
-  .socialMediaLogo{
-    padding-right: 7%;
+  .logo {
+    margin-bottom: 20px;
+    margin-top: 25px;;
   }
 
-  .socialMediaLogo > img{
-    width: 20%; /* Anpassen der Breite des Logos (Icons) */ /* Anpassen der Höhe des Logos (Icons) */
-    text-align: center; /* Links ausrichten */
-    justify-content: right;
-    margin-right: 10px;
-    /* Weitere Styling-Optionen */
-    padding-right: 4.5%;
+  .links {
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
   }
 
-  .logo :hover{
-    transform: scale(1.2);
-    transition: transform 0.1s ease-in-out; 
+  .socialMediaLogo {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
   }
+
+  .socialMediaLogo img {
+    width: 34px;
+    height: 34px;
+    
+  }
+  
+
+  .copyright {
+    margin: 15px 0px 30px 0px;
+  }
+
+
+
+}
+
+
