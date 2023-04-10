@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppFetchDataTsService } from './../app.fetch-data.ts.service';
+import contentData from './../../assets/content/course.json';
 
 @Component({
   selector: 'app-browse-courses',
@@ -7,13 +7,7 @@ import { AppFetchDataTsService } from './../app.fetch-data.ts.service';
   styleUrls: ['./browse-courses.component.css']
 })
 export class BrowseCoursesComponent implements OnInit {
-  contentData:any;
+  contentData = contentData;
 
-  constructor(private fetchData:AppFetchDataTsService) {}
-
-  ngOnInit(): void {
-    this.fetchData.getContentData().subscribe((data) => { //get the data from the fetch service
-      this.contentData = data;
-    });
-  }
+  ngOnInit(): void {}
 }

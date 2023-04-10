@@ -1,28 +1,28 @@
 [  
   {  
     "id": 1,  
-    "title": "course 1",  
-    "description": "This is a course description from a JSON file",  
+    "title": "Programación Web y Movíl",  
+    "description": "very cool course",  
     "userId": "42"  
   }, 
 
   {  
     "id": 2,  
-    "title": "course 2",  
+    "title": "Computacion Parallela",  
     "description": "This is another course description from a JSON file",  
     "userId": "11"  
   },
 
   {  
     "id": 3,  
-    "title": "course 3",  
+    "title": "Estructuras de Datos",  
     "description": "This is a course description from a JSON file",  
     "userId": "42"  
   },
 
   {  
     "id": 4,  
-    "title": "course 4",  
+    "title": "Proyectos de Ingeniería y Gestión del Software",  
     "description": "This is a course description from a JSON file",  
     "userId": "42"  
   },

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AppFetchDataTsService } from './../app.fetch-data.ts.service';
-import jsonData from './../../assets/content/content.json';
-
+import { ActivatedRoute } from '@angular/router';
+import jsonData from './../../assets/content/course.json';
 
 interface DataEntry {
-  id: string;
+  id: number;
   title: string;
   description: string;
+  userId: string;
 }
 
 @Component({
@@ -14,36 +14,15 @@ interface DataEntry {
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
-
-export class CourseDetailsComponent {
+export class CourseDetailsComponent implements OnInit {
   dataEntry: DataEntry | undefined;
 
+  constructor(private route: ActivatedRoute) {}
+
   ngOnInit() {
-    const id = '2';
-    this.dataEntry = this.findDataEntryById(jsonData.entries, id);
-  }
-
-  private findDataEntryById(data: Record<string, DataEntry>, id: string): DataEntry | undefined {
-    return data[id];
-  }
-}
-function showEntryById(data: Record<string, DataEntry>, id: string) {
-  const entries = Object.entries(data['entries']);
-  for (const [entryId, entryData] of entries) {
-    if (entryId === id) {
-      // Create and append DOM elements for the entry data
-      const entryTitle = document.createElement('h2');
-      entryTitle.textContent = entryData.title;
-
-      const entryContent = document.createElement('p');
-      entryContent.textContent = entryData.content;
-
-      const container = document.createElement('div');
-      container.appendChild(entryTitle);
-      container.appendChild(entryContent);
-
-      document.body.appendChild(container);
-      break;
-    }
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
+      this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
+    });
   }
 }

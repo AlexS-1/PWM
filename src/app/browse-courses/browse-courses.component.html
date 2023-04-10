@@ -15,7 +15,7 @@
   </div>
   <div class="card-container" *ngFor="let content of contentData">
 
-    <a href="course-details" routerLink="/course-details" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
+    <a [routerLink]="['/course-details', content.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
       <div class="inner-box">
       </div>
       <div class="description">
