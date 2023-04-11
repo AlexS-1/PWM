@@ -16,29 +16,10 @@
         <p>{{ dataEntry.description }}</p>
     </div>
     <div class="review-container">
-        <div class="review-box">
-            <h2>Miguel Mustermán</h2>
-            <p class="accoutn-details">Nationality | Date Created</p>
-            <p class="review">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Blanditiis explicabo consequuntur beatae tenetur quae nihil, 
-                veniam quidem ipsa impedit quas eum doloribus natus, excepturi ab id tempora, non molestias eveniet?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Facere saepe omnis quasi quibusdam illo atque accusamus accusantium ducimus. 
-                Nostrum numquam magni quam adipisci, tenetur ratione eos laudantium reiciendis expedita cupiditate!
-            </p>
-        </div>
-        <div class="review-box">
-            <h2>Miguel Mustermán</h2>
-            <p class="accoutn-details">Nationality | Date Created</p>
-            <p class="review">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Blanditiis explicabo consequuntur beatae tenetur quae nihil, 
-                veniam quidem ipsa impedit quas eum doloribus natus, excepturi ab id tempora, non molestias eveniet?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Facere saepe omnis quasi quibusdam illo atque accusamus accusantium ducimus. 
-                Nostrum numquam magni quam adipisci, tenetur ratione eos laudantium reiciendis expedita cupiditate!
-            </p>
+        <div class="review-box" *ngFor="let review of reviews">
+            <h2>{{ review.username }}</h2>
+            <p class="date">{{ review.date }}</p>
+            <p class="review">{{ review.review }}</p>
         </div>
     </div>
 </div>
