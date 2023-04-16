@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../nav-bar.service';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,7 +10,7 @@ import { NavBarService } from '../nav-bar.service';
 export class SideBarComponent implements OnInit {
   isSideBarOpen = false;
 
-  constructor(private navBarService: NavBarService) {}
+  constructor(private navBarService: NavBarService, private authService: AuthService) {}
 
   ngOnInit() {
     this.navBarService.isOpen$.subscribe(isOpen => this.isSideBarOpen = isOpen);
@@ -17,5 +18,8 @@ export class SideBarComponent implements OnInit {
 
   toggleSideBar() {
     this.navBarService.toggleSideBar();
+  }
+  signOut(): boolean{
+    return this.authService.logout();
   }
 }
