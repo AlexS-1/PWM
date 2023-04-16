@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AppFetchDataTsService } from './app.fetch-data.ts.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
@@ -34,7 +35,7 @@ import { TestComponent } from './test/test.component';
     BrowseCoursesComponent,
     MyCoursesComponent,
     CreateCourseComponent,
-    LogInComponent,
+    LoginComponent,
     CreateAccountComponent,
     ForgotPasswordComponent,
     TermsOfUseComponent,
@@ -45,7 +46,8 @@ import { TestComponent } from './test/test.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AppFetchDataTsService],
   bootstrap: [AppComponent]

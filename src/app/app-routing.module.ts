@@ -1,4 +1,3 @@
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LoginComponent } from './log-in/log-in.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
@@ -15,6 +14,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { ReviewCourseComponent } from './review-course/review-course.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'my-courses', component: MyCoursesComponent },
-  { path: 'log-in', component: LogInComponent },
+  { path: 'log-in', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'create-course', component: CreateCourseComponent },
   { path: 'create-account', component: CreateAccountComponent },
