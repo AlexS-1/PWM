@@ -33,10 +33,7 @@ const routes: Routes = [
   { path: 'browse-courses', component: BrowseCoursesComponent },
   { path: 'course-details/:id', component: CourseDetailsComponent }, // Änderung hier
   { path: 'review-course', component: ReviewCourseComponent },
-  { path: 'test', component: TestComponent },
-  // Redirect in case user is not logged in
-  { path: 'my-account', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'my-courses', redirectTo: '/login', pathMatch: 'full' }
+  { path: 'test', component: TestComponent }
 ];
 
 @NgModule({
