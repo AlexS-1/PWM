@@ -59,7 +59,7 @@
             <img src="/assets/side_bar_icons/close.svg" alt="close-icon" class="icon close-icon">
           </div>
           <div class="heading">
-            <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}">Log-Out</h2>
+            <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}" (click)="signOut()">Log-Out</h2>
           </div>
         </div>
       </a>
