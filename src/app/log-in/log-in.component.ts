@@ -13,7 +13,7 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit() {
-    const isValid = this.authService.validateCredentials(this.email, this.password);
+    const isValid = this.authService.login(this.email, this.password);
     /*console.log("onSubmit() function called"); // for debugging
     console.log("email value:", this.email); // for debugging
     console.log("password value:", this.password); // for debugging */
