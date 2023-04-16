@@ -16,6 +16,7 @@ import { ReviewCourseComponent } from './review-course/review-course.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { TestComponent } from './test/test.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   /* Add route info to route array*/
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: 'terms-of-use', component: TermsOfUseComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'my-account', component: MyAccountComponent },
-  { path: 'my-courses', component: MyCoursesComponent },
+  { path: 'my-account', component: MyAccountComponent, canActivate: [AuthGuardService], data: { roles: ['user', 'admin'] }},
+  { path: 'my-courses', component: MyCoursesComponent, canActivate: [AuthGuardService], data: { roles: ['user', 'admin'] }},
   { path: 'log-in', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'create-course', component: CreateCourseComponent },
@@ -32,7 +33,10 @@ const routes: Routes = [
   { path: 'browse-courses', component: BrowseCoursesComponent },
   { path: 'course-details/:id', component: CourseDetailsComponent }, // Änderung hier
   { path: 'review-course', component: ReviewCourseComponent },
-  { path: 'test', component: TestComponent }
+  { path: 'test', component: TestComponent },
+  // Redirect in case user is not logged in
+  { path: 'my-account', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'my-courses', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({
