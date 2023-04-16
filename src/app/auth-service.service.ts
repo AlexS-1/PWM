@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,19 +13,24 @@ export class AuthService {
   private loggedIn = false;
   private userRole = 'visitor';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     // Perform loading of user data (only needed for json method)
     this.loadUsers();
 
     // Initialize login status vairables
-    this.loggedIn = !!localStorage.getItem('token');
-    this.userRole = localStorage.getItem('role') || 'visitor';
+    this.loggedIn = !!localStorage.getItem('loggedInToken');
+
+    ////////////////
+    // ATTENTION: // This will read the local chached last state. For testing make sure to be logged out befor testing anything
+    ////////////////
+    this.userRole = localStorage.getItem('role') || 'visitor';      // ToDo: add verification to set logged in user state if token is still valid
   }
 
   /////////////////////////////////
   /// Validation of credentials ///
   /////////////////////////////////
 
+  // load user credential data from json file
   loadUsers() {
     return this.http.get<{ users: { id: number; email: string; password: string }[] }>('../assets/userdata/userLogInData.json').subscribe((data) => {
       this.users = data.users;
@@ -61,32 +67,45 @@ export class AuthService {
   login(email: string, password: string) : boolean{
     let succssfulLookup = this.validateCredentials(email, password);
     // TODO: Implement login logic and set role in local storage
-    let successfulState = true;   // True for testing
+    let successfulState = false;
 
-    console.log("Log-In state = " + this.loggedIn as string);   // for debugging
-    console.log("User role = " + this.userRole as string);                // for debugging
-
+    if(succssfulLookup){
+      localStorage.setItem('loggedInToken', 'true');
+      successfulState = true;
+      if(true /* add variable to denominate user role*/){
+        localStorage.setItem('role', 'user');
+        this.userRole = 'user'
+      }
+    }
+    if(succssfulLookup && successfulState){
+      console.log("Successfully logged in")  // for debugging
+      this.router.navigate(['/home']);
+    }else{
+      console.log("Log in failed in auth-service.ts, logIn()")  // for debugging
+    }
     return succssfulLookup && successfulState;
   }
 
   // Function to perfrorm logout
   // Sets login state to false, removes user role
   logout() : boolean{
-    // TODO: Remove credentials and role from local storage
     this.loggedIn = false;
     this.userRole = 'visitor';
+    localStorage.setItem('loggedInToken', 'false');
+    localStorage.setItem('role', 'visitor');
     console.log("Successfully logged out")  // for debugging
     return true;
   }
 
   // Getter for login status, logged in = true
   isLoggedIn() : boolean{
-    return this.loggedIn;
+    return this.loggedIn || !!localStorage.getItem('loggedInToken');   // for debugging;
   }
 
   // Getter for user role
   // 'visitor' = not loged in, 'user' = logged in user, 'admin'= logged in user with admin rights
   getUserRole() : string{
+    this.userRole = localStorage.getItem('role') as string;
     return this.userRole;
   }
 }
