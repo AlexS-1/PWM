@@ -58,7 +58,7 @@ export class TestComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit() {
-    const isValid = this.authService.validateCredentials(this.username, this.password);
+    const isValid = this.authService.login(this.username, this.password);
     if (isValid) {
       // perform login
     } else {
