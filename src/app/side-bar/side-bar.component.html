@@ -54,12 +54,12 @@
       </a>
   
       <a href="home-course" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
-        <div class="link-container">
+        <div class="link-container" (click)="signOut()">
           <div class="image">
             <img src="/assets/side_bar_icons/close.svg" alt="close-icon" class="icon close-icon">
           </div>
           <div class="heading">
-            <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}" (click)="signOut()">Log-Out</h2>
+            <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}">Log-Out</h2>
           </div>
         </div>
       </a>
