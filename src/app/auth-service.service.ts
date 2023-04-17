@@ -18,12 +18,12 @@ export class AuthService {
     this.loadUsers();
 
     // Initialize login status vairables
-    this.loggedIn = !!localStorage.getItem('loggedInToken');
+    this.loggedIn = !!sessionStorage.getItem('loggedInToken');
 
     ////////////////
     // ATTENTION: // This will read the local chached last state. For testing make sure to be logged out befor testing anything
     ////////////////
-    this.userRole = localStorage.getItem('role') || 'visitor';      // ToDo: add verification to set logged in user state if token is still valid
+    this.userRole = sessionStorage.getItem('role') || 'visitor';      // ToDo: add verification to set logged in user state if token is still valid
   }
 
   /////////////////////////////////
@@ -70,10 +70,10 @@ export class AuthService {
     let successfulState = false;
 
     if(succssfulLookup){
-      localStorage.setItem('loggedInToken', 'true');
+      sessionStorage.setItem('loggedInToken', 'true');
       successfulState = true;
       if(true /* add variable to denominate user role*/){
-        localStorage.setItem('role', 'user');
+        sessionStorage.setItem('role', 'user');
         this.userRole = 'user'
       }
     }
@@ -91,21 +91,21 @@ export class AuthService {
   logout() : boolean{
     this.loggedIn = false;
     this.userRole = 'visitor';
-    localStorage.setItem('loggedInToken', 'false');
-    localStorage.setItem('role', 'visitor');
+    sessionStorage.setItem('loggedInToken', 'false');
+    sessionStorage.setItem('role', 'visitor');
     console.log("Successfully logged out")  // for debugging
     return true;
   }
 
   // Getter for login status, logged in = true
   isLoggedIn() : boolean{
-    return this.loggedIn || !!localStorage.getItem('loggedInToken');   // for debugging;
+    return this.loggedIn || !!sessionStorage.getItem('loggedInToken');   // for debugging;
   }
 
   // Getter for user role
   // 'visitor' = not loged in, 'user' = logged in user, 'admin'= logged in user with admin rights
   getUserRole() : string{
-    this.userRole = localStorage.getItem('role') as string;
+    this.userRole = sessionStorage.getItem('role') as string;
     return this.userRole;
   }
 }
