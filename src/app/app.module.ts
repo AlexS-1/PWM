@@ -22,6 +22,7 @@ import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ReviewCourseComponent } from './review-course/review-course.component';
 import { TestComponent } from './test/test.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TestComponent } from './test/test.component';
     TermsOfUseComponent,
     CourseDetailsComponent,
     ReviewCourseComponent,
-    TestComponent
+    TestComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

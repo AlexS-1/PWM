@@ -11,11 +11,27 @@
         grid-template-columns: auto auto;
     
     }
+
+    .username-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px 0 0;
+    }
+
+    .username-rating .username {
+        font-weight: bold;
+        font-size: 1.17em;
+
+    }
+      
+      
       
     h1 {
         font-size: 52px;
         font-weight: bolder;
     }
+      
     
     .btns {
         margin: auto;
@@ -68,6 +84,19 @@
         display: grid;
         grid-template-columns: auto auto;
     
+    }
+
+    .username-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px 0 0;
+    }
+
+    .username-rating .username {
+        font-weight: bold;
+        font-size: 1.17em;
+
     }
       
     h1 {
@@ -132,6 +161,19 @@
     h1 {
         font-size: 52px;
         font-weight: bolder;
+    }
+
+    .username-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px 0 0;
+    }
+
+    .username-rating .username {
+        font-weight: bold;
+        font-size: 1.17em;
+
     }
     
     .btns {
