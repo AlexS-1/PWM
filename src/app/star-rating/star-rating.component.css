@@ -1,0 +1,23 @@
+:host {
+    display: inline-flex;
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 24px;
+    padding: 0 2px;
+    color: #ffa500;
+  }
+  
+  .star.filled {
+    color: #ffc107;
+  }
+  
+  .star:hover {
+    color: #ffc107;
+  }
+  
+  .star:hover ~ .star {
+    color: #d3d3d3;
+  }
+  
