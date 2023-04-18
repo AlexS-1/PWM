@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { AuthService } from './../auth-service.service';
 import { Component } from '@angular/core';
 
@@ -11,6 +12,8 @@ export class LoginComponent {
   password: string = "password1";
 
   constructor(private authService: AuthService) {}
+
+
 
   onSubmit() {
     const isValid = this.authService.login(this.email, this.password);

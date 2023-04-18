@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent {
+  favoriteColor = '';
   
 }
