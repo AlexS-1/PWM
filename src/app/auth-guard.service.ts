@@ -15,8 +15,8 @@ export class AuthGuardService {
     const roles = route.data['roles'] as Array<string>;
     const userRole = this.authService.getUserRole();
 
-    console.log(roles);   // for debugging
-    console.log(userRole);// for debugging
+    // console.log(roles);   // for debugging
+    // console.log(userRole);// for debugging
 
     if (!this.authService.isLoggedIn() || !roles.includes(userRole)) {
       // redirect to the login page if not logged in

@@ -1,4 +1,4 @@
-<div class="browse-courses">
+<article class="browse-courses">
   <div>
     <h1>Browse Courses</h1>
     <!-- Future feature
@@ -13,7 +13,7 @@
       </datalist>
     -->
   </div>
-  <div class="card-container" *ngFor="let content of contentData">
+  <section class="card-container" *ngFor="let content of contentData">
 
     <a [routerLink]="['/course-details', content.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
       <div class="inner-box">
@@ -22,5 +22,5 @@
           {{content.title}}
       </div>
     </a>
-  </div>
-</div>
+  </section>
+</article>
