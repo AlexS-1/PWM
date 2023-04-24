@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NavBarService } from './nav-bar.service';
 
 // Import pages
 import { AppComponent } from './app.component';
@@ -40,4 +41,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private navBarService: NavBarService){}
+  ngAfterViewInit(){
+    this.navBarService.toggleSideBar();
+  }
+
+}
