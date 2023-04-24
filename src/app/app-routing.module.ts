@@ -43,8 +43,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
   constructor(private navBarService: NavBarService){}
-  ngAfterViewInit(){
-    this.navBarService.toggleSideBar();
-  }
 
 }
