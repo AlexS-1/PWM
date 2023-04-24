@@ -3,12 +3,12 @@
     <div [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}" class="background">
       <section class="link-container first-link">
         <a href="my-account" routerLink="my-account" routerLinkActive="active" ariaCurrentWhenActive="page">
-            <div class="image">
-              <img src="/assets/side_bar_icons/user.svg" alt="user-icon" class="icon user-icon">
-            </div>
-            <div class="heading">
-              <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}">My Area</h2>
-            </div>
+          <div class="image">
+            <img src="/assets/side_bar_icons/user.svg" alt="user-icon" class="icon user-icon">
+          </div>
+          <div class="heading">
+            <h2 [ngClass]="{'folded-in': !isSideBarOpen, 'folded-out': isSideBarOpen}">My Area</h2>
+          </div>
         </a>
       </section>
       <section class="link-container">
@@ -31,7 +31,6 @@
           </div>
         </a>
       </section>
-  
       <section class="link-container">
         <a href="create-course" routerLink="/create-course" routerLinkActive="active" ariaCurrentWhenActive="page">
           <div class="image">

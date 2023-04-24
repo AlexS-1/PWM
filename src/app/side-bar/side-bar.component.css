@@ -9,9 +9,7 @@
     height: 100%;
     background: #D8DCFF;
     transition: width 0.3s ease-in-out; /* Change this line */
-   
     overflow-y: auto; 
-    
 }
 
 .folded-in {
@@ -92,12 +90,11 @@ h2.folded-in {
         transform: translateX(0); /* Change this line */
         z-index: 50;
         padding: 7% 0 0 0;
-        font-size: 30px;
-        
     }
     .link-container {
         margin-bottom: 10px; /* space between elements in menu */
-        line-height: 140%;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 
     .icon{
@@ -111,6 +108,6 @@ h2.folded-in {
     }
 
     h2 {
-        margin-top: 6px;
+        margin-top: 10px;
     }
 }
