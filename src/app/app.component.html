@@ -3,7 +3,7 @@
 <app-side-bar class="side-bar"></app-side-bar>
 
 <main>
-  <router-outlet></router-outlet>
+  <router-outlet class="router" [ngClass]="{'disabled': sideBarOff}"></router-outlet>
 </main>
-<app-footer class="footer"></app-footer>
+<app-footer class="footer" [ngClass]="{'disabled': sideBarOff}"></app-footer>
 </div>

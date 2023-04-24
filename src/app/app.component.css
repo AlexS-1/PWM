@@ -148,9 +148,13 @@
 
   }
 
+  .footer.disabled {
+    display: none;
+  }
 
-
-
+  .router.disabled {
+    display: none;
+  }
   
 }
 
