@@ -9,20 +9,20 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { HomeComponent } from './home/home.component';
-import { MyAccountComponent } from './my-account/my-account.component';
-import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
-import { CreateCourseComponent } from './create-course/create-course.component';
-import { LoginComponent } from './log-in/log-in.component';
-import { CreateAccountComponent } from './create-account/create-account.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
-import { ReviewCourseComponent } from './review-course/review-course.component';
-import { TestComponent } from './test/test.component';
-import { StarRatingComponent } from './star-rating/star-rating.component';
+import { AboutUsComponent } from '../feature/about-us/about-us.component';
+import { HomeComponent } from '../feature/home/home.component';
+import { MyAccountComponent } from '../feature/my-account/my-account.component';
+import { BrowseCoursesComponent } from '../feature/browse-courses/browse-courses.component';
+import { MyCoursesComponent } from '../feature/my-courses/my-courses.component';
+import { CreateCourseComponent } from '../feature/create-course/create-course.component';
+import { LoginComponent } from '../feature/log-in/log-in.component';
+import { CreateAccountComponent } from '../feature/create-account/create-account.component';
+import { ForgotPasswordComponent } from '../feature/forgot-password/forgot-password.component';
+import { TermsOfUseComponent } from '../feature/terms-of-use/terms-of-use.component';
+import { CourseDetailsComponent } from '../feature/course-details/course-details.component';
+import { ReviewCourseComponent } from '../feature/review-course/review-course.component';
+import { TestComponent } from '../test/test.component';
+import { StarRatingComponent } from '../feature/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [

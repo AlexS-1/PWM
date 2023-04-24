@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import contentData from './../../assets/content/course.json';
+import contentData from './../../../assets/content/course.json';
 
 @Component({
   selector: 'app-browse-courses',

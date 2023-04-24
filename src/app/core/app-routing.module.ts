@@ -4,19 +4,19 @@ import { NavBarService } from './nav-bar.service';
 
 // Import pages
 import { AppComponent } from './app.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './log-in/log-in.component';
-import { CreateAccountComponent } from './create-account/create-account.component';
-import { CreateCourseComponent } from './create-course/create-course.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
-import { BrowseCoursesComponent } from './browse-courses/browse-courses.component';
-import { MyAccountComponent } from './my-account/my-account.component';
-import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
-import { ReviewCourseComponent } from './review-course/review-course.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { TestComponent } from './test/test.component';
+import { AboutUsComponent } from '../feature/about-us/about-us.component';
+import { HomeComponent } from '../feature/home/home.component';
+import { LoginComponent } from '../feature/log-in/log-in.component';
+import { CreateAccountComponent } from '../feature/create-account/create-account.component';
+import { CreateCourseComponent } from '../feature/create-course/create-course.component';
+import { MyCoursesComponent } from '../feature/my-courses/my-courses.component';
+import { BrowseCoursesComponent } from '../feature/browse-courses/browse-courses.component';
+import { MyAccountComponent } from '../feature/my-account/my-account.component';
+import { TermsOfUseComponent } from '../feature/terms-of-use/terms-of-use.component';
+import { ReviewCourseComponent } from '../feature/review-course/review-course.component';
+import { CourseDetailsComponent } from '../feature/course-details/course-details.component';
+import { ForgotPasswordComponent } from '../feature/forgot-password/forgot-password.component';
+import { TestComponent } from '../test/test.component';
 import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [

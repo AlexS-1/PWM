@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import jsonData from './../../assets/content/course.json';
+import jsonData from './../../../assets/content/course.json';
 
 @Component({
   selector: 'app-my-courses',
