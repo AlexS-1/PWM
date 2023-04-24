@@ -1,12 +1,9 @@
 /* Mobile (default) */
 .browse-courses {
-  margin: 12px 6%;
+  margin: 12px 20%;
   padding: 12px 24px;
   text-align: center;
-}
-
-h1{
-  margin-left: 40px;
+  justify-content: center;
 }
 
 /*.card-container {
@@ -19,8 +16,8 @@ h1{
 }*/
 
 .card-container{
-  float: left;
-  margin-left: 5%;
+  float: none;
+  justify-content: center;
 }
 
 
