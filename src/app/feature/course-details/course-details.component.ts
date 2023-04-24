@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import jsonData from './../../assets/content/course.json';
-import commentData from './../../assets/content/comments.json';
+import jsonData from './../../../assets/content/course.json';
+import commentData from './../../../assets/content/comments.json';
 import { StarRatingComponent } from '../star-rating/star-rating.component'
 
 

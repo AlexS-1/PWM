@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavBarService } from '../nav-bar.service';
+import { NavBarService } from '../../core/nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',

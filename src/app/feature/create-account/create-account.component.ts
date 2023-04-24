@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { AuthService } from './../auth-service.service';
+import { AuthService } from './../../core/auth-service.service';
 
 @Component({
   selector: 'app-create-account',
