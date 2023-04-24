@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavBarService } from './nav-bar.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, GuardsCheckStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +17,10 @@ export class AppComponent {
   ngOnInit() {
     this.navBarService.isOpen$.subscribe(isOpen => this.sideBarOff = isOpen);
     this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd ) {
-        this.navBarService.toggleSideBar();
+      if (event instanceof NavigationEnd || GuardsCheckStart) {
+        if (!this.navBarService.isSideBarFoldedIn ) {
+          this.navBarService.toggleSideBar();
+        }
       }
     });
   }
