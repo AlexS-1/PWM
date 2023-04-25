@@ -26,7 +26,6 @@ export class CreateAccountComponent {
     } else {
       this.passwordValidity = false;
     }
-    
   }
 
   onSubmit() {
