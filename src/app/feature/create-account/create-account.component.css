@@ -66,3 +66,12 @@ body {
     margin-top: 10px;
     color: #0066A1;
 }
+
+p.errorMsg{
+    margin-left: 40px;
+    color: red;
+}
+
+p.errorMsg.visibility{
+    display: none;
+}
