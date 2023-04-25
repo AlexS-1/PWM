@@ -30,4 +30,9 @@
 .my-data-content p, .my-evaluations-content p {
    font-size: 16px;
 }
+
+.profilePic{
+   background-color: #D8DCFF;
+   border-style: double;
+}
  
