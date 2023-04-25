@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "studdybuddy-2744e": {
+      "hosting": {
+        "studdy-buddy": [
+          "studdybuddy-2744e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "studdybuddy-2744e"
+  }
+}
