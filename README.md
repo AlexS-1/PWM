@@ -42,4 +42,8 @@ If "baa" is nested in "baz". It needs a path entry like `{ path: 'foo/baz/baa', 
 ### How to add Firebase to Project ###
 
 1. Make sure to have Firebase installed: `npm install firebase`
-2. Replace in `node_modules/@angular/fire/compat/firestore/interfaces.d.ts` the following lines: to include `extends firebase.firestore.DocumentData` instead of `extends firebase.firestore.DocumentSnapshot` in lines 13, `extends firebase.firestore.QueryDocumentSnapshot` in lines 23, `extends firebase.firestore.QuerySnapshot` in line 26 and `extends firebase.firestore.DocumentChange` in line 29
+2. Replace in `node_modules/@angular/fire/compat/firestore/interfaces.d.ts` the following lines to include `extends firebase.firestore.DocumentData` instead of 
+- `extends firebase.firestore.DocumentSnapshot` in lines 13
+- `extends firebase.firestore.QueryDocumentSnapshot` in lines 23
+- `extends firebase.firestore.QuerySnapshot` in line 26
+- `extends firebase.firestore.DocumentChange` in line 29
