@@ -38,3 +38,10 @@ A `PATH` consists of `/DESTINATION_COMPONENT` or `SOURCE_COMPONENT/DESTINATION_C
 e.g., to link from component "foo" to component "baa" add `{ path: '/baa', component:BaaComponent}` or `{ path: 'foo/baa', component:BaaComponent}´ (for subpages) to the path array
 
 If "baa" is nested in "baz". It needs a path entry like `{ path: 'foo/baz/baa', component:BaaComponent}`
+
+### Additinal npm installs ### 
+You may need to run the following commands in order for the image drop-off and conversion to base64 to work
+
+`npm install ngx-file-drop --save`
+
+`npm install ngx-image-cropper --save`
