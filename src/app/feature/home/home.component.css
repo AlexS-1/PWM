@@ -14,13 +14,19 @@
     padding-top: 30px;
   }
   
-  
   .rounded-rectangle {
     background-color: #7496ED;
     border-radius:60px;
     height: 300px;
     width: 80vw;
     margin: auto;
+  }
+
+  .banner {
+    object-fit: cover;
+    height: 300px;
+    width: 80vw;
+    border-radius:60px;
   }
   
   .usp-container {
@@ -88,7 +94,13 @@
     padding-top: 30px;
   }
   
-  
+  .banner {
+    object-fit: cover;
+    height: 300px;
+    width: 80vw;
+    border-radius:60px;
+  }
+
   .rounded-rectangle {
     background-color: #7496ED;
     border-radius:60px;
@@ -170,6 +182,13 @@
     width: 80vw;
     margin: auto;
     margin-bottom: 25px;
+  }
+
+  .banner {
+    object-fit: cover;
+    height: 300px;
+    width: 80vw;
+    border-radius:60px;
   }
   
   /* Place text and buttons above each other */
