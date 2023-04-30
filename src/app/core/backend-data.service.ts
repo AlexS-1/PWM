@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { doc, setDoc, getDoc, query, where } from "firebase/firestore"
+import { DocumentData, QueryDocumentSnapshot } from '@firebase/firestore-types';
+import { doc, setDoc, getDoc, query, where, getDocs, Firestore, collection } from "firebase/firestore"
 
 @Injectable({
   providedIn: 'root'
@@ -12,56 +13,48 @@ export class BackendDataService {
 
   // Receives the users data and enters it to the firebase realtime database
   // Enter new user only if it does not already exist
+  // Check if email is alredy in use
   // INFO: This function adds a default picture and an empty course list to the useres data
   async addNewUser(username: String, first_name: String, surname: String, email: String, dateOfBirth: String, password: String) :Promise<boolean>{
     let db = this.firestore.firestore;
-    const data = { 
-      user_id: this.cyrb53(username.toString()), 
-      username, 
-      first_name, 
-      surname, 
-      email, 
-      dateOfBirth, 
-      password, 
-      courses: [], 
-      profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-    }
 
-    let isNewUser: boolean;
-
+    let canCreateNewEntry: boolean;
     // Here: serach database for doc with name = this.cyrb53(this.username).toString() --> user_id
     const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
     if(userDoc.exists()){
-      isNewUser = false;
+      canCreateNewEntry = false;
     }else{
-      isNewUser = true;
+      canCreateNewEntry = true;
+      // Here: search database for email already in use
+      const q = query(collection(db, 'users'), where('email' , '==', email));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " with: ", doc.data()['email']);
+        if(doc.data()['email'] === email){
+          canCreateNewEntry = false;                              // email alreday in use
+        }
+      });
     }
-
-    // Here: search database for email already in use
-    /*const docData = await db.collection('users').where('email', '==', email);
-    const q = query(db.collection('users'), where('email' , '==', email));
-    q.converter?.fromFirestore()
-    console.log(docData);
-    if(docData != null){
-      isNewUser = false;
-      console.log("email does alredy exist");
-    }else{
-      isNewUser = true;
-      console.log("new email");
-    }*/
-
-    // Here: set isNewUser if user or email is not already registerd
-    
-
     // Only add new user account if user is not already in the database and returen appropriate response
-    if(isNewUser){
+    if(canCreateNewEntry){
+      // Bundel input data into one object to hand to backend
+      const data = { 
+        user_id: this.cyrb53(username.toString()), 
+        username, 
+        first_name, 
+        surname, 
+        email, 
+        dateOfBirth, 
+        password, 
+        courses: [], 
+        profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+      }
       await setDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()), data);  // creates a new doc with the userId as doc name
       return true;
     }else{
       return false;
     } 
   }
-
 
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
   private cyrb53(str: string, seed = 0){
