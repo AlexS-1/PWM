@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { DocumentData, QueryDocumentSnapshot } from '@firebase/firestore-types';
 import { doc, setDoc, getDoc, query, where, getDocs, Firestore, collection } from "firebase/firestore"
 
 @Injectable({
