@@ -29,6 +29,10 @@ export class ReviewCourseComponent {
   }
   
   async reviewCourse() {
+    if (await this.authService.getCurrentUserName() == "") {
+      this.message = "Please log in to review courses";
+      return;
+    }
     const evaluation: Evaluation = {
       username: await this.authService.getCurrentUserName(),
       date: "2023-05-01",

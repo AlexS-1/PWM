@@ -90,16 +90,23 @@ export class BackendDataService {
       review: evaluation.review
     }
 
+    //Create course reference id
+    const courseReferenceID = this.cyrb53(evaluation.courseID.toString()).toString();
+    const reviewReferenceID = courseReferenceID + this.cyrb53(evaluation.username.toString()).toString();
+
     //Check if course already exists
-    const courseReference = doc(db, "courses", this.cyrb53(evaluation.courseID.toString()).toString());
+    const courseReference = doc(db, "courses", courseReferenceID);
     const courseDocument = await getDoc(courseReference);
     if(!courseDocument.exists()) {
       console.log("Add Course");
       return "Please add the course first";
     } else { 
-      const reviewReference = doc(db, "reviews", this.cyrb53(evaluation.courseID.toString()).toString());
+      const reviewReference = doc(db, "reviews", reviewReferenceID);
+      const reviewDocument = await getDoc(reviewReference)
+      if (reviewDocument.exists()) {
+        return "You can only review a course once";
+      }
       await setDoc (reviewReference, data);
-      console.log("Review added");
       return "Review added";
     }
   }
