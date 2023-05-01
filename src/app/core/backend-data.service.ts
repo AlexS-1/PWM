@@ -5,38 +5,36 @@ import { doc, setDoc, getDoc, query, where, getDocs, Firestore, collection } fro
 @Injectable({
   providedIn: 'root'
 })
+
 export class BackendDataService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore) { 
 
+  }
 
   // Receives the users data and enters it to the firebase realtime database
   // Enter new user only if it does not already exist
-  // Check if email is alredy in use
   // INFO: This function adds a default picture and an empty course list to the useres data
-  async addNewUser(username: String, first_name: String, surname: String, email: String, dateOfBirth: String, password: String) :Promise<boolean>{
+  async addNewUser(username: String, first_name: String, surname: String, email: String, dateOfBirth: String, password: String): Promise<string> {
     let db = this.firestore.firestore;
+    let message = "";
 
-    let canCreateNewEntry: boolean;
-    // Here: serach database for doc with name = this.cyrb53(this.username).toString() --> user_id
+    // Here: serach database for doc with matching user-id = this.cyrb53(this.username).toString() --> user_id
     const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
-    if(userDoc.exists()){
-      canCreateNewEntry = false;
-    }else{
-      canCreateNewEntry = true;
+    if (userDoc.exists()) {
+      return "Username already exists"
+    } else {
       // Here: search database for email already in use
       const q = query(collection(db, 'users'), where('email' , '==', email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, " with: ", doc.data()['email']);
-        if(doc.data()['email'] === email){
-          canCreateNewEntry = false;                              // email alreday in use
+        if (doc.data()['email'] === email) {
+          message =  "User with this E-Mail already exists\n Please log in"
         }
       });
     }
-    // Only add new user account if user is not already in the database and returen appropriate response
-    if(canCreateNewEntry){
-      // Bundel input data into one object to hand to backend
+    if (message != "User with this E-Mail already exists\n Please log in") {
+      // Only add new user account if user is not already in the database and returen appropriate response
       const data = { 
         user_id: this.cyrb53(username.toString()), 
         username, 
@@ -48,11 +46,11 @@ export class BackendDataService {
         courses: [], 
         profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       }
-      await setDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()), data);  // creates a new doc with the userId as doc name
-      return true;
-    }else{
-      return false;
-    } 
+      // Creates a new doc with the userId as doc name
+      await setDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()), data);
+      message = "You successfully registered"
+    }
+    return message;
   }
 
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
