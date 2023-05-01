@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   email: string = "user1@example.com";
-  password: string = "password1";
+  password: string = "UserPassword@1";
 
   constructor(private authService: AuthService) {}
 
 
 
-  onSubmit() {
-    const isValid = this.authService.login(this.email, this.password);
+  async onSubmit() {
+    const isValid = await this.authService.login(this.email, this.password);
     /*console.log("onSubmit() function called"); // for debugging
     console.log("email value:", this.email); // for debugging
     console.log("password value:", this.password); // for debugging */

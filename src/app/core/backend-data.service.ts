@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { doc, setDoc, getDoc, query, where, getDocs, Firestore, collection } from "firebase/firestore"
+import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
+import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection } from "firebase/firestore"
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,8 @@ export class BackendDataService {
       const q = query(collection(db, 'users'), where('email' , '==', email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, " with: ", doc.data()['email']);
         if(doc.data()['email'] === email){
-          canCreateNewEntry = false;                              // email alreday in use
+          canCreateNewEntry = false;                              // case: email alreday in use
         }
       });
     }
@@ -53,6 +52,34 @@ export class BackendDataService {
     }else{
       return false;
     } 
+  }
+
+  // retrieve user data from usernameand return data
+  async getUserData(username: String):Promise<DocumentData>{
+    let db = this.firestore.firestore;
+    const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
+    return userDoc;
+  }
+
+  // retrieve logIn data from token return tokenDoc
+  async getloggedInData(id: String| null):Promise<DocumentData|null>{
+    if(id == null){
+      return null;
+    }
+    let db = this.firestore.firestore;
+    const tokenDoc = await getDoc(doc(db, 'loggedIn', id.toString()));
+    return tokenDoc;
+  }
+
+  // retrieve logIn data from token return tokenDoc
+  async removeloggedInData(id: String| null):Promise<boolean>{
+    if(id == null){
+      return false;
+    }
+    let db = this.firestore.firestore;
+    console.log('id to delete: ', id);
+    await deleteDoc(doc(db, 'loggedIn', id.toString()));
+    return true;
   }
 
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
