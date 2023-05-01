@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference} from "firebase/firestore"
 import { User } from './user';
-import { Conditional } from '@angular/compiler';
+import { Evaluation } from './evaluation';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +48,7 @@ export class BackendDataService {
         profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       }
       // Creates a new doc with the userId as doc name
-      await setDoc(doc(db, 'users', this.cyrb53(user.username.toString()).toString()), data);
+      await setDoc(doc(db, 'users', data.userID.toString()), data);
       message = "You successfully registered"
     }
     return message;
@@ -77,25 +77,26 @@ export class BackendDataService {
     return "Course already exists"
   }
 
-  async addReview(courseID: number, courseName: string, stars: number, review: string): Promise<string> {
+  async addReview(evaluation: Evaluation): Promise<string> {
     let db = this.firestore.firestore
 
     //Create data
     const data = {
-      courseID: courseID,
-      courseName: courseName,
-      stars: stars,
-      review: review
+      courseID: evaluation.courseID,
+      date: evaluation.date,
+      username: evaluation.username,
+      rating: evaluation.rating,
+      review: evaluation.review
     }
 
     //Check if course already exists
-    const courseReference = doc(db, "courses", this.cyrb53(courseID.toString()).toString());
+    const courseReference = doc(db, "courses", this.cyrb53(evaluation.courseID.toString()).toString());
     const courseDocument = await getDoc(courseReference);
     if(!courseDocument.exists()) {
       console.log("Add Course");
       return "Please add the course first";
     } else { 
-      const reviewReference = doc(db, "reviews", this.cyrb53(courseID.toString()).toString());
+      const reviewReference = doc(db, "reviews", this.cyrb53(evaluation.courseID.toString()).toString());
       await setDoc (reviewReference, data);
       console.log("Review added");
       return "Review added";
@@ -104,9 +105,17 @@ export class BackendDataService {
 
   // Retrieve user data from username and return data
   async getUserData(username: String) {
-      let db = this.firestore.firestore;
-      const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
-      return userDoc
+    let db = this.firestore.firestore;
+    const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
+    return userDoc
+  }
+
+  // Retrieeve the reviews for a given user
+  async getEvaluations(username: string) {
+    let db = this.firestore.firestore;
+    const q = query(collection(db, 'reviews'), where('username' , '==', username));
+    const querySnapshot = await getDocs(q);
+    return querySnapshot;
   }
   
   // Retrieve login data from token return tokenDoc

@@ -7,9 +7,6 @@
       <section class="form-group">
         <input type="number" class="form-control" [(ngModel)]="courseID" name="courseID" placeholder="Course ID" required="required">
       </section>
-      <section class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="courseName" name="courseName" placeholder="Course name" required="required">
-      </section>
       <section class="star-bar form-group">
         <app-star-rating (ratingChanged)="setRating($event)"></app-star-rating>
       </section>

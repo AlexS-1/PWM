@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendDataService } from 'src/app/core/backend-data.service';
+import { Evaluation } from 'src/app/core/evaluation';
 
 @Component({
   selector: 'app-review-course',
@@ -27,7 +28,14 @@ export class ReviewCourseComponent {
   }
   
   async reviewCourse() {
-    this.message = await this.backend.addReview(Number(this.courseID), this.courseName, Number(this.currentRating), this.review);
+    const evaluation: Evaluation = {
+      username: "user1",
+      date: "2023-05-01",
+      review: this.review,
+      rating: this.currentRating,
+      courseID: Number(this.courseID)
+    }
+    this.message = await this.backend.addReview(evaluation);
     this.courseID = "";
     this.courseName = "";
     this.review = "";

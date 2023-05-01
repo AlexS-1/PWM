@@ -15,9 +15,16 @@
   <section class="my-evaluations-box">
       <h2>My Evaluations</h2>
       <div class="my-evaluations-content">
-        <ul *ngFor="let evaluation of ">
-          <li>{{ evaluation }}</li>
-        </ul>
+        <div class="review-container">
+          <div class="review-box" *ngFor="let review of reviews">
+              <div class="username-rating">
+                  <span class="username">{{ review.username }}</span>
+                  <app-star-rating [rating]="review.rating"></app-star-rating>
+              </div> 
+              <p class="date">{{ review.date }}</p>
+              <p class="review">{{ review.review }}</p>
+          </div>
+      </div>
       </div>
   </section>
 </article>
