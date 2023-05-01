@@ -6,16 +6,18 @@
   <section class="my-data">
     <h2>My Data</h2>
       <div class="my-data-content">
-        <p>Name: -----</p>
-        <p>Date of Birth: -----</p>
-        <p>Buddy since: -----</p>
-        <p>Number of Evaluations: --</p>
+        <p>Name: {{ user.firstName }} {{ user.surname }}</p>
+        <p>Date of Birth: {{ user.dateOfBirth }}</p>
+        <p>Number of Evaluations: {{ user.courses.length }}</p>
+        <p>E-Mail: {{ user.email }}</p>
       </div>
   </section>
   <section class="my-evaluations-box">
       <h2>My Evaluations</h2>
       <div class="my-evaluations-content">
-        <p>----     // Soon here: Content of users evaluations //     ----</p>
+        <ul *ngFor="let evaluation of ">
+          <li>{{ evaluation }}</li>
+        </ul>
       </div>
   </section>
 </article>

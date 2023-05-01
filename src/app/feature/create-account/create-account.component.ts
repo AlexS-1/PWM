@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendDataService } from 'src/app/core/backend-data.service';
+import { User } from 'src/app/core/user';
 
 @Component({
   selector: 'app-create-account',
@@ -8,13 +9,13 @@ import { BackendDataService } from 'src/app/core/backend-data.service';
 })
 export class CreateAccountComponent {
   //Input from form
-  first_name = 'User';
+  firstName = 'User';
   surname = 'Lastname';
   username = 'user1';
-  date_of_birth = '2000-01-01';
+  dateOfBirth = '2000-01-01';
   email = 'user1@example.com';
   password = 'UserPassword@1';
-  repeat_password = 'UserPassword@1';
+  repeatedPassword = 'UserPassword@1';
 
   //Output to form
   message = "";
@@ -27,7 +28,7 @@ export class CreateAccountComponent {
   }
 
   checkValidityPasswords(password: any) {
-    if (this.password == this.repeat_password) {
+    if (this.password == this.repeatedPassword) {
       this.passwordValidity = true;
     } else {
       this.passwordValidity = false;
@@ -35,6 +36,17 @@ export class CreateAccountComponent {
   }
 
   async onSubmit() {
-    this.message = await this.backendDataService.addNewUser(this.username, this.first_name, this.surname, this.email, this.date_of_birth, this.password);
+    const user: User = {
+      username: this.username,
+      firstName: this.firstName,
+      surname: this.surname,
+      dateOfBirth: this.dateOfBirth,
+      email: this.email,
+      password: this.password,
+      profilePicture: "",
+      userID: "",
+      courses: []
+    }
+    this.message = await this.backendDataService.addNewUser(user);
   }
 }
