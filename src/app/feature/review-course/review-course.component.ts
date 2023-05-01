@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/core/auth-service.service';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { Evaluation } from 'src/app/core/evaluation';
 
@@ -8,7 +9,7 @@ import { Evaluation } from 'src/app/core/evaluation';
   styleUrls: ['./review-course.component.css']
 })
 export class ReviewCourseComponent {
-  constructor(private backend: BackendDataService) {
+  constructor(private backend: BackendDataService, private authService: AuthService) {
 
   }
 
@@ -29,7 +30,7 @@ export class ReviewCourseComponent {
   
   async reviewCourse() {
     const evaluation: Evaluation = {
-      username: "user1",
+      username: await this.authService.getCurrentUserName(),
       date: "2023-05-01",
       review: this.review,
       rating: this.currentRating,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { User } from 'src/app/core/user';
 import { Evaluation } from 'src/app/core/evaluation';
+import { AuthService } from 'src/app/core/auth-service.service';
 
 @Component({
   selector: 'app-my-account',
@@ -10,7 +11,7 @@ import { Evaluation } from 'src/app/core/evaluation';
 })
 
 export class MyAccountComponent {
-  constructor(private backend: BackendDataService) {
+  constructor(private backend: BackendDataService, private authService: AuthService) {
 
   }
 
@@ -34,8 +35,11 @@ export class MyAccountComponent {
   }
 
   async updateUserInformation() {
+    this.user.username = await this.authService.getCurrentUserName();
+    
     //TODO pass only logged in user to get updated data
-    const user = await this.backend.getUserData("user1");
+    console.log('username: ' , this.user.username);
+    const user = await this.backend.getUserData(this.user.username);
     if (user.exists()) {
       this.user.firstName = user.data()['firstName'];
       this.user.surname = user.data()['surname'];
@@ -44,7 +48,7 @@ export class MyAccountComponent {
       this.user.profilePicture = user.data()['profilePicture'];
     }
 
-    const evaluaions = await this.backend.getEvaluations("user1");
+    const evaluaions = await this.backend.getEvaluations(this.user.username);
     console.log(evaluaions)
     evaluaions.forEach((doc) => {
       const evaluation: Evaluation = {

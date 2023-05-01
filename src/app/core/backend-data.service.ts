@@ -9,6 +9,7 @@ import { Evaluation } from './evaluation';
 })
 
 export class BackendDataService {
+
   constructor(private firestore: AngularFirestore) { 
 
   }
@@ -66,8 +67,8 @@ export class BackendDataService {
       courseID: courseID,
       courseName: courseName,
       courseDescription: courseDescription
-    }
-
+  }
+  
     //Add data if it does not exist yet
     if(!courseDoc.exists()) {
       setDoc(documentReference, data);
@@ -108,7 +109,7 @@ export class BackendDataService {
     let db = this.firestore.firestore;
     const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
     return userDoc
-  }
+      }
 
   // Retrieeve the reviews for a given user
   async getEvaluations(username: string) {
@@ -117,7 +118,7 @@ export class BackendDataService {
     const querySnapshot = await getDocs(q);
     return querySnapshot;
   }
-  
+
   // Retrieve login data from token return tokenDoc
   async getloggedInData(id: String| null): Promise<DocumentData|null>{
     if(id == null){
@@ -134,9 +135,21 @@ export class BackendDataService {
       return false;
     }
     let db = this.firestore.firestore;
-    console.log('id to delete: ', id);
     await deleteDoc(doc(db, 'loggedIn', id.toString()));
     return true;
+  }
+
+  async getUserNameByMail(mail: string): Promise<string | null>{
+    let db = this.firestore.firestore;
+    const userDocs = await getDocs(query(collection(db, 'users'), where('email', '==', mail)));
+    let docUsername: string | null = null;
+    userDocs.forEach((doc) => {
+      if (doc.data()['email'] === mail) {
+        console.log('getUsernameByMail username: ', doc.data()['username'])
+        docUsername = doc.data()['username'];
+      }
+    });
+    return docUsername;
   }
 
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
@@ -153,5 +166,5 @@ export class BackendDataService {
     h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
   
     return 4294967296 * (2097151 & h2) + (h1 >>> 0);
-  };
+    };
 }

@@ -94,5 +94,33 @@ export class AuthService {
     }
     return false;
   }
+
+  // Getter for login status, logged in = true
+  async retrieveUserMail(token: String) : Promise<String| null>{
+    const tokenDoc = await this.backendDataService.getloggedInData(token);
+    console.log('tokenDoc: ', tokenDoc);
+    if(tokenDoc != null){
+      return tokenDoc['data']()['email']
+    }
+    return null;
+  }
+
+  // Returns "" on failure
+  async getCurrentUserName(): Promise<string>{
+    let userToken = sessionStorage.getItem('logInToken');
+    console.log(userToken);
+    if(userToken != null){
+      let retrUserMail = await this.retrieveUserMail(userToken);
+      console.log('mail: ', retrUserMail);
+      if (retrUserMail != null){
+        let uName = await this.backendDataService.getUserNameByMail(retrUserMail.toString());
+        console.log('uName: ' , uName);
+        if(uName != null){
+          return uName;
+        }
+      }
+    }
+    return "";
+  }
 }
 
