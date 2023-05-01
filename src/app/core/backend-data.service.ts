@@ -81,34 +81,6 @@ export class BackendDataService {
     return true;
   }
 
-  // retrieve user data from usernameand return data
-  async getUserData(username: String):Promise<DocumentData>{
-    let db = this.firestore.firestore;
-    const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
-    return userDoc;
-  }
-
-  // retrieve logIn data from token return tokenDoc
-  async getloggedInData(id: String| null):Promise<DocumentData|null>{
-    if(id == null){
-      return null;
-    }
-    let db = this.firestore.firestore;
-    const tokenDoc = await getDoc(doc(db, 'loggedIn', id.toString()));
-    return tokenDoc;
-  }
-
-  // retrieve logIn data from token return tokenDoc
-  async removeloggedInData(id: String| null):Promise<boolean>{
-    if(id == null){
-      return false;
-    }
-    let db = this.firestore.firestore;
-    console.log('id to delete: ', id);
-    await deleteDoc(doc(db, 'loggedIn', id.toString()));
-    return true;
-  }
-
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
   private cyrb53(str: string, seed = 0){
     let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
