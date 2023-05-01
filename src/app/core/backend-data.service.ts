@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
-import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection} from "firebase/firestore"
+import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference} from "firebase/firestore"
 import { User } from './user';
 
 @Injectable({
@@ -53,29 +53,51 @@ export class BackendDataService {
     return message;
   }
 
-    // retrieve user data from usernameand return data
-    async getUserData(username: String) {//Promise<User|undefined> {
-        let db = this.firestore.firestore;
-        const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
-        return userDoc
-        /*if (userDoc.exists()) {
-            const user: User = {
-                userID: userDoc.data()['userID'],
-                username: userDoc.data()['username'],
-                firstName: userDoc.data()['firstName'],
-                surname: userDoc.data()['surname'],
-                email: userDoc.data()['email'],
-                dateOfBirth: userDoc.data()['dateOfBirth'],
-                password: userDoc.data()['password'],
-                courses: userDoc.data()['courses'],
-                profilePicture: userDoc.data()['profilePicture']
-            }
-            return user;
-        }
-        return undefined;*/
-    }
-  
+  async addCourse(courseID: number, courseName: string, courseDescription: string): Promise<string> {
+    let db = this.firestore.firestore
 
+    //Check if course already exists
+    const documentReference = doc(db, "courses", this.cyrb53(courseID.toString()).toString());
+    const courseDoc = await getDoc(documentReference);
+
+    //Create data
+    const data = {
+      courseID: courseID,
+      courseName: courseName,
+      courseDescription: courseDescription
+    }
+
+    //Add data if it does not exist yet
+    if(!courseDoc.exists()) {
+      setDoc(documentReference, data);
+      return "Course added"
+    }
+
+    return "Course already exists"
+  }
+
+  // retrieve user data from usernameand return data
+  async getUserData(username: String) {//Promise<User|undefined> {
+      let db = this.firestore.firestore;
+      const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
+      return userDoc
+      /*if (userDoc.exists()) {
+          const user: User = {
+              userID: userDoc.data()['userID'],
+              username: userDoc.data()['username'],
+              firstName: userDoc.data()['firstName'],
+              surname: userDoc.data()['surname'],
+              email: userDoc.data()['email'],
+              dateOfBirth: userDoc.data()['dateOfBirth'],
+              password: userDoc.data()['password'],
+              courses: userDoc.data()['courses'],
+              profilePicture: userDoc.data()['profilePicture']
+          }
+          return user;
+      }
+      return undefined;*/
+  }
+  
   // retrieve logIn data from token return tokenDoc
   async getloggedInData(id: String| null): Promise<DocumentData|null>{
     if(id == null){
