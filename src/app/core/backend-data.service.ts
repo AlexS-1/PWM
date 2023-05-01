@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference} from "firebase/firestore"
 import { User } from './user';
+import { Conditional } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -76,29 +77,39 @@ export class BackendDataService {
     return "Course already exists"
   }
 
-  // retrieve user data from usernameand return data
-  async getUserData(username: String) {//Promise<User|undefined> {
+  async addReview(courseID: number, courseName: string, stars: number, review: string): Promise<string> {
+    let db = this.firestore.firestore
+
+    //Create data
+    const data = {
+      courseID: courseID,
+      courseName: courseName,
+      stars: stars,
+      review: review
+    }
+
+    //Check if course already exists
+    const courseReference = doc(db, "courses", this.cyrb53(courseID.toString()).toString());
+    const courseDocument = await getDoc(courseReference);
+    if(!courseDocument.exists()) {
+      console.log("Add Course");
+      return "Please add the course first";
+    } else { 
+      const reviewReference = doc(db, "reviews", this.cyrb53(courseID.toString()).toString());
+      await setDoc (reviewReference, data);
+      console.log("Review added");
+      return "Review added";
+    }
+  }
+
+  // Retrieve user data from username and return data
+  async getUserData(username: String) {
       let db = this.firestore.firestore;
       const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
       return userDoc
-      /*if (userDoc.exists()) {
-          const user: User = {
-              userID: userDoc.data()['userID'],
-              username: userDoc.data()['username'],
-              firstName: userDoc.data()['firstName'],
-              surname: userDoc.data()['surname'],
-              email: userDoc.data()['email'],
-              dateOfBirth: userDoc.data()['dateOfBirth'],
-              password: userDoc.data()['password'],
-              courses: userDoc.data()['courses'],
-              profilePicture: userDoc.data()['profilePicture']
-          }
-          return user;
-      }
-      return undefined;*/
   }
   
-  // retrieve logIn data from token return tokenDoc
+  // Retrieve login data from token return tokenDoc
   async getloggedInData(id: String| null): Promise<DocumentData|null>{
     if(id == null){
       return null;
@@ -108,7 +119,7 @@ export class BackendDataService {
     return tokenDoc;
   }
 
-  // retrieve logIn data from token return tokenDoc
+  // Retrieve logIn data from token return tokenDoc
   async removeloggedInData(id: String| null): Promise<boolean>{
     if(id == null){
       return false;

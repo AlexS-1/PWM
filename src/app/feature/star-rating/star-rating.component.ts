@@ -13,14 +13,13 @@ export class StarRatingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.rating); // Hier wurde das console.log hinzugefügt
+  ngOnInit() {
     for (let i = 1; i <= this.maxRating; i++) {
       this.stars.push(i <= this.rating);
     }
   }
 
-  setRating(rating: number): void {
+  setRating(rating: number) {
     this.rating = rating;
     this.ratingChanged.emit(this.rating);
   }
