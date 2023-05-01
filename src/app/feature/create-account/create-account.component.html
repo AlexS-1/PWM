@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <input type="password" [(ngModel)]="repeat_password" class="form-control" name="repeat_password" placeholder="Repeat Password" minlength="8" maxlength="25" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" (keyup)="checkValidityPasswords($event)" required>
-            <p class="errorMsg" [ngClass]="{'visibility': passwordValidity}">Password mismatch</p>
+            <p class="errorMsg"> {{ message }}</p>
         </div>
         <button class="btn" type="submit button" [disabled]="createAccountForm.form.invalid || !passwordValidity">
             Create Account

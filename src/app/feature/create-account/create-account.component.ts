@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { AuthService } from './../../core/auth-service.service';
-import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 
 @Component({
@@ -11,17 +7,24 @@ import { BackendDataService } from 'src/app/core/backend-data.service';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent {
+  //Input from form
   first_name = 'User';
   surname = 'Lastname';
   username = 'user1';
-  date_of_birth = '';
+  date_of_birth = '2000-01-01';
   email = 'user1@example.com';
   password = 'UserPassword@1';
-  repeat_password = 'UserPassword@2';
+  repeat_password = 'UserPassword@1';
 
+  //Output to form
+  message = "";
+
+  //Other variables
   passwordValidity = false;
 
-  constructor(private authService: AuthService, private backendDataService: BackendDataService, private firestore: AngularFirestore) {}
+  constructor(private backendDataService: BackendDataService) {
+
+  }
 
   checkValidityPasswords(password: any) {
     if (this.password == this.repeat_password) {
@@ -32,13 +35,6 @@ export class CreateAccountComponent {
   }
 
   async onSubmit() {
-    let addSuccessfully = await this.backendDataService.addNewUser(this.username, this.first_name, this.surname, this.email, this.date_of_birth, this.password);
-
-    // TODO: Show response on webpage if added successfully to database
-    if(addSuccessfully){
-      // Show response "OK"
-    }else{
-      // Shwo response "User/email already exists"
-    }
+    this.message = await this.backendDataService.addNewUser(this.username, this.first_name, this.surname, this.email, this.date_of_birth, this.password);
   }
 }
