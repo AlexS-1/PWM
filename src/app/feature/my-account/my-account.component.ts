@@ -9,33 +9,35 @@ import { User } from 'src/app/core/user';
 })
 
 export class MyAccountComponent {
-  constructor(private bE: BackendDataService) {
+  constructor(private backend: BackendDataService) {
 
   }
 
-  declare imageUrl: string;
-
   user: User = {
-    email: "",
-    username: "",
-    dateOfBirth: "",
-    surname: "",
-    firstName: "",
-    password: "",
+    userID: '',
+    username: '',
+    firstName: '',
+    surname: '',
+    email: '',
+    dateOfBirth: '',
+    password: '',
     courses: [],
-    userID: "",
-    profilePicture: ""
+    profilePicture: ''
   };
 
   ngAfterViewInit() {
-    console.log("Hi!")
-    this.user.email = "f"
-    this.user.username = "b"
-    this.user.dateOfBirth = "2000-01-01"
-    this.user.surname = "s"
-    this.user.firstName = "a"
-    this.user.password = ""
-    this.user.courses = ["1", "2"]
+    this.updateUserInformation();
   }
 
+  async updateUserInformation() {
+    //TODO pass only logged in user to get updated data
+    const user = await this.backend.getUserData("user1");
+    if (user.exists()) {
+      this.user.firstName = user.data()['firstName'];
+      this.user.surname = user.data()['surname'];
+      this.user.email = user.data()['email'];
+      this.user.dateOfBirth = user.data()['dateOfBirth'];
+      this.user.profilePicture = user.data()['profilePicture'];
+    }
+  }
 }
