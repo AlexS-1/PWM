@@ -45,11 +45,7 @@ export class CourseDetailsComponent implements OnInit {
 
   async getCourseForID(id: number) {
       // Loading data from firebase backend
-      console.log('loading course data');
       const doccoumentData = await this.backend.getCoursData(id);
-
-      // get data from firebase DocumentData
-      console.log('docData: ', doccoumentData);
       if(doccoumentData.exists()) {
         this.dataEntry.id = doccoumentData.data()['id'];
         this.dataEntry.title = doccoumentData.data()['id'];
