@@ -37,8 +37,6 @@ export class MyAccountComponent {
   async updateUserInformation() {
     this.user.username = await this.authService.getCurrentUserName();
     
-    //TODO pass only logged in user to get updated data
-    console.log('username: ' , this.user.username);
     const user = await this.backend.getUserData(this.user.username);
     if (user.exists()) {
       this.user.firstName = user.data()['firstName'];
@@ -48,8 +46,7 @@ export class MyAccountComponent {
       this.user.profilePicture = user.data()['profilePicture'];
     }
 
-    const evaluaions = await this.backend.getEvaluations(this.user.username);
-    console.log(evaluaions)
+    const evaluaions = await this.backend.getEvaluations(this.user.username);+
     evaluaions.forEach((doc) => {
       const evaluation: Evaluation = {
         username: doc.data()['username'],
@@ -59,7 +56,6 @@ export class MyAccountComponent {
         courseID: doc.data()['courseID']
       }
       this.reviews.push(evaluation);
-      console.log(this.reviews);
     });
   }
 }

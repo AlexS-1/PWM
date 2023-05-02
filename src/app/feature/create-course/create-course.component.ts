@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/core/auth-service.service';
 import { BackendDataService } from 'src/app/core/backend-data.service';
+import { Course } from 'src/app/shared/course';
 
 @Component({
   selector: 'app-create-course',
@@ -8,7 +10,7 @@ import { BackendDataService } from 'src/app/core/backend-data.service';
 })
 export class CreateCourseComponent {
   //Constructor for used services
-  constructor(private backend: BackendDataService) {
+  constructor(private backend: BackendDataService, private auth: AuthService) {
   }
 
   //Input of form
@@ -28,7 +30,13 @@ export class CreateCourseComponent {
   }
 
   async addCourse() {
-    this.message = await this.backend.addCourse(Number(this.courseID), this.courseName, this.courseDescription)
+    const course: Course = {
+      id: Number(this.courseID),
+      title: this.courseName,
+      description: this.courseDescription,
+      createdByUserID: await this.auth.getCurrentUserName()
+    }
+    this.message = await this.backend.addCourse(course)
     this.courseID = "";
     this.courseName = "";
     this.courseDescription = "";

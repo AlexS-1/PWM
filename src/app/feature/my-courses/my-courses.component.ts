@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import jsonData from './../../../assets/content/course.json';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { AuthService } from 'src/app/core/auth-service.service';
+import { Course } from 'src/app/shared/course';
 
 @Component({
   selector: 'app-my-courses',
@@ -13,8 +14,8 @@ export class MyCoursesComponent implements OnInit {
 
   }
 
-  courses: any[] = [];
-  selectedCourseIds: number[] = []; // Liste der ausgewählten Kurs-IDs
+  courses: Course[] = [];
+  selectedCourseIDs: number[] = []; // Liste der ausgewählten Kurs-IDs
 
   ngOnInit(): void {
     this.loadSelectedCourses();
@@ -24,9 +25,8 @@ export class MyCoursesComponent implements OnInit {
     const userName: string = await this.authService.getCurrentUserName();
     const userDocument = await this.backend.getUserData(userName);
     if (userDocument.exists()) {
-      this.selectedCourseIds = userDocument.data()['courses'];
+      this.selectedCourseIDs = userDocument.data()['courses'];
     }
-    const coursesDocument = await this.backend.getMyCoursesByCourseIDs(this.selectedCourseIds);
-    this.courses = jsonData.filter(course => this.selectedCourseIds.includes(course.id));
+    this.courses = await this.backend.getMyCoursesByCourseIDs(this.selectedCourseIDs);
   }
 }
