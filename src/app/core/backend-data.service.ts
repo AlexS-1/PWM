@@ -120,16 +120,10 @@ export class BackendDataService {
 
   // Retrieve user data from username and return data
   // Rerurns doc.data() on success or empty data ( {} ) on failure
-  async getCoursData(id: string): Promise<DocumentData | null> {
-    let db = this.firestore.firestore;
-    const q = query(collection(db, 'courses'), where('courseID' , '==', id));
-    const querySnapshot = await getDocs(q);
-    let docData: DocumentData = {};
-    querySnapshot.forEach((doc) => {
-      return doc.data()
-    });
-    return null;
-    }
+  async getCoursData(id: number) {
+    const courseDocument = await getDoc(doc(this.db, 'courses', this.cyrb53(id.toString()).toString()));
+    return courseDocument
+  }
 
   // Retrieeve the reviews for a given user
   async getEvaluations(username: string) {
