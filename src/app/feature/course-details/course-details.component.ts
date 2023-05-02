@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, importProvidersFrom } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import jsonData from './../../../assets/content/course.json';
 import commentData from './../../../assets/content/comments.json';
-import { StarRatingComponent } from '../star-rating/star-rating.component'
+import { Course } from 'src/app/shared/course';
+import { Evaluation } from 'src/app/shared/evaluation';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { AuthService } from 'src/app/core/auth-service.service';
 
@@ -15,22 +16,14 @@ interface DataEntry {
   rating?: number;
 }
 
-interface CommentEntry {
-  username: string;
-  review: string;
-  kurs_id: number;
-  date: string;
-  rating: number;
-}
-
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent implements OnInit {
-  dataEntry: DataEntry | undefined;
-  reviews: CommentEntry[] = [];
+  dataEntry: Course | undefined;
+  reviews: Evaluation[] = [];
 
   constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {}
 
@@ -41,7 +34,7 @@ export class CourseDetailsComponent implements OnInit {
 
       // DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
-      this.reviews = commentData.filter((entry) => entry.kurs_id === parseInt(id, 10));
+      this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));
 
 
 

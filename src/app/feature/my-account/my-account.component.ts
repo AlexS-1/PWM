@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendDataService } from 'src/app/core/backend-data.service';
-import { User } from 'src/app/core/user';
-import { Evaluation } from 'src/app/core/evaluation';
+import { User } from 'src/app/shared/user';
+import { Evaluation } from 'src/app/shared/evaluation';
 import { AuthService } from 'src/app/core/auth-service.service';
 
 @Component({

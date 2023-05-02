@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/auth-service.service';
 import { BackendDataService } from 'src/app/core/backend-data.service';
-import { Evaluation } from 'src/app/core/evaluation';
+import { Evaluation } from 'src/app/shared/evaluation';
 
 @Component({
   selector: 'app-review-course',
