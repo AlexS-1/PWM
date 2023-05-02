@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import jsonData from './../../../assets/content/course.json';
 import commentData from './../../../assets/content/comments.json';
 import { StarRatingComponent } from '../star-rating/star-rating.component'
+import { BackendDataService } from 'src/app/core/backend-data.service';
+import { AuthService } from 'src/app/core/auth-service.service';
 
 
 interface DataEntry {
@@ -30,13 +32,28 @@ export class CourseDetailsComponent implements OnInit {
   dataEntry: DataEntry | undefined;
   reviews: CommentEntry[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {}
 
-  ngOnInit() {
-    this.route.params.subscribe((params) => {
+  async ngOnInit() {
+    // Get information on loaded course
+    this.route.params.subscribe(async (params) => {
       const id = params['id'];
+
+      // DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.kurs_id === parseInt(id, 10));
+
+
+
+      // Loading data from firebase backend
+      let username = await this.authService.getCurrentUserName();
+      let docData = await this.backend.getCoursData(id);
+
+      // get data from firebase DocumentData
+      this.dataEntry.id = docData['data']()['id'];
+      this.dataEntry.title = docData['data']()['titel'];
+      this.dataEntry.rating = docData['data']()['couratingre'];
+      this.dataEntry.description = docData['data']()['description'];
     });
   }
 }
