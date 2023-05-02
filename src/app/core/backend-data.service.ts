@@ -3,6 +3,7 @@ import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference, QuerySnapshot, QueryDocumentSnapshot} from "firebase/firestore"
 import { User } from '../shared/user';
 import { Evaluation } from '../shared/evaluation';
+import { Course } from '../shared/course';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class BackendDataService {
   constructor(private firestore: AngularFirestore) { 
 
   }
-
+  
   db = this.firestore.firestore;
 
   // Receives the users data and enters it to the firebase realtime database
@@ -56,16 +57,18 @@ export class BackendDataService {
     return message;
   }
 
-  async addCourse(courseID: number, courseName: string, courseDescription: string): Promise<string> { 
+  async addCourse(course: Course): Promise<string> {
+  
     //Check if course already exists
-    const documentReference = doc(this.db, "courses", this.cyrb53(courseID.toString()).toString());
+    const documentReference = doc(this.db, "courses", this.cyrb53(course.id.toString()).toString());
     const courseDoc = await getDoc(documentReference);
 
     //Create data
     const data = {
-      courseID: courseID,
-      courseName: courseName,
-      courseDescription: courseDescription
+      id: course.id,
+      title: course.title,
+      description: course.description,
+      createdByUserID: course.createdByUserID 
   }
   
     //Add data if it does not exist yet
@@ -137,18 +140,25 @@ export class BackendDataService {
 
   // Retrieve course data
   async getMyCoursesByCourseIDs(courses: number[]) {
-    //let myCourseDocuments = null;
-    const collectionQuery = query(collection(this.db, 'courses'), where('courseID', '!=', undefined));
+    let myCourseDocuments: Course[] = [];
+    const collectionQuery = query(collection(this.db, 'courses'));
     const collectionSnapshot = await getDocs(collectionQuery)
-    for (let courseID in courses) {
-      /*collectionSnapshot.forEach((doc) => {
-        if (doc.data()['courseID'] === courseID) {
-          myCourseDocuments
+    for (let courseID of courses) {
+      collectionSnapshot.forEach((doc) => {
+        if (doc.data()['id'] === Number(courseID)) {
+          const course: Course = {
+            id: doc.data()['id'],
+            title: doc.data()['title'],
+            description: doc.data()['description'],
+            createdByUserID: doc.data()['createdByUserID']
+          }
+          console.log('couse: ', course)
+          myCourseDocuments.push(course);
         }
-      });´*/
+      });
     }
     
-    //return querySnapshot
+    return myCourseDocuments
   }
 
   // Retrieve login data from token return tokenDoc
@@ -174,7 +184,6 @@ export class BackendDataService {
     let docUsername: string | null = null;
     userDocs.forEach((doc) => {
       if (doc.data()['email'] === mail) {
-        console.log('getUsernameByMail username: ', doc.data()['username'])
         docUsername = doc.data()['username'];
       }
     });
