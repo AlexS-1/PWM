@@ -56,9 +56,7 @@ export class BackendDataService {
     return message;
   }
 
-  async addCourse(courseID: number, courseName: string, courseDescription: string): Promise<string> {
-    let db = this.firestore.firestore
-
+  async addCourse(courseID: number, courseName: string, courseDescription: string): Promise<string> { 
     //Check if course already exists
     const documentReference = doc(this.db, "courses", this.cyrb53(courseID.toString()).toString());
     const courseDoc = await getDoc(documentReference);
@@ -121,7 +119,6 @@ export class BackendDataService {
   // Rerurns doc.data() on success or empty data ( {} ) on failure
   async getCoursData(id: string): Promise<DocumentData> {
     let db = this.firestore.firestore;
-    let temp = await getDoc(doc(db, 'courses', where('courseID' , '==', id)));
     const q = query(collection(db, 'courses'), where('courseID' , '==', id));
     const querySnapshot = await getDocs(q);
     let docData: DocumentData = {};
