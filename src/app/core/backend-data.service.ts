@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference} from "firebase/firestore"
-import { User } from './user';
-import { Evaluation } from './evaluation';
+import { User } from '../shared/user';
+import { Evaluation } from '../shared/evaluation';
 
 @Injectable({
   providedIn: 'root'
@@ -14,20 +14,21 @@ export class BackendDataService {
 
   }
 
+  db = this.firestore.firestore;
+
   // Receives the users data and enters it to the firebase realtime database
   // Enter new user only if it does not already exist
   // INFO: This function adds a default picture and an empty course list to the useres data
   async addNewUser(user: User): Promise<string> {
-    let db = this.firestore.firestore;
     let message = "";
 
     // Here: serach database for doc with matching user-id = this.cyrb53(this.username).toString() --> user_id
-    const userDoc = await getDoc(doc(db, 'users', this.cyrb53(user.username.toString()).toString()));
+    const userDoc = await getDoc(doc(this.db, 'users', this.cyrb53(user.username.toString()).toString()));
     if (userDoc.exists()) {
       return "Username already exists"
     } else {
       // Here: search database for email already in use
-      const q = query(collection(db, 'users'), where('email' , '==', user.email));
+      const q = query(collection(this.db, 'users'), where('email' , '==', user.email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         if (doc.data()['email'] === user.email) {
@@ -49,7 +50,7 @@ export class BackendDataService {
         profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       }
       // Creates a new doc with the userId as doc name
-      await setDoc(doc(db, 'users', data.userID.toString()), data);
+      await setDoc(doc(this.db, 'users', data.userID.toString()), data);
       message = "You successfully registered"
     }
     return message;
@@ -59,7 +60,7 @@ export class BackendDataService {
     let db = this.firestore.firestore
 
     //Check if course already exists
-    const documentReference = doc(db, "courses", this.cyrb53(courseID.toString()).toString());
+    const documentReference = doc(this.db, "courses", this.cyrb53(courseID.toString()).toString());
     const courseDoc = await getDoc(documentReference);
 
     //Create data
@@ -79,7 +80,6 @@ export class BackendDataService {
   }
 
   async addReview(evaluation: Evaluation): Promise<string> {
-    let db = this.firestore.firestore
 
     //Create data
     const data = {
@@ -95,13 +95,13 @@ export class BackendDataService {
     const reviewReferenceID = courseReferenceID + this.cyrb53(evaluation.username.toString()).toString();
 
     //Check if course already exists
-    const courseReference = doc(db, "courses", courseReferenceID);
+    const courseReference = doc(this.db, "courses", courseReferenceID);
     const courseDocument = await getDoc(courseReference);
     if(!courseDocument.exists()) {
       console.log("Add Course");
       return "Please add the course first";
     } else { 
-      const reviewReference = doc(db, "reviews", reviewReferenceID);
+      const reviewReference = doc(this.db, "reviews", reviewReferenceID);
       const reviewDocument = await getDoc(reviewReference)
       if (reviewDocument.exists()) {
         return "You can only review a course once";
@@ -113,17 +113,31 @@ export class BackendDataService {
 
   // Retrieve user data from username and return data
   async getUserData(username: String) {
-    let db = this.firestore.firestore;
-    const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
+    const userDoc = await getDoc(doc(this.db, 'users', this.cyrb53(username.toString()).toString()));
     return userDoc
-      }
+  }
 
   // Retrieeve the reviews for a given user
   async getEvaluations(username: string) {
-    let db = this.firestore.firestore;
-    const q = query(collection(db, 'reviews'), where('username' , '==', username));
+    const q = query(collection(this.db, 'reviews'), where('username' , '==', username));
     const querySnapshot = await getDocs(q);
     return querySnapshot;
+  }
+
+  // Retrieve course data
+  async getMyCoursesByCourseIDs(courses: number[]) {
+    //let myCourseDocuments = null;
+    const collectionQuery = query(collection(this.db, 'courses'), where('courseID', '!=', undefined));
+    const collectionSnapshot = await getDocs(collectionQuery)
+    for (let courseID in courses) {
+      /*collectionSnapshot.forEach((doc) => {
+        if (doc.data()['courseID'] === courseID) {
+          myCourseDocuments
+        }
+      });´*/
+    }
+    
+    //return querySnapshot
   }
 
   // Retrieve login data from token return tokenDoc
@@ -131,8 +145,7 @@ export class BackendDataService {
     if(id == null){
       return null;
     }
-    let db = this.firestore.firestore;
-    const tokenDoc = await getDoc(doc(db, 'loggedIn', id.toString()));
+    const tokenDoc = await getDoc(doc(this.db, 'loggedIn', id.toString()));
     return tokenDoc;
   }
 
@@ -141,14 +154,12 @@ export class BackendDataService {
     if(id == null){
       return false;
     }
-    let db = this.firestore.firestore;
-    await deleteDoc(doc(db, 'loggedIn', id.toString()));
+    await deleteDoc(doc(this.db, 'loggedIn', id.toString()));
     return true;
   }
 
   async getUserNameByMail(mail: string): Promise<string | null>{
-    let db = this.firestore.firestore;
-    const userDocs = await getDocs(query(collection(db, 'users'), where('email', '==', mail)));
+    const userDocs = await getDocs(query(collection(this.db, 'users'), where('email', '==', mail)));
     let docUsername: string | null = null;
     userDocs.forEach((doc) => {
       if (doc.data()['email'] === mail) {
