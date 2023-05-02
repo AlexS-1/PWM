@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection } from "firebase/firestore"
-import { User } from '../shared/user';
-import { Evaluation } from '../shared/evaluation';
-import { Course } from '../shared/course';
+import { User } from '../models/user';
+import { Evaluation } from '../models/evaluation';
+import { Course } from '../models/course';
 
 
 @Injectable({

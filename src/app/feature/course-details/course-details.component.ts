@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Course } from 'src/app/shared/course';
-import { Evaluation } from 'src/app/shared/evaluation';
+import { Course } from 'src/app/models/course';
+import { Evaluation } from 'src/app/models/evaluation';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { AuthService } from 'src/app/core/auth-service.service';
 

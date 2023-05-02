@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/auth-service.service';
 import { BackendDataService } from 'src/app/core/backend-data.service';
-import { Course } from 'src/app/shared/course';
+import { Course } from 'src/app/models/course';
 
 @Component({
   selector: 'app-create-course',

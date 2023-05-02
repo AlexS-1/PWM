@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendDataService } from 'src/app/core/backend-data.service';
-import { User } from 'src/app/shared/user';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-create-account',
