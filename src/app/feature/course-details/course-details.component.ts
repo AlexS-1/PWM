@@ -11,6 +11,10 @@ import { AuthService } from 'src/app/core/auth-service.service';
   styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {
+
+  }
+  
   dataEntry: Course = {
     id: 0,
     title: '',
@@ -26,15 +30,13 @@ export class CourseDetailsComponent implements OnInit {
     courseID: 1
   }];
 
-  constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {}
-
   ngOnInit() {
 
     // Get information on loaded course
     this.route.params.subscribe(async (params) => {
       const id = params['id'];
       this.getCourseForID(id)
-      this.getEvaluationsByCourseID()
+      this.getEvaluationsByCourseID(id)
       /*DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));
@@ -60,9 +62,9 @@ export class CourseDetailsComponent implements OnInit {
       }
   }
 
-  async getEvaluationsByCourseID() {
+  async getEvaluationsByCourseID(id: number) {
     // Loading data from firebase backend
-    const evaluations = await this.backend.getEvaluationsForCourse(this.dataEntry.id);+
+    const evaluations = await this.backend.getEvaluationsForCourse(id);
     evaluations.forEach((doc) => {
       const evaluation: Evaluation = {
         username: doc.data()['username'],
