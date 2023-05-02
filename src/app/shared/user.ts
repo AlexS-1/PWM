@@ -6,6 +6,6 @@ export interface User {
     email: string, 
     dateOfBirth: string, 
     password: string, 
-    courses: string[], 
+    courses: number[], 
     profilePicture: string
 }

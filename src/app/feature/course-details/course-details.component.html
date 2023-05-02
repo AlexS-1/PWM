@@ -2,7 +2,7 @@
     <section class="grid-container" *ngIf="dataEntry">
         <h1>{{ dataEntry.title }}</h1>
         <div class="btns">
-            <button >
+            <button (click)="addToUsersCourses()">
                 + Add to my Courses
             </button>
             <a href="review-course" routerLink="/review-course" routerLinkActive="active" ariaCurrentWhenActive="page">
@@ -21,8 +21,6 @@
                 <span class="username">{{ review.username }}</span>
                 <app-star-rating [rating]="review.rating"></app-star-rating>
             </div>
-            
-            
             <p class="date">{{ review.date }}</p>
             <p class="review">{{ review.review }}</p>
         </div>

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
-import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference, QuerySnapshot, QueryDocumentSnapshot} from "firebase/firestore"
+import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection } from "firebase/firestore"
 import { User } from '../shared/user';
 import { Evaluation } from '../shared/evaluation';
 import { Course } from '../shared/course';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class BackendDataService {
   // Receives the users data and enters it to the firebase realtime database
   // Enter new user only if it does not already exist
   // INFO: This function adds a default picture and an empty course list to the useres data
-  async addNewUser(user: User): Promise<string> {
+  async addUser(user: User): Promise<string> {
     let message = "";
 
     // Here: serach database for doc with matching user-id = this.cyrb53(this.username).toString() --> user_id
@@ -112,6 +113,30 @@ export class BackendDataService {
     }
   }
 
+  async addToUsersCourses(username: string, courseID: number) {
+    const userID = this.cyrb53(username).toString();
+    const userReference = doc(this.db, "users", userID);
+    let userData = await this.getUserData(username);
+    if (userData.exists()) {
+        let userCourses: number[] = userData.data()['courses'];
+        if (!userCourses.includes(courseID)) {
+            userCourses.push(courseID);
+        }
+        const data: User = {
+            userID: userData.data()['userID'] ,
+            username: userData.data()['username'],
+            firstName: userData.data()['firstName'],
+            surname: userData.data()['surname'],
+            email: userData.data()['email'],
+            dateOfBirth: userData.data()['dateOfBirth'],
+            password: userData.data()['password'],
+            courses: userCourses,
+            profilePicture: userData.data()['profilePicture']
+        }
+        await setDoc(userReference, data);
+    }
+  }
+
   // Retrieve user data from username and return data
   async getUserData(username: String) {
     const userDoc = await getDoc(doc(this.db, 'users', this.cyrb53(username.toString()).toString()));
@@ -126,10 +151,27 @@ export class BackendDataService {
   }
 
   // Retrieeve the reviews for a given user
-  async getEvaluations(username: string) {
+  async getEvaluationsForUser(username: string) {
     const q = query(collection(this.db, 'reviews'), where('username' , '==', username));
     const querySnapshot = await getDocs(q);
     return querySnapshot;
+  }
+
+  // Get all courses in database for browse-courses view
+  async getAllCourses() {
+    const coursesQuery = query(collection(this.db, "courses"));
+    const courseCollection = await getDocs(coursesQuery);
+    const allCourses: Course[] = [];
+    courseCollection.forEach((doc) => {
+      const course: Course = {
+        id: doc.data()['id'],
+        title: doc.data()['title'],
+        description: doc.data()['description'],
+        createdByUserID: doc.data()['createdByUserID']
+      }
+      allCourses.push(course);
+    });
+    return allCourses;
   }
 
   // Retrieve course data
@@ -146,7 +188,6 @@ export class BackendDataService {
             description: doc.data()['description'],
             createdByUserID: doc.data()['createdByUserID']
           }
-          console.log('couse: ', course)
           myCourseDocuments.push(course);
         }
       });

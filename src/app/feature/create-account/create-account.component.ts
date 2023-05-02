@@ -47,6 +47,6 @@ export class CreateAccountComponent {
       userID: "",
       courses: []
     }
-    this.message = await this.backendDataService.addNewUser(user);
+    this.message = await this.backendDataService.addUser(user);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import contentData from './../../../assets/content/course.json';
+import { Course } from 'src/app/shared/course';
+import { BackendDataService } from 'src/app/core/backend-data.service';
 
 @Component({
   selector: 'app-browse-courses',
@@ -7,7 +9,18 @@ import contentData from './../../../assets/content/course.json';
   styleUrls: ['./browse-courses.component.css']
 })
 export class BrowseCoursesComponent implements OnInit {
-  contentData = contentData;
+  constructor(private backend: BackendDataService) {
 
-  ngOnInit(): void {}
+  }
+
+  //Output to HTML
+  courses: Course[] = [];
+
+  ngOnInit(): void {
+    this.loadSelectedCourses();
+  }
+
+  private async loadSelectedCourses() {
+    this.courses = await this.backend.getAllCourses();
+  }
 }

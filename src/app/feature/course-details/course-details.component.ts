@@ -1,7 +1,5 @@
-import { Component, OnInit, importProvidersFrom } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import jsonData from './../../../assets/content/course.json';
-import commentData from './../../../assets/content/comments.json';
 import { Course } from 'src/app/shared/course';
 import { Evaluation } from 'src/app/shared/evaluation';
 import { BackendDataService } from 'src/app/core/backend-data.service';
@@ -52,5 +50,11 @@ export class CourseDetailsComponent implements OnInit {
         this.dataEntry.description = doccoumentData.data()['description'];
         this.dataEntry.createdByUserID = doccoumentData.data()['createdByUserID'];
       }
+  }
+
+  async addToUsersCourses() {
+    console.log('currentCourseId: ', this.dataEntry.id);
+    const username = await this.authService.getCurrentUserName();
+    this.backend.addToUsersCourses(username, this.dataEntry.id);
   }
 }
