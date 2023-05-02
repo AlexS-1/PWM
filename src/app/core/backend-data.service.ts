@@ -145,14 +145,20 @@ export class BackendDataService {
 
   // Retrieve user data from username and return data
   // Rerurns doc.data() on success or empty data ( {} ) on failure
-  async getCoursData(id: number) {
+  async getCourseData(id: number) {
     const courseDocument = await getDoc(doc(this.db, 'courses', this.cyrb53(id.toString()).toString()));
     return courseDocument
   }
 
   // Retrieeve the reviews for a given user
   async getEvaluationsForUser(username: string) {
-    const q = query(collection(this.db, 'reviews'), where('username' , '==', username));
+    const q = query(collection(this.db, 'reviews'), where('username', '==', username));
+    const querySnapshot = await getDocs(q);
+    return querySnapshot;
+  }
+
+  async getEvaluationsForCourse(courseID: number) {
+    const q = query(collection(this.db, 'reviews'), where('courseID', '==', courseID));
     const querySnapshot = await getDocs(q);
     return querySnapshot;
   }

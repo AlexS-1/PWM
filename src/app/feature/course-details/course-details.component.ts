@@ -17,7 +17,14 @@ export class CourseDetailsComponent implements OnInit {
     description: '',
     createdByUserID: ''
   };
-  reviews: Evaluation[] = [];
+
+  reviews: Evaluation[] = [{
+    username: "test",
+    date: "2023-05-01",
+    review: "test review",
+    rating: 1,
+    courseID: 1
+  }];
 
   constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {}
 
@@ -27,6 +34,7 @@ export class CourseDetailsComponent implements OnInit {
     this.route.params.subscribe(async (params) => {
       const id = params['id'];
       this.getCourseForID(id)
+      this.getEvaluationsByCourseID()
       /*DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));
@@ -42,14 +50,29 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   async getCourseForID(id: number) {
-      // Loading data from firebase backend
-      const doccoumentData = await this.backend.getCoursData(id);
+      // Loading courses for current user from firebase backend
+      const doccoumentData = await this.backend.getCourseData(id);
       if(doccoumentData.exists()) {
         this.dataEntry.id = doccoumentData.data()['id'];
-        this.dataEntry.title = doccoumentData.data()['id'];
+        this.dataEntry.title = doccoumentData.data()['title'];
         this.dataEntry.description = doccoumentData.data()['description'];
         this.dataEntry.createdByUserID = doccoumentData.data()['createdByUserID'];
       }
+  }
+
+  async getEvaluationsByCourseID() {
+    // Loading data from firebase backend
+    const evaluations = await this.backend.getEvaluationsForCourse(this.dataEntry.id);+
+    evaluations.forEach((doc) => {
+      const evaluation: Evaluation = {
+        username: doc.data()['username'],
+        date: doc.data()['date'],
+        review: doc.data()['review'],
+        rating: doc.data()['rating'],
+        courseID: doc.data()['courseID']
+      }
+      this.reviews.push(evaluation);
+    });
   }
 
   async addToUsersCourses() {

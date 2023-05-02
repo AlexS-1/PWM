@@ -46,8 +46,8 @@ export class MyAccountComponent {
       this.user.profilePicture = user.data()['profilePicture'];
     }
 
-    const evaluaions = await this.backend.getEvaluationsForUser(this.user.username);+
-    evaluaions.forEach((doc) => {
+    const evaluations = await this.backend.getEvaluationsForUser(this.user.username);
+    evaluations.forEach((doc) => {
       const evaluation: Evaluation = {
         username: doc.data()['username'],
         date: doc.data()['date'],
