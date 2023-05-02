@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
-import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference} from "firebase/firestore"
+import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection, DocumentReference, QuerySnapshot} from "firebase/firestore"
 import { User } from './user';
 import { Evaluation } from './evaluation';
 
@@ -116,7 +116,21 @@ export class BackendDataService {
     let db = this.firestore.firestore;
     const userDoc = await getDoc(doc(db, 'users', this.cyrb53(username.toString()).toString()));
     return userDoc
-      }
+    }
+
+  // Retrieve user data from username and return data
+  // Rerurns doc.data() on success or empty data ( {} ) on failure
+  async getCoursData(id: string): Promise<DocumentData> {
+    let db = this.firestore.firestore;
+    let temp = await getDoc(doc(db, 'courses', where('courseID' , '==', id)));
+    const q = query(collection(db, 'courses'), where('courseID' , '==', id));
+    const querySnapshot = await getDocs(q);
+    let docData: DocumentData = {};
+    querySnapshot.forEach((doc) => {
+      docData = doc.data()
+    });
+    return docData;
+    }
 
   // Retrieeve the reviews for a given user
   async getEvaluations(username: string) {
