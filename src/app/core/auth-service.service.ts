@@ -100,8 +100,9 @@ export class AuthService {
     const tokenDoc = await this.backendDataService.getloggedInData(token);
     console.log('tokenDoc: ', tokenDoc);
     if(tokenDoc != null){
-      return tokenDoc['data']()['email']
+      return tokenDoc['data']()['email'];
     }
+    console.log('returning null');      // for debugging
     return null;
   }
 
