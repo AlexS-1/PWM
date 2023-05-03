@@ -17,6 +17,7 @@ export class StarRatingComponent implements OnInit {
     for (let i = 1; i <= this.maxRating; i++) {
       this.stars.push(i <= this.rating);
     }
+    console.log('currentStarRating: ', this.rating)
   }
 
   setRating(rating: number) {

@@ -25,7 +25,7 @@ export class CourseDetailsComponent implements OnInit {
 
   reviews: Evaluation[] = [];
 
-  rating: number = 0;
+  averageRating: number = 0;
 
   ngOnInit() {
     // Get information on loaded course
@@ -37,11 +37,7 @@ export class CourseDetailsComponent implements OnInit {
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));*/
     });
-    let ratingSum: number = 0;
-    for (let i = 0; i < this.reviews.length; i++) {
-      ratingSum += this.reviews[i].rating;
-    }
-    this.rating = ratingSum / this.reviews.length;
+    this.calculateAverageRating()
   }
 
   async getCourseForID(id: number) {
@@ -58,25 +54,31 @@ export class CourseDetailsComponent implements OnInit {
   async getEvaluationsByCourseID(id: number) {
     // Loading data from firebase backend
     const evaluations = await this.backend.getEvaluationsForCourse(id);
-    if(!evaluations.empty) {
-      evaluations.forEach((doc) => {
-        const evaluation: Evaluation = {
-          username: doc.data()['username'],
-          date: doc.data()['date'],
-          review: doc.data()['review'],
-          rating: doc.data()['rating'],
-          courseID: doc.data()['courseID']
-        }
-        this.reviews.push(evaluation);
-      });
-    } else {
-      console.log("ERROR: Evaluations is empty")
-    }
+    evaluations.forEach((doc) => {
+      const evaluation: Evaluation = {
+        username: doc.data()['username'],
+        date: doc.data()['date'],
+        review: doc.data()['review'],
+        rating: doc.data()['rating'],
+        courseID: doc.data()['courseID']
+      }
+      this.reviews.push(evaluation);
+    });
   }
 
   async addToUsersCourses() {
     console.log('currentCourseId: ', this.dataEntry.id);
     const username = await this.authService.getCurrentUserName();
     this.backend.addToUsersCourses(username, this.dataEntry.id);
+  }
+
+  calculateAverageRating() {
+    console.log(this.reviews)
+    let ratingSum: number = 0;
+    for (let i = 0; i < this.reviews.length; i++) {
+      ratingSum += this.reviews[i].rating;
+      console.log('currentRatingSum: ', ratingSum)
+    }
+    this.averageRating = ratingSum / this.reviews.length;
   }
 }
