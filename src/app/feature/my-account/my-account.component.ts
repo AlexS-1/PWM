@@ -18,7 +18,7 @@ export class MyAccountComponent {
   reviews: Evaluation[] = []
 
   user: User = {
-    userID: '',
+    id: '',
     username: '',
     firstName: '',
     surname: '',

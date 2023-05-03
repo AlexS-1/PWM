@@ -44,7 +44,7 @@ export class CreateAccountComponent {
       email: this.email,
       password: this.password,
       profilePicture: "",
-      userID: "",
+      id: "",
       courses: []
     }
     this.message = await this.backendDataService.addUser(user);

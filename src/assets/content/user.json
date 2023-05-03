@@ -1,278 +1,278 @@
 [
     {
-        "user_id": 1,
+        "id": "",
         "username": "user123",
-        "first_name": "Carlos",
+        "firstName": "Carlos",
         "surname": "García",
         "email": "carlos.garcia@example.com",
-        "birthday": "10.06.1994",
+        "dateOfBirth": "10.06.1994",
         "password": "User123Pass/",
         "courses": [1, 18],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 2,
+        "id": "",
         "username": "user456",
-        "first_name": "Marta",
+        "firstName": "Marta",
         "surname": "Fernández",
         "email": "marta.fernandez@example.com",
-        "birthday": "15.07.1998",
+        "dateOfBirth": "15.07.1998",
         "password": "User456Pass#",
         "courses": [1, 16, 10, 9],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 3,
+        "id": "",
         "username": "user789",
-        "first_name": "Santiago",
+        "firstName": "Santiago",
         "surname": "González",
         "email": "santiago.gonzalez@example.com",
-        "birthday": "21.03.1997",
+        "dateOfBirth": "21.03.1997",
         "password": "User789Pass//",
         "courses": [20 ],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     
     {
-        "user_id": 4,
+        "id": "",
         "username": "Luna Gómez",
-        "first_name": "Luna",
+        "firstName": "Luna",
         "surname": "Gómez",
         "email": "luna.gomez@example.com",
-        "birthday": "29.08.1995",
+        "dateOfBirth": "29.08.1995",
         "password": "LunaGomezPass1//",
         "courses": [1],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 5,
+        "id": "",
         "username": "Joaquín Sánchez",
-        "first_name": "Joaquín",
+        "firstName": "Joaquín",
         "surname": "Sánchez",
         "email": "joaquin.sanchez@example.com",
-        "birthday": "11.01.1996",
+        "dateOfBirth": "11.01.1996",
         "password": "JoaquinSanchezPass34#",
         "courses": [1, 2],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 6,
+        "id": "",
         "username": "María Torres",
-        "first_name": "María",
+        "firstName": "María",
         "surname": "Torres",
         "email": "maria.torres@example.com",
-        "birthday": "20.04.1999",
+        "dateOfBirth": "20.04.1999",
         "password": "MariaTorresPass1&",
         "courses": [3, 7, 18, 21],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 7,
+        "id": "",
         "username": "Gabriel Flores",
-        "first_name": "Gabriel",
+        "firstName": "Gabriel",
         "surname": "Flores",
         "email": "gabriel.flores@example.com",
-        "birthday": "06.11.1993",
+        "dateOfBirth": "06.11.1993",
         "password": "GabrielFloresPass33~",
         "courses": [4],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 8,
+        "id": "",
         "username": "Sofía Martínez",
-        "first_name": "Sofía",
+        "firstName": "Sofía",
         "surname": "Martínez",
         "email": "sofia.martinez@example.com",
-        "birthday": "30.12.1997",
+        "dateOfBirth": "30.12.1997",
         "password": "SofiaMartinezPass90~",
         "courses": [5],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 9,
+        "id": "",
         "username": "Juan Carlos",
-        "first_name": "Juan",
+        "firstName": "Juan",
         "surname": "Carlos",
         "email": "juan.carlos@example.com",
-        "birthday": "16.05.1998",
+        "dateOfBirth": "16.05.1998",
         "password": "JuanCarlosPass7%",
         "courses": [21, 3],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 10,
+        "id": "",
         "username": "Maria",
-        "first_name": "Maria",
+        "firstName": "Maria",
         "surname": "Rodríguez",
         "email": "maria.rodriguez@example.com",
-        "birthday": "28.07.1996",
+        "dateOfBirth": "28.07.1996",
         "password": "MariaPass73!",
         "courses": [7, 11, 17],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 11,
+        "id": "",
         "username": "Miguel",
-        "first_name": "Miguel",
+        "firstName": "Miguel",
         "surname": "Hernández",
         "email": "miguel.hernandez@email.com",
-        "birthday": "16.03.1994",
+        "dateOfBirth": "16.03.1994",
         "password": "M1gu3l_p4ssw0rd!!",
         "courses": [3],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 12,
+        "id": "",
         "username": "Laura",
-        "first_name": "Laura",
+        "firstName": "Laura",
         "surname": "Díaz",
         "email": "laura.diaz@email.com",
-        "birthday": "11.07.1995",
+        "dateOfBirth": "11.07.1995",
         "password": "L4ur4_p4ssw0rd#",
         "courses": [3],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 13,
+        "id": "",
         "username": "user987",
-        "first_name": "Álvaro",
+        "firstName": "Álvaro",
         "surname": "García",
         "email": "alvaro.garcia987@email.com",
-        "birthday": "22.09.1993",
+        "dateOfBirth": "22.09.1993",
         "password": "Alvaro987!",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 14,
+        "id": "",
         "username": "happy_hacker",
-        "first_name": "Cristina",
+        "firstName": "Cristina",
         "surname": "Ramírez",
         "email": "cristina.ramirez654@email.com",
-        "birthday": "15.12.1996",
+        "dateOfBirth": "15.12.1996",
         "password": "Cristina654#",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 15,
+        "id": "",
         "username": "rrramos",
-        "first_name": "Sergio",
+        "firstName": "Sergio",
         "surname": "Pérez",
         "email": "sergio.perez321@email.com",
-        "birthday": "31.05.1998",
+        "dateOfBirth": "31.05.1998",
         "password": "Sergio321#",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 16,
+        "id": "",
         "username": "Carla",
-        "first_name": "Carla",
+        "firstName": "Carla",
         "surname": "Martínez",
         "email": "carla.martinez@email.com",
-        "birthday": "27.02.1992",
+        "dateOfBirth": "27.02.1992",
         "password": "Carla_m4rtin3z//",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 17,
+        "id": "",
         "username": "Samuel",
-        "first_name": "Samuel",
+        "firstName": "Samuel",
         "surname": "Ruiz",
         "email": "samuel.ruiz@email.com",
-        "birthday": "06.10.1999",
+        "dateOfBirth": "06.10.1999",
         "password": "Samuel_ru1z42&",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 18,
+        "id": "",
         "username": "Alicia",
-        "first_name": "Alicia",
+        "firstName": "Alicia",
         "surname": "Sánchez",
         "email": "alicia.sanchez@email.com",
-        "birthday": "18.11.1997",
+        "dateOfBirth": "18.11.1997",
         "password": "4lici4_s4ncheZ%",
         "courses": [],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 19,
+        "id": "",
         "username": "Santiago",
-        "first_name": "Santiago",
+        "firstName": "Santiago",
         "surname": "Moralez",
         "email": "santiago.moralez@example.com",
-        "birthday": "20.03.1998",
+        "dateOfBirth": "20.03.1998",
         "password": "myPass42!",
         "courses": [1, 20],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 20,
+        "id": "",
         "username": "Diego",
-        "first_name": "Diego",
+        "firstName": "Diego",
         "surname": "Morata",
         "email": "diego.invisible@example.com",
-        "birthday": "20.03.1995",
+        "dateOfBirth": "20.03.1995",
         "password": "Tegustaverde42?",
         "courses": [2, 10],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 21,
+        "id": "",
         "username": "Luisa",
-        "first_name": "Luisa",
+        "firstName": "Luisa",
         "surname": "Yuste",
         "email": "luisa.yuste@example.com",
-        "birthday": "30.10.1994",
+        "dateOfBirth": "30.10.1994",
         "password": "Megustaamarilla9%",
         "courses": [1, 17, 18],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 22,
+        "id": "",
         "username": "Carmen",
-        "first_name": "Carmen",
+        "firstName": "Carmen",
         "surname": "Breja",
         "email": "carmen.breacha@gmail.com",
-        "birthday": "01.02.1999",
+        "dateOfBirth": "01.02.1999",
         "password": "Uhwaz55",
         "courses": [1, 18],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 23,
+        "id": "",
         "username": "Javier",
-        "first_name": "Javier",
+        "firstName": "Javier",
         "surname": "Sanchez",
         "email": "javier.sanchez@gmail.com",
-        "birthday": "01.07.1997",
+        "dateOfBirth": "01.07.1997",
         "password": "Zohwaz5%",
         "courses": [7],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 24,
+        "id": "",
         "username": "Ana",
-        "first_name": "Ana",
+        "firstName": "Ana",
         "surname": "Alvarez",
         "email": "ana.alvarez@gmail.com",
-        "birthday": "01.09.1996",
+        "dateOfBirth": "01.09.1996",
         "password": "Zhwaz11%",
         "courses": [5, 8],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     },
     {
-        "user_id": 25,
+        "id": "",
         "username": "Luis",
-        "first_name": "Luis",
+        "firstName": "Luis",
         "surname": "Gave",
         "email": "luis.gave@gmail.com",
-        "birthday": "21.01.1999",
+        "dateOfBirth": "21.01.1999",
         "password": "Tbcow45+",
         "courses": [8],
-        "profile_image": "./assets/user.png"
+        "profilePicture": ""
     }
 ]

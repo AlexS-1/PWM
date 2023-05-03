@@ -83,7 +83,7 @@ export class BackendDataService {
     return "Course already exists"
   }
 
-  async addReview(evaluation: Evaluation): Promise<string> {
+  async addEvaluation(evaluation: Evaluation): Promise<string> {
 
     //Create data
     const data = {
@@ -105,7 +105,7 @@ export class BackendDataService {
       console.log("Add Course");
       return "Please add the course first";
     } else { 
-      const reviewReference = doc(this.db, "reviews", reviewReferenceID);
+      const reviewReference = doc(this.db, "evaluations", reviewReferenceID);
       const reviewDocument = await getDoc(reviewReference)
       if (reviewDocument.exists()) {
         return "You can only review a course once";
@@ -125,7 +125,7 @@ export class BackendDataService {
             userCourses.push(courseID);
         }
         const data: User = {
-            userID: userData.data()['userID'] ,
+            id: userData.data()['userID'] ,
             username: userData.data()['username'],
             firstName: userData.data()['firstName'],
             surname: userData.data()['surname'],
@@ -154,15 +154,15 @@ export class BackendDataService {
     return courseDocument
   }
 
-  // Retrieeve the reviews for a given user
+  // Retrieeve the evaluations for a given user
   async getEvaluationsForUser(username: string) {
-    const q = query(collection(this.db, 'reviews'), where('username', '==', username));
+    const q = query(collection(this.db, 'evaluations'), where('username', '==', username));
     const querySnapshot = await getDocs(q);
     return querySnapshot;
   }
 
   async getEvaluationsForCourse(courseID: number) {
-    const q = query(collection(this.db, 'reviews'), where('courseID', '==', courseID));
+    const q = query(collection(this.db, 'evaluations'), where('courseID', '==', courseID));
     const querySnapshot = await getDocs(q);
     return querySnapshot;
   }
@@ -251,7 +251,7 @@ export class BackendDataService {
           }
         }
         const data: User = {
-            userID: userData.data()['userID'] ,
+            id: userData.data()['userID'] ,
             username: userData.data()['username'],
             firstName: userData.data()['firstName'],
             surname: userData.data()['surname'],

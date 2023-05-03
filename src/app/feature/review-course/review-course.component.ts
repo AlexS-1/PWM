@@ -40,7 +40,7 @@ export class ReviewCourseComponent {
       rating: this.currentRating,
       courseID: Number(this.courseID)
     }
-    this.message = await this.backend.addReview(evaluation);
+    this.message = await this.backend.addEvaluation(evaluation);
     this.courseID = "";
     this.courseName = "";
     this.review = "";
