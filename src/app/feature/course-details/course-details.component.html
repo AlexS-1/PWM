@@ -1,6 +1,7 @@
 <article class="my-courses">
     <section class="grid-container" *ngIf="dataEntry">
         <h1>{{ dataEntry.title }}</h1>
+        <app-star-rating [rating]="rating"></app-star-rating>
         <div class="btns">
             <button (click)="addToUsersCourses()">
                 + Add to my Courses

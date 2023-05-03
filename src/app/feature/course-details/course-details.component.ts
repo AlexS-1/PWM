@@ -4,6 +4,7 @@ import { Course } from 'src/app/models/course';
 import { Evaluation } from 'src/app/models/evaluation';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 import { AuthService } from 'src/app/core/auth-service.service';
+import { StarRatingComponent } from '../star-rating/star-rating.component';
 
 @Component({
   selector: 'app-course-details',
@@ -14,7 +15,7 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {
 
   }
-  
+
   dataEntry: Course = {
     id: 0,
     title: '',
@@ -26,17 +27,31 @@ export class CourseDetailsComponent implements OnInit {
     username: "test",
     date: "2023-05-01",
     review: "test review",
-    rating: 1,
+    rating: 5,
     courseID: 1
+  },{ 
+  username: "test",
+  date: "2023-05-01",
+  review: "test review",
+  rating: 3,
+  courseID: 1
   }];
+
+  rating: number = 0;
 
   ngOnInit() {
 
     // Get information on loaded course
     this.route.params.subscribe(async (params) => {
       const id = params['id'];
-      this.getCourseForID(id)
-      this.getEvaluationsByCourseID(id)
+      this.getCourseForID(id);
+      this.getEvaluationsByCourseID(id);
+      let ratingSum: number = 0;
+      for (let i = 0; i < this.reviews.length; i++) {
+        ratingSum += this.reviews[i].rating;
+      }
+      this.rating = ratingSum / this.reviews.length;
+
       /*DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));
