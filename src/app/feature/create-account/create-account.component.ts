@@ -9,13 +9,13 @@ import { User } from 'src/app/models/user';
 })
 export class CreateAccountComponent {
   //Input from form
-  firstName = 'User';
-  surname = 'Lastname';
-  username = 'user1';
-  dateOfBirth = '2000-01-01';
-  email = 'user1@example.com';
-  password = 'UserPassword@1';
-  repeatedPassword = 'UserPassword@1';
+  firstName = '';
+  surname = '';
+  username = '';
+  dateOfBirth = '';
+  email = '';
+  password = '';
+  repeatedPassword = '';
 
   //Output to form
   message = "";

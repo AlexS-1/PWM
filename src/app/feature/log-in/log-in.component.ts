@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LoginComponent {
-  email: string = "user1@example.com";
-  password: string = "UserPassword@1";
+  email: string = "";
+  password: string = "";
 
   constructor(private authService: AuthService) {}
 
