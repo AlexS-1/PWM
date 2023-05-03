@@ -18,6 +18,8 @@ export class BackendDataService {
   
   db = this.firestore.firestore;
 
+//ADD DATA TO FIRESTORE
+
   // Receives the users data and enters it to the firebase realtime database
   // Enter new user only if it does not already exist
   // INFO: This function adds a default picture and an empty course list to the useres data
@@ -137,6 +139,8 @@ export class BackendDataService {
     }
   }
 
+
+//READ USER DATA
   // Retrieve user data from username and return data
   async getUserData(username: String) {
     const userDoc = await getDoc(doc(this.db, 'users', this.cyrb53(username.toString()).toString()));
@@ -211,15 +215,6 @@ export class BackendDataService {
     return tokenDoc;
   }
 
-  // Retrieve logIn data from token return tokenDoc
-  async removeloggedInData(id: String| null): Promise<boolean>{
-    if(id == null){
-      return false;
-    }
-    await deleteDoc(doc(this.db, 'loggedIn', id.toString()));
-    return true;
-  }
-
   async getUserNameByMail(mail: string): Promise<string | null>{
     const userDocs = await getDocs(query(collection(this.db, 'users'), where('email', '==', mail)));
     let docUsername: string | null = null;
@@ -229,6 +224,45 @@ export class BackendDataService {
       }
     });
     return docUsername;
+  }
+
+//REMOVE DATA FROM FIRESTORE
+
+  // Remove user form logged in user
+  async removeloggedInData(id: String| null): Promise<boolean>{
+    if(id == null){
+      return false;
+    }
+    await deleteDoc(doc(this.db, 'loggedIn', id.toString()));
+    return true;
+  }
+
+  // Remove course from user selected course
+  async removeFromUserCourses(username: string, courseID: number) {
+    const userID = this.cyrb53(username).toString();
+    const userReference = doc(this.db, "users", userID);
+    let userData = await this.getUserData(username);
+    if (userData.exists()) {
+        let userCourses: number[] = userData.data()['courses'];
+        if (userCourses.includes(courseID)) {
+          const index = userCourses.indexOf(courseID, 0);
+          if (index > -1) {
+             userCourses.splice(index, 1);
+          }
+        }
+        const data: User = {
+            userID: userData.data()['userID'] ,
+            username: userData.data()['username'],
+            firstName: userData.data()['firstName'],
+            surname: userData.data()['surname'],
+            email: userData.data()['email'],
+            dateOfBirth: userData.data()['dateOfBirth'],
+            password: userData.data()['password'],
+            courses: userCourses,
+            profilePicture: userData.data()['profilePicture']
+        }
+        await setDoc(userReference, data);
+    }
   }
 
   // 53-Bit hash function from https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js

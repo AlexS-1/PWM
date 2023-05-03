@@ -23,9 +23,28 @@ export class CourseDetailsComponent implements OnInit {
     createdByUserID: ''
   };
 
+  //Reviews for testing
+  review1: Evaluation = {
+    username: 'testuser',
+    date: '2000-10-10',
+    review: 'bala',
+    rating: 1,
+    courseID: 1
+  }
+
+  review2: Evaluation = {
+    username: 'testuser',
+    date: '2000-10-10',
+    review: 'bala',
+    rating: 5,
+    courseID: 1
+  }
+
   reviews: Evaluation[] = [];
+  
 
   averageRating: number = 0;
+  toggleMyCourses: string = "Operation my Courses"
 
   ngOnInit() {
     // Get information on loaded course
@@ -33,11 +52,13 @@ export class CourseDetailsComponent implements OnInit {
       const id = Number(params['id']);
       this.getCourseForID(id);
       this.getEvaluationsByCourseID(id);
+      this.checkLogIn(id)
       /*DEPRICATED: Loading from JSON
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));*/
     });
-    this.calculateAverageRating()
+    this.calculateAverageRating();
+
   }
 
   async getCourseForID(id: number) {
@@ -66,10 +87,45 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
+  async checkLogIn(currentCourseID: number) {
+    let loggedIn:boolean  = await this.authService.isLoggedIn();
+    if (loggedIn) {
+      const getCurrentUserName = await this.authService.getCurrentUserName()
+      const currentUserData = await this.backend.getUserData(getCurrentUserName);
+      if (currentUserData.exists()) {
+        const loggedInUserCourses: number[] = currentUserData.data()['courses']
+        if (loggedInUserCourses.includes(currentCourseID)) {
+          this.toggleMyCourses = "- Remove from my Courses"
+        } else {
+          this.toggleMyCourses = "+ Add to my Courses"
+        }
+      }
+    } else {
+      this.toggleMyCourses = "Log in to add to my Courses"
+    }
+  }
+
+  async toggleUserCourses() {
+    let loggedIn: boolean = await this.authService.isLoggedIn();
+    if (loggedIn && this.toggleMyCourses == "+ Add to my Courses") {
+      this.addToUsersCourses()
+      this.toggleMyCourses = "- Remove from my Courses";
+    } else if (loggedIn && this.toggleMyCourses == "- Remove from my Courses") {
+      this.removeFromUserCourses()
+      this.toggleMyCourses = "+ Add to my Courses";
+    } else {
+      console.log("ERROR: Typo")
+    }
+  }
+
   async addToUsersCourses() {
-    console.log('currentCourseId: ', this.dataEntry.id);
     const username = await this.authService.getCurrentUserName();
     this.backend.addToUsersCourses(username, this.dataEntry.id);
+  }
+
+  async removeFromUserCourses() {
+    const username = await this.authService.getCurrentUserName();
+    this.backend.removeFromUserCourses(username, this.dataEntry.id);
   }
 
   calculateAverageRating() {

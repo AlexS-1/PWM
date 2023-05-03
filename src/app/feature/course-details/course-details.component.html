@@ -3,8 +3,8 @@
         <h1>{{ dataEntry.title }}</h1>
         <app-star-rating [rating]="averageRating"></app-star-rating>
         <div class="btns">
-            <button (click)="addToUsersCourses()">
-                + Add to my Courses
+            <button (click)="toggleUserCourses()">
+                {{ toggleMyCourses }}
             </button>
             <a href="review-course" routerLink="/review-course" routerLinkActive="active" ariaCurrentWhenActive="page">
                 <button class="review">
