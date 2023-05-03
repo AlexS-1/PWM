@@ -23,26 +23,14 @@ export class CourseDetailsComponent implements OnInit {
     createdByUserID: ''
   };
 
-  reviews: Evaluation[] = [{
-    username: "test",
-    date: "2023-05-01",
-    review: "test review",
-    rating: 5,
-    courseID: 1
-  },{ 
-  username: "test",
-  date: "2023-05-01",
-  review: "test review",
-  rating: 3,
-  courseID: 1
-  }];
+  reviews: Evaluation[] = [];
 
   rating: number = 0;
 
   ngOnInit() {
     // Get information on loaded course
     this.route.params.subscribe(async (params) => {
-      const id = params['id'];
+      const id = Number(params['id']);
       this.getCourseForID(id);
       this.getEvaluationsByCourseID(id);
       /*DEPRICATED: Loading from JSON
