@@ -184,6 +184,44 @@ export class BackendDataService {
     return allCourses;
   }
 
+  async getAllEvaluations() {
+    const evaluationQuery = query(collection(this.db, "evaluations"));
+    const evaluationCollection = await getDocs(evaluationQuery);
+    const allEvaluations: Evaluation[] = [];
+    evaluationCollection.forEach((doc) => {
+      const evaluation: Evaluation = {
+        username: doc.data()['username'],
+        date: doc.data()['date'],
+        review: doc.data()['review'],
+        rating: doc.data()['rating'],
+        courseID: doc.data()['courseID']
+      }
+      allEvaluations.push(evaluation);
+    });
+    return allEvaluations;
+  }
+
+  async getAllUsers() {
+    const usersQuery = query(collection(this.db, "users"));
+    const userCollection = await getDocs(usersQuery);
+    const allusers: User[] = [];
+    userCollection.forEach((doc) => {
+      const user: User = {
+        id: doc.data()['id'],
+        username: doc.data()['username'],
+        firstName: doc.data()['firstName'],
+        surname: doc.data()['surname'],
+        email: doc.data()['email'],
+        dateOfBirth: doc.data()['dateOfBirth'],
+        password: doc.data()['password'],
+        courses: doc.data()['courses'],
+        profilePicture: doc.data()['profilePicture']
+      }
+      allusers.push(user);
+    });
+    return allusers;
+  }
+
   // Retrieve course data
   async getMyCoursesByCourseIDs(courses: number[]) {
     let myCourseDocuments: Course[] = [];

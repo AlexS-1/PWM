@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import contentData from './../../../assets/content/course.json';
 import { Course } from 'src/app/models/course';
 import { BackendDataService } from 'src/app/core/backend-data.service';
 

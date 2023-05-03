@@ -1,4 +1,5 @@
-<p>test works!</p>
+<button (click)="jsonToFirestore()">Backup to Firestore</button>
+<button (click)="firestoreToJSON()">Backup to JSON</button>
 <ul>
     <li *ngFor="let item of items | async">{{ item.name }}</li>
     <li *ngFor="let user of users | async">{{ user.username }}</li>
