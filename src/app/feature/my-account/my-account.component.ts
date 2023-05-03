@@ -31,7 +31,6 @@ export class MyAccountComponent {
 
   ngAfterViewInit() {
     this.updateUserInformation();
-    console.log("Im here");
   }
 
   async updateUserInformation() {
