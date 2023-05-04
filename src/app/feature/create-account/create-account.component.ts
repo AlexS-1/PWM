@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { AuthService } from './../../core/auth-service.service';
+import { BackendDataService } from 'src/app/core/backend-data.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-create-account',
@@ -8,27 +8,45 @@ import { AuthService } from './../../core/auth-service.service';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent {
-  first_name = 'User';
-  surname = 'Lastname';
-  username = 'user1';
-  date_of_birth = '';
-  email = 'user1@example.com';
-  password = 'UserPassword@1';
-  repeat_password = 'UserPassword@2';
+  //Input from form
+  firstName = '';
+  surname = '';
+  username = '';
+  dateOfBirth = '';
+  email = '';
+  password = '';
+  repeatedPassword = '';
 
+  //Output to form
+  message = "";
+
+  //Other variables
   passwordValidity = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private backendDataService: BackendDataService) {
+
+  }
 
   checkValidityPasswords(password: any) {
-    if (this.password == this.repeat_password) {
+    if (this.password == this.repeatedPassword) {
       this.passwordValidity = true;
     } else {
       this.passwordValidity = false;
     }
   }
 
-  onSubmit() {
-    //TODO Submit information to .JSON
+  async onSubmit() {
+    const user: User = {
+      username: this.username,
+      firstName: this.firstName,
+      surname: this.surname,
+      dateOfBirth: this.dateOfBirth,
+      email: this.email,
+      password: this.password,
+      profilePicture: "",
+      id: "",
+      courses: []
+    }
+    this.message = await this.backendDataService.addUser(user);
   }
 }

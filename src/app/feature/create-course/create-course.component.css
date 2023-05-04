@@ -35,7 +35,7 @@ button {
     margin-top: 14px;
 }
 
-button:hover {
+button:hover:enabled {
     cursor: pointer;
     transform: scale(1.05); /* Vergrößerungsfaktor */
     transition: transform 0.1s ease-in-out; /* Übergangseffekt */
@@ -45,4 +45,12 @@ button:hover {
 
 .bns {
     padding: auto 30px;
+}
+
+p.errorMsg{
+    color: red;
+}
+
+*:disabled {
+    opacity: 0.5;
 }

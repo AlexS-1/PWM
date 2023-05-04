@@ -1,15 +1,18 @@
 <section class="create-course-form">
-  <h1>Add Your Course !</h1>
-  <form action="#">
+  <h1>Add Your Course!</h1>
+  <form #createAccountForm="ngForm" (submit)="addCourse()">
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Course ID" required="required">
+      <input type="number" class="form-control" [(ngModel)]="courseID" name="courseID" placeholder="Course ID" min="0" required="required">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Course Name" required="required">
+      <input type="text" class="form-control" [(ngModel)]="courseName" name="courseName" placeholder="Course Name" required="required">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Course Description">
+      <input type="text" class="form-control" [(ngModel)]="courseDescription" name="courseDescription" placeholder="Course Description">
     </div>
-      <button>+ Add Course</button>
+    <p class="errorMsg"> {{ message }}</p>
+      <button type="submit" [disabled]="!createAccountForm.form.valid">
+        + Add Course
+      </button>
   </form>
 </section>

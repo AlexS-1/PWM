@@ -13,13 +13,13 @@
       </datalist>
     -->
   </div>
-  <section class="card-container" *ngFor="let content of contentData">
+  <section class="card-container" *ngFor="let course of courses">
 
-    <a [routerLink]="['/course-details', content.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
+    <a [routerLink]="['/course-details', course.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
       <div class="inner-box">
       </div>
       <div class="description">
-          {{content.title}}
+          {{course.title}}
       </div>
     </a>
   </section>

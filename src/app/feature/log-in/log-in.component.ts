@@ -8,15 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LoginComponent {
-  email: string = "user1@example.com";
-  password: string = "password1";
+  email: string = "";
+  password: string = "";
 
   constructor(private authService: AuthService) {}
 
 
 
-  onSubmit() {
-    const isValid = this.authService.login(this.email, this.password);
+  async onSubmit() {
+    const isValid = await this.authService.login(this.email, this.password);
     /*console.log("onSubmit() function called"); // for debugging
     console.log("email value:", this.email); // for debugging
     console.log("password value:", this.password); // for debugging */

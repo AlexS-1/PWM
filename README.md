@@ -1,6 +1,8 @@
 # StuddyBuddy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0. 
+
+To make it work, install the rquired packes using: `npm install`
 
 ## Development server
 
@@ -26,8 +28,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-
-
 ### How to link form components to other components ###
 
 1. Make sure to have <router-outlet></router-outlet> in the component that should change the visible content (here: our app.component.html)
@@ -45,3 +45,19 @@ You may need to run the following commands in order for the image drop-off and c
 `npm install ngx-file-drop --save`
 
 `npm install ngx-image-cropper --save`
+
+### Additinal npm installs ### 
+You may need to run the following commands in order for the image drop-off and conversion to base64 to work
+
+`npm install ngx-file-drop --save`
+
+`npm install ngx-image-cropper --save`
+
+### How to add Firebase to Project ###
+
+1. Make sure to have Firebase installed: `npm install firebase`
+2. Replace in `node_modules/@angular/fire/compat/firestore/interfaces.d.ts` the following lines to include `extends firebase.firestore.DocumentData` instead of 
+- `extends firebase.firestore.DocumentSnapshot` in lines 13
+- `extends firebase.firestore.QueryDocumentSnapshot` in lines 23
+- `extends firebase.firestore.QuerySnapshot` in line 26
+- `extends firebase.firestore.DocumentChange` in line 29

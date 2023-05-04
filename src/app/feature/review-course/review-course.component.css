@@ -48,7 +48,7 @@ button {
     color: white;
 }
 
-button:hover {
+button:hover:valid {
     cursor: pointer;
     transform: scale(1.05); /* Vergrößerungsfaktor */
     transition: transform 0.1s ease-in-out; /* Übergangseffekt */
@@ -56,6 +56,3 @@ button:hover {
     color: white;
 }
 
-.checked {
-    color: #ffa100;
-}

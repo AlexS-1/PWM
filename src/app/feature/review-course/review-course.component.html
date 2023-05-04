@@ -3,25 +3,19 @@
 
 <article class="review-course-form">
     <h1>Review your course!</h1>
-    <form>
+    <form #reviewForm="ngForm" (submit)="reviewCourse()">
       <section class="form-group">
-        <input type="number" class="form-control" placeholder="Course ID" required="required">
-      </section>
-      <section class="form-group">
-        <input type="text" class="form-control" placeholder="Course name" required="required">
+        <input type="number" class="form-control" [(ngModel)]="courseID" name="courseID" placeholder="Course ID" required="required">
       </section>
       <section class="star-bar form-group">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+        <app-star-rating (ratingChanged)="setRating($event)"></app-star-rating>
       </section>
       <div class="form-group">
-        <textarea name="review" id="1" cols="50" rows="5" placeholder="Review with a short comment..." required="required"></textarea>
+        <textarea name="review" id="1" [(ngModel)]="review" name="review" cols="50" rows="5" placeholder="Review with a short comment..." required="required"></textarea>
       </div>
+      <p class="message"> {{ message }}</p>
+      <button type="submit" [disabled]="reviewForm.form.invalid || !ratingVailidity">
+        Review Course
+      </button>
     </form>
-    <a href="course-details" routerLink="/course-details" routerLinkActive="active" ariaCurrentWhenActive="page">
-      <button>Review Course</button>
-    </a>
   </article>

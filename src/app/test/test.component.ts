@@ -1,69 +1,66 @@
-import { AuthService } from './../core/auth-service.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BackendDataService } from '../core/backend-data.service';
+
+import { HttpClient } from '@angular/common/http';
+
+import courseData from './../../assets/content/courses.json';
+import evaluationData from './../../assets/content/evaluations.json';
+import userData from './../../assets/content/users.json';
+
+import { Course } from '../models/course';
+import { Evaluation } from '../models/evaluation';
+import { User } from '../models/user';
 
 
-  /*@Component({
+  @Component({
     selector: 'app-test',
-
     templateUrl: './test.component.html',
     styleUrls: ['./test.component.css']
-  })*/
+  })
 
-@Component({
-  selector: 'app-login',
-  template: `
-<div class="signup-form">
-  <h2>Welcome !</h2>
-  <div>{{email}}</div>
-  <div>{{password}}</div>
-  <form (submit)="onSubmit()">
-    <div class="form-group">
-      <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" required>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </div>
-    <div class="form-group text-center">
-      <a href="forgot-password" routerLink="/forgot-password" routerLinkActive="active" ariaCurrentWhenActive="page">Forgot Password?</a>
-      <a href="create-account" routerLink="/create-account" routerLinkActive="active" ariaCurrentWhenActive="page">Don't have an Account yet?</a>
-    </div>
-  </form>
-</div>
-    <form (submit)="onSubmit()">
-      <label>
-        Username:
-        <input type="email" [(ngModel)]="username" name="username" required/>
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" [(ngModel)]="password" name="password" required/>
-      </label>
-      <br />
-      <button type="submit">Log In</button>
-    </form>
-    <div>{{username}}</div>
-    <div>{{password}}</div>
-  `,
-})
+
 export class TestComponent {
-  email: string = 'e';
-  password: string = 'p1';
-  password2: string = 'p2';
-  username: string = 'u';
+  items: Observable<any[]>;
+  users: Observable<any[]>;
+  
+  constructor(db: AngularFirestore, private backend: BackendDataService, private http: HttpClient){
+    this.items = db.collection('0').valueChanges();
+    this.users = db.collection('1').valueChanges();
+  }
 
-  constructor(private authService: AuthService) {}
-
-  onSubmit() {
-    const isValid = this.authService.login(this.username, this.password);
-    if (isValid) {
-      // perform login
-    } else {
-      // display error message
+  jsonToFirestore() {
+    const courses: Course[] = courseData
+    for(let i = 0; i < courses.length; i++) {
+      this.backend.addCourse(courses[i]);
     }
+    const evaluations: Evaluation[] = evaluationData
+    for(let i = 0; i < evaluations.length; i++) {
+      this.backend.addEvaluation(evaluations[i]);
+    }
+    const users: User[] = userData;
+    for(let i = 0; i < users.length; i++) {
+      this.backend.addUser(users[i]);
+    }
+  }
+   
+  async firestoreToJSON() {    
+    const firestoreCourses: Course[] = await this.backend.getAllCourses();
+    for (let i = 0; i < firestoreCourses.length; i++) {
+      courseData.push(firestoreCourses[i])
+    }
+
+    const firestoreEvaluations: Evaluation[] = await this.backend.getAllEvaluations();
+    for (let i = 0; i < firestoreEvaluations.length; i++) {
+      evaluationData.push(firestoreEvaluations[i])
+    }
+
+    const firestoreUsers: User[] = await this.backend.getAllUsers();
+    for (let i = 0; i < firestoreUsers.length; i++) {
+      userData.push(firestoreUsers[i])
+    }
+    
   }
 }
 

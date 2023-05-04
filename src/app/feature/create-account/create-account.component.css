@@ -55,7 +55,7 @@ body {
     max-width: 78%;
 }
 
-.signup-form .btn:hover {
+.signup-form .btn:hover:enabled {
     background-color: white;
 }
 
@@ -68,10 +68,5 @@ body {
 }
 
 p.errorMsg{
-    margin-left: 40px;
     color: red;
-}
-
-p.errorMsg.visibility{
-    display: none;
 }

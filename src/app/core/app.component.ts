@@ -9,7 +9,6 @@ import { Router, NavigationEnd, GuardsCheckStart } from '@angular/router';
 })
 
 export class AppComponent {
-
   constructor(private navBarService: NavBarService, private router: Router){}
 
   declare sideBarOff: boolean;
