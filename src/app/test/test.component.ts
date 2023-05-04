@@ -45,33 +45,22 @@ export class TestComponent {
     }
   }
    
-  async firestoreToJSON() {
-    const jsonCourses: Course[] = courseData
+  async firestoreToJSON() {    
     const firestoreCourses: Course[] = await this.backend.getAllCourses();
-    for(let i = 0; i < jsonCourses.length; i++) {
-      courseData.pop();
-    }
     for (let i = 0; i < firestoreCourses.length; i++) {
       courseData.push(firestoreCourses[i])
     }
 
-    const jsonEvaluations: Evaluation[] = evaluationData
     const firestoreEvaluations: Evaluation[] = await this.backend.getAllEvaluations();
-    for(let i = 0; i < jsonEvaluations.length; i++) {
-      evaluationData.pop();
-    }
     for (let i = 0; i < firestoreEvaluations.length; i++) {
       evaluationData.push(firestoreEvaluations[i])
     }
 
-    const jsonUsers: User[] = userData
     const firestoreUsers: User[] = await this.backend.getAllUsers();
-    for(let i = 0; i < jsonUsers.length; i++) {
-      userData.pop();
-    }
     for (let i = 0; i < firestoreUsers.length; i++) {
       userData.push(firestoreUsers[i])
     }
+    
   }
 }
 
