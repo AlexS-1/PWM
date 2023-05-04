@@ -32,8 +32,8 @@ const routes: Routes = [
   { path: 'create-course', component: CreateCourseComponent },
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'browse-courses', component: BrowseCoursesComponent },
-  { path: 'course-details/:id', component: CourseDetailsComponent }, // Änderung hier
-  { path: 'review-course', component: ReviewCourseComponent },
+  { path: 'course-details/:id', component: CourseDetailsComponent },
+  { path: 'review-course/:id', component: ReviewCourseComponent },
   { path: 'test', component: TestComponent }
 ];
 

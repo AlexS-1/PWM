@@ -6,7 +6,7 @@
             <button (click)="toggleUserCourses()">
                 {{ toggleMyCourses }}
             </button>
-            <a href="review-course" routerLink="/review-course" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <a [routerLink]="['/review-course', dataEntry.id]" routerLinkActive="active" ariaCurrentWhenActive="page">
                 <button class="review">
                     Evaluate this Course
                 </button>
