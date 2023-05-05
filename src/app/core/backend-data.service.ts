@@ -125,7 +125,7 @@ export class BackendDataService {
             userCourses.push(courseID);
         }
         const data: User = {
-            id: userData.data()['userID'] ,
+            id: userData.data()['id'] ,
             username: userData.data()['username'],
             firstName: userData.data()['firstName'],
             surname: userData.data()['surname'],
@@ -140,7 +140,7 @@ export class BackendDataService {
   }
 
 
-//READ USER DATA
+//READ DATA
   // Retrieve user data from username and return data
   async getUserData(username: String) {
     const userDoc = await getDoc(doc(this.db, 'users', this.cyrb53(username.toString()).toString()));
@@ -289,7 +289,7 @@ export class BackendDataService {
           }
         }
         const data: User = {
-            id: userData.data()['userID'] ,
+            id: userData.data()['id'] ,
             username: userData.data()['username'],
             firstName: userData.data()['firstName'],
             surname: userData.data()['surname'],
