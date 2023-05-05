@@ -109,11 +109,7 @@ export class AuthService {
     const tokenDoc = await this.backendDataService.getloggedInData(token);
     if(tokenDoc != null){
       if (tokenDoc['id'] === token) {
-        return new Promise<any>((resolve)=> {
-          this.firestore.collection('loggedIn')
-          .valueChanges()
-          .subscribe(loggedIn => resolve(loggedIn));
-        })  
+        return true;
       }
     }
     return false;

@@ -12,6 +12,7 @@ import userData from './../../assets/content/users.json';
 import { Course } from '../models/course';
 import { Evaluation } from '../models/evaluation';
 import { User } from '../models/user';
+import { AuthService } from '../core/auth-service.service';
 
 
   @Component({
@@ -24,10 +25,24 @@ import { User } from '../models/user';
 export class TestComponent {
   items: Observable<any[]>;
   users: Observable<any[]>;
+  text = "HI";
   
-  constructor(db: AngularFirestore, private backend: BackendDataService, private http: HttpClient){
-    this.items = db.collection('0').valueChanges();
-    this.users = db.collection('1').valueChanges();
+  constructor(
+    db: AngularFirestore, 
+    private backend: BackendDataService, 
+    private http: HttpClient,
+    private authService: AuthService) {
+      this.items = db.collection('0').valueChanges();
+      this.users = db.collection('1').valueChanges();
+      new Promise<any>((resolve)=> {
+        db.collection('loggedIn')
+        .valueChanges()
+        .subscribe(loggedIn => resolve(loggedIn));
+      })  
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
   jsonToFirestore() {

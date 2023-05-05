@@ -67,6 +67,8 @@ a {
 @media screen and (min-width: 768px) {
 
   .browse-courses {
+    margin: 12px 12%;
+    padding: 12px 24px;
     text-align: left;
   }
 
@@ -79,6 +81,8 @@ a {
 @media screen and (min-width: 1200px) {
 
   .browse-courses {
+    margin: 12px 12%;
+    padding: 12px 24px;
     text-align: left;
   }
 
