@@ -46,6 +46,8 @@ export class CourseDetailsComponent implements OnInit {
   averageRating: number = 0;
   toggleMyCourses: string = "Operation my Courses"
 
+  debugging = false;
+
   ngOnInit() {
     // Get information on loaded course
     this.route.params.subscribe(async (params) => {
@@ -114,7 +116,9 @@ export class CourseDetailsComponent implements OnInit {
       this.removeFromUserCourses()
       this.toggleMyCourses = "+ Add to my Courses";
     } else {
-      console.log("ERROR: Typo")
+      if (this.debugging) {
+        console.log("ERROR: Typo");
+      }
     }
   }
 
@@ -129,11 +133,15 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   calculateAverageRating() {
-    console.log(this.reviews)
+    if (this.debugging) {
+      console.log(this.reviews);
+    }
     let ratingSum: number = 0;
     for (let i = 0; i < this.reviews.length; i++) {
       ratingSum += this.reviews[i].rating;
-      console.log('currentRatingSum: ', ratingSum)
+      if (this.debugging) {
+        console.log('currentRatingSum: ', ratingSum);
+      }
     }
     this.averageRating = ratingSum / this.reviews.length;
   }

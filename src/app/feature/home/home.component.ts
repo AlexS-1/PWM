@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/core/auth-service.service';
 })
 export class HomeComponent {
   constructor(private authService: AuthService) {
-
+    
   }
   
   accountPath = "/create-account";

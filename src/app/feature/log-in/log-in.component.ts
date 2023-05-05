@@ -13,19 +13,26 @@ export class LoginComponent {
 
   constructor(private authService: AuthService) {}
 
+  debugging = false
 
 
   async onSubmit() {
     const isValid = await this.authService.login(this.email, this.password);
-    /*console.log("onSubmit() function called"); // for debugging
-    console.log("email value:", this.email); // for debugging
-    console.log("password value:", this.password); // for debugging */
+    if (this.debugging) {
+      console.log("onSubmit() function called"); // for debugging
+      console.log("email value:", this.email); // for debugging
+      console.log("password value:", this.password); // for debugging *
+    }
     if (isValid) {
       // perform login
-      console.log("perform log-in");  // For DEBUGGGING
+      if (this.debugging) {
+        console.log("perform log-in");  // For DEBUGGGING
+      }
     } else {
       // display error message
-      console.log("invalid log-in data"); // For DEBUGGGING
+      if (this.debugging) {
+        console.log("invalid log-in data"); // For DEBUGGGING 
+      }
     }
   }
 }

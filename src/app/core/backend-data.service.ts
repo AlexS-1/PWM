@@ -102,7 +102,6 @@ export class BackendDataService {
     const courseReference = doc(this.db, "courses", courseReferenceID);
     const courseDocument = await getDoc(courseReference);
     if(!courseDocument.exists()) {
-      console.log("Add Course");
       return "Please add the course first";
     } else { 
       const reviewReference = doc(this.db, "evaluations", reviewReferenceID);
