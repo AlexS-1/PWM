@@ -47,7 +47,7 @@ export class ReviewCourseComponent {
     }
     const evaluation: Evaluation = {
       username: await this.authService.getCurrentUserName(),
-      date: "2023-05-01",
+      date: new Date().toISOString().split('T')[0],
       review: this.review,
       rating: this.currentRating,
       courseID: Number(this.courseID)

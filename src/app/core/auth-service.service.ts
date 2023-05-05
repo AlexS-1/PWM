@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getDocs } from 'firebase/firestore';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +18,12 @@ export class AuthService {
 
   debugging = false
 
+  db = this.firestore.firestore;
+
   // Valifation function to be called by login function
   // Returns the first match for email+password pair in user data array
   private async validateCredentials(email: string, password: string): Promise<boolean> {
-    let db = this.firestore.firestore;
-    var query = db.collection('users')
+    var query = this.db.collection('users')
       .where('email' , '==', email)
       .where('password' , '==', password);
     const querySnapshot = await getDocs(query);
@@ -42,7 +42,6 @@ export class AuthService {
   ///////////////////////
 
   async login(email: string, password: string) : Promise<boolean>{
-    let db = this.firestore.firestore;
     // check credentials with database
     let succssfulLookup = await this.validateCredentials(email, password);
 
@@ -63,7 +62,7 @@ export class AuthService {
       const tokenDoc = await this.backendDataService.getloggedInData(token);
       if(tokenDoc != null){
         if(!tokenDoc['exists']()){
-          let newEntryDoc = await db.collection('loggedIn').add(data);
+          let newEntryDoc = await this.db.collection('loggedIn').add(data);
           // Add doc ID to session storage to be able to retrieve login state
           sessionStorage.setItem('logInToken', newEntryDoc.id);                 
         }else{
@@ -76,7 +75,7 @@ export class AuthService {
         }
         successfulState = true; 
       }else{
-        let newEntryDoc = await db.collection('loggedIn').add(data);
+        let newEntryDoc = await this.db.collection('loggedIn').add(data);
         // Add doc ID to session storage to be able to retrieve login state
         sessionStorage.setItem('logInToken', newEntryDoc.id);                
         successfulState = true;

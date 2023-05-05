@@ -41,9 +41,14 @@ export class TestComponent {
       })  
   }
 
-  logout(){
+  logout() {
     this.authService.logout();
   }
+
+  login() {
+    this.authService.login("ale.sch.1@web.de", "StuddyBuddy@1")
+  }
+
 
   jsonToFirestore() {
     const courses: Course[] = courseData
