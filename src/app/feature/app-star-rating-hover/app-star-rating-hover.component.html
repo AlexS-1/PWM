@@ -1,8 +1,6 @@
 <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
-    <i class="fa fa-star"
-      [ngClass]="{'yellow': i < rating, 'grey': i >= rating }"
-      (mouseover)="rating = i + 1" (mouseout)="rating = rating"
-      (click)="onClick(i)">
-    </i>
-  </span>
-  
+  <i class="fa fa-star"
+    [ngClass]="{'yellow': i < rating, 'grey': i >= rating }"
+    (mouseenter)="rating = i + 1" (click)="onClick(i)">
+  </i>
+</span>
