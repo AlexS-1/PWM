@@ -13,7 +13,7 @@ import { AuthService } from './auth-service.service';
 
 export class BackendDataService {
 
-  constructor(private firestore: AngularFirestore, private authService: AuthService) { 
+  constructor(private firestore: AngularFirestore) { 
 
   }
   
@@ -139,8 +139,7 @@ export class BackendDataService {
     }
   }
 
-  /*async setProfilePicture(url: string) {
-    const username = await this.authService.getCurrentUserName();
+  async setProfilePicture(username: string, url: string) {
     const userID = this.cyrb53(username).toString();
     const userReference = doc(this.db, "users", userID);
     let userData = await this.getUserData(username);
@@ -158,7 +157,7 @@ export class BackendDataService {
         }
         await setDoc(userReference, data);
     }
-  }*/
+  }
 
 
 //READ DATA
