@@ -8,22 +8,20 @@
     left: 0px;
     height: 100%;
     background: #D8DCFF;
-    transition: width 0.3s ease-in-out; /* Change this line */
-    overflow-y: auto; 
+    transition: width 0.3s ease-in-out; 
 }
 
 .folded-in {
     width: 90px;
-
 }
 
 .folded-out {
-    width: 300px;
-    transform: translateX(0); /* Change this line */
+    transform: translateX(0); 
     z-index: 50;
+    overflow-y: hidden;
+    ;
 }
 
-/* Add the following lines */
 .nav-bar, footer {
   z-index: 130;
   position: relative;
@@ -80,6 +78,7 @@ h2.folded-in {
     .folded-in {
         width: 0px;
         z-index: 20;
+        overflow-y: auto;
     }
 
     .folded-in.image{

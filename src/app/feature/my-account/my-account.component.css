@@ -1,10 +1,10 @@
 .my-area {
-   margin: 12px 5%;
+   margin: 12px 80px;
    padding: 12px 24px;
 }
 
 .my-data {
-   margin-top: 100px;
+   margin-top: 50px;
    border-radius: 10px;
    background-color: #D8DCFF;
    padding: 30px 8%;
@@ -17,8 +17,7 @@
    background-color: #D8DCFF;
    padding: 35px 8%;
    padding-bottom:45px;
-   margin-top: 35px;
-   margin-bottom: 190px;
+   margin-top: 30px auto auto 190px;
    box-sizing: border-box;
 }
 
@@ -41,4 +40,10 @@
 .sec {
    display: grid;
    grid-template-columns: 108px auto;
+}
+
+@media (max-width: 767px) {
+   .sec {
+      display: inline;
+   }
 }
