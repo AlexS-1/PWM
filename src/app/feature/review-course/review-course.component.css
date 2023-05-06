@@ -15,6 +15,15 @@ form {
 .form-group {
     margin: 20px auto;
 }
+
+
+.star-bar {
+    font-size: 30px; /* Größe der Sterne */
+    display: inline-block; /* sorgt dafür, dass die Sterne nebeneinander angezeigt werden */
+    vertical-align: middle; /* Ausrichtung mittig zum Text */
+    margin: 15px 0 15px 0;
+  } 
+  
   
 .form-control {
     font-size: 16px;

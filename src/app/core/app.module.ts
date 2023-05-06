@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AppStarRatingHoverComponent } from '../feature/app-star-rating-hover/app-star-rating-hover.component';
 
 /// Firebase ///
 import { AngularFireModule } from '@angular/fire/compat';
@@ -51,7 +52,8 @@ import { StarRatingComponent } from '../feature/star-rating/star-rating.componen
     CourseDetailsComponent,
     ReviewCourseComponent,
     TestComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    AppStarRatingHoverComponent
   ],
   imports: [
     BrowserModule,
