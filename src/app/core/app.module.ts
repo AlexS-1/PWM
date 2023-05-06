@@ -4,13 +4,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { AppStarRatingHoverComponent } from '../feature/app-star-rating-hover/app-star-rating-hover.component';
 
 /// Firebase ///
 import { AngularFireModule } from '@angular/fire/compat';
-//import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-//import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../../environments/environment';
 ////////////////
 
@@ -32,6 +31,8 @@ import { CourseDetailsComponent } from '../feature/course-details/course-details
 import { ReviewCourseComponent } from '../feature/review-course/review-course.component';
 import { TestComponent } from '../test/test.component';
 import { StarRatingComponent } from '../feature/star-rating/star-rating.component';
+import { ImageUploadFormComponent } from './../shared/image-upload-form/image-upload-form.component';
+import { AppStarRatingHoverComponent } from '../feature/app-star-rating-hover/app-star-rating-hover.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { StarRatingComponent } from '../feature/star-rating/star-rating.componen
     ReviewCourseComponent,
     TestComponent,
     StarRatingComponent,
-    AppStarRatingHoverComponent
+    AppStarRatingHoverComponent,
+    ImageUploadFormComponent
   ],
   imports: [
     BrowserModule,
@@ -61,9 +63,9 @@ import { StarRatingComponent } from '../feature/star-rating/star-rating.componen
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    //AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
     AngularFirestoreModule,
-    //AngularFireStorageModule
+    AngularFireStorageModule
   ],
   providers: [AppFetchDataTsService],
   bootstrap: [AppComponent]
