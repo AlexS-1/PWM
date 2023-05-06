@@ -1,7 +1,7 @@
 /* Desktop */
 @media screen and (min-width: 1024px) {
     .my-courses {
-        margin: 12px 4%;
+        margin: 12px 8%;
         padding: 16px 24px;
     }
     
@@ -11,6 +11,12 @@
         grid-template-columns: auto auto;
     
     }
+
+    .star-avg {
+        font-size: 165%;
+        margin: 0 0 40px 1px;
+    }
+    
 
     .username-rating {
         display: flex;
@@ -30,11 +36,17 @@
     h1 {
         font-size: 52px;
         font-weight: bolder;
+        margin-bottom: 10px;
     }
       
     
     .btns {
-        margin: auto;
+        margin: 5px 0 30px 0;
+        padding: 0 10px 0 0;
+    }
+
+    .btn1{
+        margin-right: 20px;
     }
     
     button {
@@ -46,7 +58,7 @@
         border-radius: 24px;
         padding: 10px 16px;
         line-height: 48px;
-        margin: 12px 24px;
+        margin: 12px 0;
     }
     
     button:hover {
@@ -68,7 +80,7 @@
         border-radius: 24px;
         padding: 12px 4%;
         padding-bottom: 18px;
-        margin: 24px 0px;
+        margin: 45px 0 20px 0;
     }
 }
 
@@ -77,6 +89,11 @@
     .my-courses {
         margin: 12px 4%;
         padding: 16px 24px;
+    }
+
+    .star-avg {
+        font-size: 165%;
+        margin: 15px 0 40px 0;
     }
     
     .grid-container {
@@ -117,7 +134,11 @@
         border-radius: 24px;
         padding: 10px 16px;
         line-height: 48px;
-        margin: 12px 24px;
+        margin: 10px 0 30px 0;
+    }
+
+    .btn1{
+        margin-right: 20px;
     }
     
     button:hover {
@@ -147,8 +168,8 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
     .my-courses {
-        margin: 12px 4%;
-        padding: 16px 24px;
+        margin: 0 5%;
+        padding: 0 24px;
     }
     
     .grid-container {
@@ -157,10 +178,17 @@
         grid-template-columns: auto;
     
     }
+
+    .star-avg {
+        font-size: 165%;
+        margin: 15px 0 40px 0;
+    }
+    
       
     h1 {
         font-size: 52px;
         font-weight: bolder;
+        margin-bottom: 10px;
     }
 
     .username-rating {
@@ -179,6 +207,10 @@
     .btns {
         margin: auto;
     }
+
+    .btn1{
+        margin-right: 20px;
+    }
     
     button {
         background-color: #ffa100;
@@ -189,7 +221,8 @@
         border-radius: 24px;
         padding: 10px 16px;
         line-height: 48px;
-        margin: 12px 24px;
+        margin: 12px 0;
+        width: 290px;
     }
     
     button:hover {
