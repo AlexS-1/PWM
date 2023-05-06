@@ -17,7 +17,8 @@
    background-color: #D8DCFF;
    padding: 35px 8%;
    padding-bottom:45px;
-   margin-top: 30px auto auto 190px;
+   margin-top: 30px;
+   margin-bottom: 190px;
    box-sizing: border-box;
 }
 
@@ -45,5 +46,10 @@
 @media (max-width: 767px) {
    .sec {
       display: inline;
+   }
+
+   .my-area {
+      margin: 12px;
+      padding: 12px;
    }
 }
