@@ -66,8 +66,8 @@ a {
     float: left;
   }
 
-  .card-section {
-    margin-bottom: 180px;
+  .last {
+    margin-bottom: 140px;
   }
 }
 
@@ -82,5 +82,9 @@ a {
 
   .card-container{
     float: left;
+  }
+
+  .last {
+    margin-bottom: 140px;
   }
 }

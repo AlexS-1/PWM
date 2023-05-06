@@ -13,7 +13,7 @@
       </datalist>
     -->
   </div>
-  <section class="card-container" *ngFor="let course of courses">
+  <section class="card-container" *ngFor="let course of courses; let i = index" [ngClass]="i + 1 == courses.length ? 'last': 'normal'">
     <a [routerLink]="['/course-details', course.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
       <div class="inner-box">
       </div>
