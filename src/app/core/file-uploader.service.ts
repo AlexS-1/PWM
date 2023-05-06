@@ -3,6 +3,7 @@ import { Observable, finalize } from 'rxjs';
 import { FileUpload } from '../models/file-upload';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { BackendDataService } from './backend-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 export class FileUploaderService {
   private basePath = '/uploads';
 
-  constructor(private storage: AngularFireStorage, private fdb: AngularFireDatabase){}
+  constructor(private storage: AngularFireStorage, private fdb: AngularFireDatabase, private backend: BackendDataService){}
 
   pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -20,6 +21,7 @@ export class FileUploaderService {
       storageRef.getDownloadURL().subscribe(downloadURL => {
         fileUpload.url = downloadURL;
         fileUpload.name = fileUpload.file.name;
+        //this.backend.setProfilePicture(fileUpload.url);
         this.saveFileData(fileUpload);
       });
     })).subscribe();

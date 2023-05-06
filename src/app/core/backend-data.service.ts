@@ -4,6 +4,7 @@ import { doc, setDoc, getDoc, deleteDoc, query, where, getDocs, collection } fro
 import { User } from '../models/user';
 import { Evaluation } from '../models/evaluation';
 import { Course } from '../models/course';
+import { AuthService } from './auth-service.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { Course } from '../models/course';
 
 export class BackendDataService {
 
-  constructor(private firestore: AngularFirestore) { 
+  constructor(private firestore: AngularFirestore, private authService: AuthService) { 
 
   }
   
@@ -137,6 +138,27 @@ export class BackendDataService {
         await setDoc(userReference, data);
     }
   }
+
+  /*async setProfilePicture(url: string) {
+    const username = await this.authService.getCurrentUserName();
+    const userID = this.cyrb53(username).toString();
+    const userReference = doc(this.db, "users", userID);
+    let userData = await this.getUserData(username);
+    if (userData.exists()) {
+        const data: User = {
+            id: userData.data()['id'] ,
+            username: userData.data()['username'],
+            firstName: userData.data()['firstName'],
+            surname: userData.data()['surname'],
+            email: userData.data()['email'],
+            dateOfBirth: userData.data()['dateOfBirth'],
+            password: userData.data()['password'],
+            courses: userData.data()['courses'],
+            profilePicture: url
+        }
+        await setDoc(userReference, data);
+    }
+  }*/
 
 
 //READ DATA
