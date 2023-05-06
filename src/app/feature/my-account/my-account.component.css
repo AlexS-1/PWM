@@ -34,5 +34,11 @@
 .profilePic{
    background-color: #D8DCFF;
    border-style: double;
+   border-width: 4px;
+   margin: auto;
 }
- 
+
+.sec {
+   display: grid;
+   grid-template-columns: 108px auto;
+}
