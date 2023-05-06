@@ -3,7 +3,7 @@
   <picture class="profilePic">
     <img src="{{ user.profilePicture }}" alt="profile picture" width="100" height="120">       <!-- Check dimensions-->
   </picture>
-  <app-image-upload-form></app-image-upload-form>
+  <app-image-upload-form (profilePictureChanged)="updateUserInformation()"></app-image-upload-form>
   <section class="my-data">
     <h2>My Data</h2>
       <div class="my-data-content">
