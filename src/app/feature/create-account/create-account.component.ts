@@ -36,7 +36,7 @@ export class CreateAccountComponent {
     if(!this.password.match(".*[A-Z].*"))
       this.message += '\n- at least an uppercase letter';
     if(!this.password.match("(?=.*[@$!%*?&])"))
-      this.message += '\n- at least a special character';
+      this.message += '\n- at least a special character such as: @$!%*?&';
     if ((!(/^(.{8,32})$/.test(this.password)))) {
       this.message += '\n- the password must between 8 and 32 characters'
     }
