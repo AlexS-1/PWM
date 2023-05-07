@@ -44,7 +44,7 @@ export class BackendDataService {
     if (message != "User with this E-Mail already exists\n Please log in") {
       // Only add new user account if user is not already in the database and returen appropriate response
       const data = { 
-        userID: this.cyrb53(user.username.toString()), 
+        id: this.cyrb53(user.username.toString()), 
         username: user.username, 
         firstName: user.firstName,
         surname: user.surname, 
@@ -55,7 +55,7 @@ export class BackendDataService {
         profilePicture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       }
       // Creates a new doc with the userId as doc name
-      await setDoc(doc(this.db, 'users', data.userID.toString()), data);
+      await setDoc(doc(this.db, 'users', data.id.toString()), data);
       message = "You successfully registered"
     }
     return message;

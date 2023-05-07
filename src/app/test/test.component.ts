@@ -55,13 +55,13 @@ export class TestComponent {
     for(let i = 0; i < courses.length; i++) {
       this.backend.addCourse(courses[i]);
     }
-    const evaluations: Evaluation[] = evaluationData
-    for(let i = 0; i < evaluations.length; i++) {
-      this.backend.addEvaluation(evaluations[i]);
-    }
     const users: User[] = userData;
     for(let i = 0; i < users.length; i++) {
       this.backend.addUser(users[i]);
+    }
+    const evaluations: Evaluation[] = evaluationData
+    for(let i = 0; i < evaluations.length; i++) {
+      this.backend.addEvaluation(evaluations[i]);
     }
   }
    
