@@ -11,6 +11,8 @@ export class LoginComponent {
   email: string = "";
   password: string = "";
 
+  message = ""
+
   constructor(private authService: AuthService) {}
 
   debugging = false
@@ -25,11 +27,13 @@ export class LoginComponent {
     }
     if (isValid) {
       // perform login
+      this.message = "Succesfully logged in"
       if (this.debugging) {
         console.log("perform log-in");  // For DEBUGGGING
       }
     } else {
       // display error message
+      this.message = "The password or mail is invalid"
       if (this.debugging) {
         console.log("invalid log-in data"); // For DEBUGGGING 
       }

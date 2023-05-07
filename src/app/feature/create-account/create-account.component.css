@@ -69,4 +69,6 @@ body {
 
 p.errorMsg{
     color: red;
+    white-space: pre-line;
 }
+

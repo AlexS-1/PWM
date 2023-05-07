@@ -18,7 +18,7 @@ export class CreateAccountComponent {
   repeatedPassword = '';
 
   //Output to form
-  message = "";
+  message = '';
 
   //Other variables
   passwordValidity = false;
@@ -28,10 +28,37 @@ export class CreateAccountComponent {
   }
 
   checkValidityPasswords(password: any) {
+    if (this.password == "") {
+      this.message = ""
+    } else {
+      this.message = 'The password must match the following criteria: ';
+      if (!/^(?=.*[^0-9])$/.test(password)) {
+        this.message += '\n- at least one number';
+      }
+      if (/^(?=.*[^a-z])$/.test(password)) {
+        this.message += '\n- at least a lowercase letter';
+      } 
+      if (/^(?=.*[^A-Z])$/.test(password)) {
+        this.message += '\n- at least an uppercase letter';
+      }
+      if (/^(?=.*[^*.!@$%^&\(\)\{\}\[\]\:\;<>,.?/~_+-=|])$/.test(password)) {
+        this.message += '\n- at least a special character';
+      }
+      if (/^(.{^8,32})$/.test(password)) {
+        this.message += '\n- the password must between 8 and 32 characters'
+      }
+      if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+        this.message = ""
+      }
+    }
+  }
+
+  checkMatchingPasswords(password: any) {
     if (this.password == this.repeatedPassword) {
       this.passwordValidity = true;
     } else {
       this.passwordValidity = false;
+      this.message = 'Please enter matching passwords'
     }
   }
 
