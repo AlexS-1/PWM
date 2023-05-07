@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavBarService } from './nav-bar.service';
 import { Router, NavigationEnd, GuardsCheckStart } from '@angular/router';
 import { AuthService } from './auth-service.service';
@@ -25,9 +25,13 @@ export class AppComponent {
     });
   }
 
-  ngOnDestroy(){
+  // Listen for tab close event and logout user automatically
+  @HostListener('window:beforeunload', [ '$event' ])
+  beforeUnloadHandler(event:any) {
+    console.log('hi');
     this.authService.logout();
   }
+
 
   
   title = 'studdy-buddy';
