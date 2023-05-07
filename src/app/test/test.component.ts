@@ -64,23 +64,5 @@ export class TestComponent {
       this.backend.addEvaluation(evaluations[i]);
     }
   }
-   
-  async firestoreToJSON() {    
-    const firestoreCourses: Course[] = await this.backend.getAllCourses();
-    for (let i = 0; i < firestoreCourses.length; i++) {
-      courseData.push(firestoreCourses[i])
-    }
-
-    const firestoreEvaluations: Evaluation[] = await this.backend.getAllEvaluations();
-    for (let i = 0; i < firestoreEvaluations.length; i++) {
-      evaluationData.push(firestoreEvaluations[i])
-    }
-
-    const firestoreUsers: User[] = await this.backend.getAllUsers();
-    for (let i = 0; i < firestoreUsers.length; i++) {
-      userData.push(firestoreUsers[i])
-    }
-    
-  }
 }
 

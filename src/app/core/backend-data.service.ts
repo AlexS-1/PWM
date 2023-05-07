@@ -68,11 +68,11 @@ export class BackendDataService {
     const courseDoc = await getDoc(documentReference);
 
     //Create data
-    const data = {
+    const data: Course = {
       id: course.id,
       title: course.title,
       description: course.description,
-      createdByUserID: course.createdByUserID 
+      createdByUserID: course.createdByUserID
   }
   
     //Add data if it does not exist yet

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/models/course';
 import { Evaluation } from 'src/app/models/evaluation';
 import { BackendDataService } from 'src/app/core/backend-data.service';
@@ -12,7 +12,11 @@ import { StarRatingComponent } from '../star-rating/star-rating.component';
   styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private backend: BackendDataService, private authService: AuthService) {
+  constructor(
+    private route: ActivatedRoute, 
+    private backend: BackendDataService, 
+    private authService: AuthService,
+    private router: Router) {
 
   }
 
@@ -20,7 +24,7 @@ export class CourseDetailsComponent implements OnInit {
     id: 0,
     title: '',
     description: '',
-    createdByUserID: ''
+    createdByUserID: 0
   };
 
   //Reviews for testing
@@ -46,7 +50,7 @@ export class CourseDetailsComponent implements OnInit {
   averageRating: number = 0;
   toggleMyCourses: string = "Operation my Courses"
 
-  debugging = false;
+  debugging = true;
 
   ngOnInit() {
     // Get information on loaded course
@@ -59,8 +63,10 @@ export class CourseDetailsComponent implements OnInit {
       this.dataEntry = jsonData.find((entry) => entry.id === parseInt(id, 10));
       this.reviews = commentData.filter((entry) => entry.courseID === parseInt(id, 10));*/
     });
-    this.calculateAverageRating();
+  }
 
+  ngAfterViewInit() {
+    this.calculateAverageRating();
   }
 
   async getCourseForID(id: number) {
@@ -116,9 +122,7 @@ export class CourseDetailsComponent implements OnInit {
       this.removeFromUserCourses()
       this.toggleMyCourses = "+ Add to my Courses";
     } else {
-      if (this.debugging) {
-        console.log("ERROR: Typo");
-      }
+      this.router.navigateByUrl("/log-in")
     }
   }
 

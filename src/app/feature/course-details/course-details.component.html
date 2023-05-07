@@ -10,7 +10,7 @@
         
     </section>
     <div class="btns">
-        <button (click)="toggleUserCourses()" class="btn1">
+        <button (click)="toggleUserCourses()" class="btn1" [ngClass]="toggleMyCourses == 'Log in to add to my Courses' ? 'log-in' : 'normal'">
             {{ toggleMyCourses }}
         </button>
         <a [routerLink]="['/review-course', dataEntry.id]" routerLinkActive="active" ariaCurrentWhenActive="page">
