@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavBarService } from './nav-bar.service';
 import { Router, NavigationEnd, GuardsCheckStart } from '@angular/router';
+import { AuthService } from './auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Router, NavigationEnd, GuardsCheckStart } from '@angular/router';
 })
 
 export class AppComponent {
-  constructor(private navBarService: NavBarService, private router: Router){}
+  constructor(private navBarService: NavBarService, private router: Router, private authService: AuthService){}
 
   declare sideBarOff: boolean;
 
@@ -23,6 +24,11 @@ export class AppComponent {
       }
     });
   }
+
+  ngOnDestroy(){
+    this.authService.logout();
+  }
+
   
   title = 'studdy-buddy';
 
