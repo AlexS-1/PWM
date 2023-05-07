@@ -1,0 +1,22 @@
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<article class="review-course-form">
+    <h1>Review this course!</h1>
+    <form #reviewForm="ngForm" (submit)="reviewCourse()">
+      <section class="form-group">
+        <input type="number" class="form-control" [(ngModel)]="courseID" name="courseID" placeholder="Course ID" required="required">
+      </section>
+      <section class="star-bar">
+        <app-star-rating-hover [rating]="currentRating" (ratingChanged)="setRating($event)"></app-star-rating-hover>
+      </section>
+      
+      <div class="form-group">
+        <textarea name="review" id="1" [(ngModel)]="review" name="review" cols="50" rows="5" placeholder="Review with a short comment..." required="required"></textarea>
+      </div>
+      <p class="message"> {{ message }}</p>
+      <button type="submit" [disabled]="reviewForm.form.invalid || !ratingVailidity">
+        Review Course
+      </button>
+    </form>
+  </article>

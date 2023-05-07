@@ -1,14 +1,8 @@
-<p>test works!</p>
-
-<div class="container">
-    <a class="card">
-        <div class="inner-box" *ngFor="let content of contentData">
-            {{content.id}}
-        </div>
-        <div class="description" *ngFor="let content of contentData">
-            {{content.title}}
-            {{content.userId}}
-            
-        </div>
-    </a>
-</div>
+<button (click)="jsonToFirestore()">Backup to Firestore</button>
+<ul>
+    <li *ngFor="let item of items | async">{{ item.name }}</li>
+    <li *ngFor="let user of users | async">{{ user.username }}</li>
+</ul>
+<button (click)="logout()">Log-Out</button>
+<button (click)="login()">Log-In</button>
+<p>{{ text }}</p>

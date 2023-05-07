@@ -1,0 +1,25 @@
+<article class="browse-courses">
+  <div>
+    <h1>Browse Courses</h1>
+    <!-- Future feature
+    <form>
+      <input type="text" value="Search">
+    </form>
+      <input list="filter-types" name="myBrowser" />
+      <datalist id="filter-types">
+        <option value="Name">
+        <option value="Date">
+        <option value="Popularity">
+      </datalist>
+    -->
+  </div>
+  <section class="card-container" *ngFor="let course of courses; let i = index" [ngClass]="i + 1 == courses.length ? 'last': 'normal'">
+    <a [routerLink]="['/course-details', course.id]" routerLinkActive="active" ariaCurrentWhenActive="page" class="card">
+      <div class="inner-box">
+      </div>
+      <div class="description">
+          {{course.title}}
+      </div>
+    </a>
+  </section>
+</article>

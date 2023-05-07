@@ -1,0 +1,67 @@
+.review-course-form {
+    margin: 12px 5%;
+    padding: 12px 24px;
+}
+  
+h1 {
+    font-size: 60px;
+    font-weight: bolder;
+}
+  
+form {
+    margin: 20px auto;
+}
+  
+.form-group {
+    margin: 20px auto;
+}
+
+
+.star-bar {
+    font-size: 30px; /* Größe der Sterne */
+    display: inline-block; /* sorgt dafür, dass die Sterne nebeneinander angezeigt werden */
+    vertical-align: middle; /* Ausrichtung mittig zum Text */
+    margin: 15px 0 15px 0;
+  } 
+  
+  
+.form-control {
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #D8DCFF;
+    border: none;
+    min-width: 300px;
+    text-align: center;
+}
+
+textarea {
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #D8DCFF;
+    border: none;
+    max-width: 1000px;
+    max-width: 80vw;
+    min-height: 120px;
+}
+
+button {
+    background-color: #ffa100;
+    border: none;
+    font-weight: bolder;
+    font-size: 24px;
+    border-radius: 24px;
+    padding: 15px;
+    line-height: 48px;
+    color: white;
+}
+
+button:hover:valid {
+    cursor: pointer;
+    transform: scale(1.05); /* Vergrößerungsfaktor */
+    transition: transform 0.1s ease-in-out; /* Übergangseffekt */
+    background-color: #0066A1;
+    color: white;
+}
+

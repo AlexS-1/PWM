@@ -1,0 +1,36 @@
+<article class="my-courses">
+    <section *ngIf="dataEntry">
+        <h1>
+            {{ dataEntry.title }}
+           
+        </h1>
+        <div class="star-avg">
+            <!-- <app-star-rating [rating]="averageRating"></app-star-rating> -->
+        </div>
+        
+    </section>
+    <div class="btns">
+        <button (click)="toggleUserCourses()" class="btn1" [ngClass]="toggleMyCourses == 'Log in to add to my Courses' ? 'log-in' : 'normal'">
+            {{ toggleMyCourses }}
+        </button>
+        <a [routerLink]="['/review-course', dataEntry.id]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <button class="review">
+                Evaluate this Course
+            </button>
+        </a>
+    </div>
+    <div class="course-description" *ngIf="dataEntry">
+        <p>{{ dataEntry.description }}</p>
+    </div>
+    
+    <div class="review-container">
+        <div class="review-box" *ngFor="let review of reviews">
+            <div class="username-rating">
+                <span class="username">{{ review.username }}</span>
+                <app-star-rating [rating]="review.rating"></app-star-rating>
+            </div>
+            <p class="date">{{ review.date }}</p>
+            <p class="review">{{ review.review }}</p>
+        </div>
+    </div>
+</article>

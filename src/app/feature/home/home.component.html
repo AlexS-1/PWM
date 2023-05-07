@@ -1,0 +1,25 @@
+<article class="hoempage">
+    <h1 class="homepage-heading">Welcome Buddy!</h1>
+    <section class="rounded-rectangle">
+        <img src="/assets/homepage-banner.jpeg" alt="student with study buddy" class="banner">
+    </section>
+    <section class="usp-container">
+        <div id="home-text-h2">
+            <h2>Rate your courses here!</h2>
+            <h2>Connect with your classmates!</h2>
+            <h2>Share your experience!</h2>
+        </div>
+        <div class="home-button-container">
+            <a class="home-button-sign-in" routerLink="{{ accountPath }}" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <button id="home-button-sign-in">
+                    {{ accountButtonText }}
+                </button>
+            </a>
+            <a href="browse-courses" routerLink="/browse-courses" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <button>
+                    Start browsing for courses
+                </button>
+            </a>
+        </div>
+    </section>
+</article>
