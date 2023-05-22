@@ -72,8 +72,10 @@ export class BackendDataService {
       id: course.id,
       title: course.title,
       description: course.description,
-      createdByUserID: course.createdByUserID
-  }
+      createdByUserID: course.createdByUserID,
+      imageURL: course.imageURL
+    }
+
   
     //Add data if it does not exist yet
     if(!courseDoc.exists()) {

@@ -3,145 +3,167 @@
     "id": 1,  
     "title": "Programación Web y Movíl",  
     "description": "En el módulo Programación Web y Móvil, los estudiantes aprenden a desarrollar aplicaciones web y móviles utilizando tecnologías y marcos modernos, como Angular. A lo largo del curso, exploran conceptos clave en el diseño y la arquitectura de aplicaciones, así como en la creación de interfaces de usuario receptivas y accesibles. Además, el módulo proporciona a los estudiantes habilidades prácticas para la implementación de aplicaciones en múltiples plataformas y la optimización del rendimiento en diversos dispositivos.",  
-    "createdByUserID": 1070657581755231  
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://codigoonclick.com/wp-content/uploads/2017/03/desarrollo-web-movil.jpg"
   }, 
 
   {  
     "id": 2,  
     "title": "Computacion Parallela",  
     "description": "En el módulo Computación Paralela, los estudiantes aprenden acerca de los conceptos y técnicas fundamentales para diseñar y desarrollar algoritmos y aplicaciones paralelas que aprovechan múltiples núcleos de procesadores, clusters y sistemas distribuidos. Durante el curso, se exploran enfoques de programación concurrente, sincronización, comunicación entre procesos y balanceo de carga. Además, los estudiantes adquieren habilidades prácticas para evaluar y mejorar el rendimiento de las aplicaciones paralelas en una variedad de arquitecturas y plataformas.",  
-    "createdByUserID": 1070657581755231  
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.techtitute.com/techtitute/cursos/018237129/recursos/banner/experto-online-computacion-paralela.jpg"  
   },
 
   {  
     "id": 3,  
     "title": "Estructuras de Datos",  
     "description": "En el módulo Estructuras de Datos, los estudiantes aprenden sobre las estructuras de datos fundamentales y cómo se utilizan para representar, almacenar y manipular información en aplicaciones de software. Durante el curso, se exploran conceptos clave como listas enlazadas, árboles, pilas, colas, tablas hash y grafos. Además, los estudiantes adquieren habilidades para analizar y comparar el rendimiento y la eficiencia de diferentes estructuras de datos en función de sus propiedades y aplicaciones específicas.",  
-    "createdByUserID": 1070657581755231  
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Hash_table_es.svg/1200px-Hash_table_es.svg.png"  
   },
 
   {  
     "id": 4,  
     "title": "Proyectos de Ingeniería y Gestión del Software",  
     "description": "En el módulo Proyectos de Ingeniería y Gestión del Software, los estudiantes aprenden sobre las metodologías y procesos clave en el desarrollo de software, como la planificación de proyectos, la gestión de requisitos y la programación ágil. También adquieren experiencia práctica en la implementación de sistemas de control de versiones, pruebas de software y técnicas de integración continua. Además, el módulo cubre aspectos importantes de la gestión de proyectos de software, como la gestión de riesgos, la comunicación efectiva y la asignación de recursos.",  
-    "createdByUserID": 1070657581755231  
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.monografias.com/trabajos102/gestion-proyectos-software/img6.png"
   },
 
   {  
     "id": 5,  
     "title": "Databases",  
     "description": "Participants learn about various types of database systems, such as relational, NoSQL, and graph databases, as well as their underlying data models and storage techniques. They also gain practical experience in designing, implementing, and querying databases using popular query languages like SQL. Additionally, the module covers best practices for database optimization, security, and data integrity to ensure efficient and reliable data storage and retrieval.",  
-    "createdByUserID": 1070657581755231  
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://miro.medium.com/v2/resize:fit:3840/1*mLqtKV1FjUg-WKlLW-cXjQ.jpeg"
   },
 
   {
     "id": 6,
     "title": "Introducción a la Física",
     "description": "En este curso, los estudiantes aprenderán los conceptos fundamentales de la física, incluyendo mecánica clásica, termodinámica, electromagnetismo, óptica y física moderna. A través de lecciones teóricas y experimentos prácticos, adquirirán habilidades para analizar y resolver problemas en distintos campos de la física.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://media.tutellus.com/libraries/45/01/lib/1499432902212_1.jpg?size=854x493s&ext=jpg"
   },
 
   {
     "id": 7,
     "title": "Biología Molecular y Celular",
     "description": "Este curso introduce a los estudiantes a la biología molecular y celular, explorando la estructura y función de las células y sus componentes moleculares. Los temas incluyen la síntesis de proteínas, el metabolismo celular, la comunicación celular y la regulación génica. Los estudiantes aprenderán a aplicar técnicas experimentales y análisis de datos en la investigación biológica.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://cdn0.ecologiaverde.com/es/posts/6/5/6/biologia_celular_que_es_y_su_importancia_3656_orig.jpg"
   },
 
   {
     "id": 8,
     "title": "Química Orgánica",
     "description": "Los estudiantes aprenderán los principios y conceptos básicos de la química orgánica, incluyendo la estructura y propiedades de compuestos orgánicos, reacciones químicas y mecanismos de reacción. A través de experimentos prácticos, adquirirán habilidades en síntesis orgánica, purificación y análisis de compuestos orgánicos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.quimicaorganica.org/images/stories/indices/serotonina.png"
   },
 
   {
     "id": 9,
     "title": "Matemáticas Avanzadas",
     "description": "En este curso, los estudiantes explorarán temas avanzados en matemáticas, incluyendo análisis real y complejo, álgebra abstracta, geometría diferencial y topología. A través de ejercicios y problemas, desarrollarán habilidades en razonamiento matemático, demostraciones y resolución de problemas complejos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.shutterstock.com/image-photo/advanced-mathematics-260nw-368844992.jpg"
   },
 
   {
     "id": 10,
     "title": "Inteligencia Artificial",
     "description": "Este curso introduce a los estudiantes a los conceptos fundamentales y técnicas de la inteligencia artificial, incluyendo aprendizaje automático, procesamiento del lenguaje natural y visión por computadora. A través de proyectos prácticos, los estudiantes aprenderán a desarrollar y aplicar algoritmos de IA en diversas aplicaciones y contextos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://phantom-marca.unidadeditorial.es/be5cf69943e2b05db3195721d3ecb0af/resize/1320/f/jpg/assets/multimedia/imagenes/2023/04/20/16820026671942.jpg"
   },
 
   {
     "id": 11,
     "title": "Psicología Social",
     "description": "Los estudiantes aprenderán los conceptos básicos de la psicología social, incluyendo la percepción y cognición social, actitudes y persuasión, comportamiento grupal y toma de decisiones. A través de lecturas, discusiones y actividades prácticas, adquirirán habilidades en la investigación y aplicación de teorías psicológicas en contextos sociales y culturales.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://psicologiapractica.es/wp-content/uploads/2017/02/psicologia-social.jpg"
   },
 
   {
     "id": 12,
     "title": "Filosofía de la Ciencia",
     "description": "En este curso, los estudiantes explorarán las cuestiones fundamentales en la filosofía de la ciencia, como la naturaleza de las teorías científicas, la justificación y la demarcación entre ciencia y no ciencia. A través de lecturas y discusiones, adquirirán habilidades en el análisis crítico y reflexión sobre el proceso científico y su impacto en la sociedad.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.donostiakultura.eus/imgs/particulares/casas-cultura/ernest-lluch/filosofia-ciencia-1200x900.jpg"
   },
   {
     "id": 13,
     "title": "Geología y Ciencias de la Tierra",
     "description": "En este curso, los estudiantes aprenderán sobre la estructura y composición de la Tierra, así como los procesos geológicos que han moldeado nuestro planeta a lo largo del tiempo. A través de lecciones teóricas y trabajo de campo, adquirirán habilidades en la identificación de rocas y minerales, interpretación de mapas geológicos y análisis de datos geofísicos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://edea.juntadeandalucia.es/bancorecursos/file/633d08a4-38e3-419e-9f2c-3468cf07c9d0/1/es-an_2018121412_9124148.zip/Imagen_24_T1_Las_ciencias_geologicas.1.jpg"
   },
 
   {
     "id": 14,
     "title": "Astronomía y Astrofísica",
     "description": "Este curso introduce a los estudiantes a la astronomía y la astrofísica, explorando la estructura y evolución del universo, desde estrellas y galaxias hasta el espacio intergaláctico. A través de lecciones teóricas y observaciones prácticas, adquirirán habilidades en la interpretación de datos astronómicos y la aplicación de leyes físicas en el estudio del cosmos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.unir.net/wp-content/uploads/2021/03/astrofisica_ficha_1920x1080.jpg"
   },
   {
     "id": 15,
     "title": "Ecología y Conservación",
     "description": "En este curso, los estudiantes aprenderán sobre los conceptos fundamentales de la ecología y la conservación, incluyendo la estructura y función de los ecosistemas, la dinámica de poblaciones y comunidades, y los factores que influyen en la biodiversidad. A través de lecciones teóricas y trabajo de campo, adquirirán habilidades en la investigación ecológica y la aplicación de estrategias de conservación.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://img.freepik.com/vector-premium/conservacion-ecologia-proteger-medio-ambiente_24640-20164.jpg?w=2000"
   },
   {
     "id": 16,
     "title": "Economía y Política",
     "description": "Los estudiantes aprenderán sobre los conceptos básicos de la economía y la política, incluyendo la oferta y la demanda, el mercado y la intervención gubernamental, así como los sistemas políticos y las teorías de poder. A través de lecturas, discusiones y análisis de casos, adquirirán habilidades en el análisis económico y político y la aplicación de teorías en contextos reales.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://4.bp.blogspot.com/-gCcso1TMv_c/V7yDoyfMocI/AAAAAAAACg0/YjtY5YmaSHIrenVCZWLt32OWyKh8XF3FgCEw/s1600/economia-politica.jpg"
   },
 
   {
     "id": 17,
     "title": "Fisiología del Ejercicio",
     "description": "En este módulo, los estudiantes aprenderán los fundamentos de la fisiología del ejercicio, incluyendo el sistema cardiovascular, respiratorio y muscular. A través de experimentos prácticos y ejercicios, adquirirán habilidades en la medición y análisis de las respuestas fisiológicas al ejercicio físico.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.topdoctors.es/files/Image/large/5b7fee2c-7df4-4e4c-b04a-038a8ac97da0.png"
   },
   {
     "id": 18,
     "title": "Sistemas Embebidos",
     "description": "En este módulo, los estudiantes aprenderán sobre los fundamentos de los sistemas embebidos, incluyendo la arquitectura, el diseño y la programación de microcontroladores. A través de ejercicios prácticos, adquirirán habilidades en el diseño y la implementación de sistemas embebidos para aplicaciones en tiempo real.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://d29jy8ovkd5kcx.cloudfront.net/wp-content/uploads/2022/12/14193633/el-sistema-embedido.jpg"
   },
   {
     "id": 19,
     "title": "Neurociencia Cognitiva",
     "description": "En este módulo, los estudiantes aprenderán sobre los fundamentos de la neurociencia cognitiva, incluyendo el sistema nervioso, la percepción, la atención, la memoria y el lenguaje. A través de experimentos prácticos y ejercicios, adquirirán habilidades en la medición y análisis de las funciones cognitivas del cerebro.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://luisdegarrido.com/wp-content/uploads/2015/06/Cognitive-Neuroscience-and-Neurobiology-Luis-De-Garrido.jpg"
   },
   {
     "id": 20,
     "title": "Desarrollo de Videojuegos",
     "description": "En este módulo, los estudiantes aprenderán sobre los fundamentos del desarrollo de videojuegos, incluyendo la programación, el diseño y la producción de videojuegos. A través de ejercicios prácticos, adquirirán habilidades en la creación de juegos interactivos y la aplicación de técnicas avanzadas de programación y diseño.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://www.bbva.com/wp-content/uploads/2017/12/video-juegos-ordenador-diseno-desarrollo-programador-BBVA-1024x576.jpg"
   },
   {
     "id": 21,
     "title": "Física Cuántica",
     "description": "En este módulo, los estudiantes aprenderán sobre los fundamentos de la física cuántica, incluyendo las propiedades de las partículas subatómicas, la mecánica cuántica y la teoría de la relatividad. A través de ejercicios prácticos, adquirirán habilidades en el análisis y la interpretación de los fenómenos cuánticos.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://images.ecestaticos.com/j0QOnfdwgS2xO6v_mmKCMWDXQ7A=/58x1:1764x960/1338x752/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fdd9%2F7af%2F724%2Fdd97af724d3beb0d79794af2f42d5d52.jpg"
   },
   {
     "id": 22,
     "title": "Biomateriales",
     "description": "En este módulo, los estudiantes aprenderán sobre los fundamentos de los biomateriales, incluyendo las propiedades de los materiales biocompatibles, su procesamiento y sus aplicaciones en la medicina y la ingeniería. A través de experimentos prácticos y ejercicios, adquirirán habilidades en el diseño y la evaluación de biomateriales para aplicaciones médicas.",
-    "createdByUserID": 1070657581755231
+    "createdByUserID": 1070657581755231,
+    "imageURL": "https://miriadax-wp-uploads-pro.s3.eu-west-1.amazonaws.com/wp-content/uploads/2022/07/22090601/86-biomaterial-1.jpg"
   }
 ] 
